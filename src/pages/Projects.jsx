@@ -58,7 +58,7 @@ const Projects = () => {
             </div>
 
             {/* Accordion Container */}
-            <div className="flex-1 flex flex-col md:flex-row gap-2 md:gap-0 overflow-hidden rounded-[2rem] bg-white shadow-2xl relative min-h-[600px] md:min-h-0">
+            <div className="flex-1 flex flex-col md:flex-row gap-2 md:gap-0 overflow-hidden rounded-[2rem] bg-white shadow-2xl relative min-h-[1000px] md:min-h-0 h-auto">
                 {projects.map((project) => (
                     <motion.a
                         key={project.id}
@@ -67,11 +67,15 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         onHoverStart={() => setActiveId(project.id)}
                         onHoverEnd={() => setActiveId(null)}
-                        className={`relative flex-1 flex flex-col justify-between border-r last:border-r-0 border-vedic-brown/10 overflow-hidden cursor-pointer group transition-[flex] duration-700 ease-[cubic-bezier(0.32,0,0.67,0)] ${activeId === project.id ? 'md:flex-[3]' : 'md:flex-1'
-                            }`}
+                        className={`relative flex-1 flex flex-col justify-between border-r last:border-r-0 border-vedic-brown/10 overflow-hidden cursor-pointer group transition-[flex] duration-700 ease-[cubic-bezier(0.32,0,0.67,0)]
+                            ${activeId === project.id ? 'md:flex-[3]' : 'md:flex-1'}
+                            min-h-[250px] md:min-h-0
+                        `}
                     >
-                        {/* Background Image (Reveals on Hover) */}
-                        <div className={`absolute inset-0 bg-vedic-brown transition-opacity duration-500 z-0 ${activeId === project.id ? 'opacity-100' : 'opacity-0'}`}>
+                        {/* Background Image */}
+                        <div className={`absolute inset-0 bg-vedic-brown transition-opacity duration-500 z-0 
+                            ${activeId === project.id ? 'opacity-100' : 'opacity-40 md:opacity-0'}
+                        `}>
                             {/* Dark overlay for text readability */}
                             <div className="absolute inset-0 bg-black/40 z-10" />
                             <img
@@ -82,7 +86,9 @@ const Projects = () => {
                         </div>
 
                         {/* Hover Overlay Gradient */}
-                        <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-500 z-10 ${activeId === project.id ? 'opacity-100' : 'opacity-0'}`} />
+                        <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent transition-opacity duration-500 z-10 
+                            ${activeId === project.id ? 'opacity-100' : 'opacity-60 md:opacity-0'}
+                         `} />
 
 
                         {/* Content Container */}
@@ -90,8 +96,9 @@ const Projects = () => {
 
                             {/* Number */}
                             <div className="flex justify-center md:block">
-                                <span className={`text-6xl md:text-8xl font-light transition-colors duration-500 ${activeId === project.id ? 'text-white/20' : 'text-vedic-brown'
-                                    }`}>
+                                <span className={`text-6xl md:text-8xl font-light transition-colors duration-500 ${activeId === project.id ? 'text-white/20' : 'text-vedic-brown md:text-vedic-brown'
+                                    } text-white/20 md:text-vedic-brown`}>
+                                    {/* Mobile: default white/20 because BG is visible, Desktop: Brown unless active */}
                                     {project.id}
                                 </span>
                             </div>
@@ -100,16 +107,16 @@ const Projects = () => {
                             <div className="mt-auto">
                                 <div className="flex justify-between items-end">
                                     <div className={`transition-transform duration-500 ${activeId === project.id ? 'translate-y-0' : 'translate-y-4'}`}>
-                                        <h3 className={`text-2xl md:text-4xl font-serif font-bold mb-2 transition-colors duration-300 ${activeId === project.id ? 'text-white' : 'text-vedic-brown'
+                                        <h3 className={`text-2xl md:text-4xl font-serif font-bold mb-2 transition-colors duration-300 ${activeId === project.id ? 'text-white' : 'text-white md:text-vedic-brown'
                                             }`}>
                                             {project.title}
                                         </h3>
-                                        <p className={`text-sm md:text-base transition-colors duration-300 ${activeId === project.id ? 'text-white/80' : 'text-vedic-brown/60'
+                                        <p className={`text-sm md:text-base transition-colors duration-300 ${activeId === project.id ? 'text-white/80' : 'text-white/60 md:text-vedic-brown/60'
                                             }`}>
                                             {project.category}
                                         </p>
 
-                                        {/* Description (Only shows on expand) */}
+                                        {/* Description (Only shows on expand/hover) */}
                                         <div className={`overflow-hidden transition-all duration-500 ease-in-out ${activeId === project.id ? 'max-h-20 opacity-100 mt-4' : 'max-h-0 opacity-0 mt-0'}`}>
                                             <p className="text-white/70 text-sm max-w-md">
                                                 {project.description}
@@ -119,10 +126,10 @@ const Projects = () => {
 
                                     {/* Arrow Icon */}
                                     <div className={`w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 ${activeId === project.id
-                                        ? 'bg-vedic-saffron border-vedic-saffron rotate-45'
-                                        : 'border-vedic-brown/20 group-hover:border-vedic-brown'
+                                            ? 'bg-vedic-saffron border-vedic-saffron rotate-45'
+                                            : 'border-white/20 md:border-vedic-brown/20 group-hover:border-vedic-brown'
                                         }`}>
-                                        <ArrowUpRight className={`w-6 h-6 transition-colors duration-300 ${activeId === project.id ? 'text-white' : 'text-vedic-brown'
+                                        <ArrowUpRight className={`w-6 h-6 transition-colors duration-300 ${activeId === project.id ? 'text-white' : 'text-white md:text-vedic-brown'
                                             }`} />
                                     </div>
                                 </div>

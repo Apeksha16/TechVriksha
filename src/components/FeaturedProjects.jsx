@@ -77,9 +77,13 @@ const FeaturedProjects = () => {
 
     const ExpandableRow = ({ projects, rowIndex }) => {
         const [hoveredId, setHoveredId] = useState(null);
+        // We can just rely on CSS for layout shifts (column -> row)
+        // For the accordion effect:
+        // On Mobile: It will just be a stack of cards. We can disable the "flex" animation or just let it be.
+        // If parent height is auto, flex-grow doesn't drive height in column mode nicely without simple stacking.
 
         return (
-            <div className="flex flex-col md:flex-row gap-4 w-full h-[500px]">
+            <div className="flex flex-col md:flex-row gap-4 w-full h-auto md:h-[500px]">
                 {projects.map((project, idx) => {
                     const isHovered = hoveredId === project.id;
                     const isSomeoneHovered = hoveredId !== null;
@@ -96,12 +100,18 @@ const FeaturedProjects = () => {
                             onHoverStart={() => setHoveredId(project.id)}
                             onHoverEnd={() => setHoveredId(null)}
                             layout
-                            className={`relative rounded-[2.5rem] overflow-hidden ${bgColor} ${textColor} shadow-xl cursor-pointer`}
+                            className={`relative rounded-[2.5rem] overflow-hidden ${bgColor} ${textColor} shadow-xl cursor-pointer
+                                min-h-[400px] md:min-h-0
+                            `}
                             animate={{
                                 flex: isHovered ? 3 : 1,
                                 opacity: isSomeoneHovered && !isHovered ? 0.7 : 1
                             }}
                             transition={{ type: "spring", stiffness: 200, damping: 25 }}
+                        // On mobile this "flex" animation might be weird if height is auto.
+                        // But since we set min-h-[400px], they will just stack. 
+                        // Flex-grow on column with auto-height parent doesn't collapse them.
+                        // So effectively this animation only works visibly on MD where parent is fixed h-500 & row.
                         >
                             <div className="relative h-full w-full p-8 flex flex-col">
                                 {/* Top Content (Always Visible) */}
@@ -124,7 +134,8 @@ const FeaturedProjects = () => {
 
                                     {/* Expanded Content */}
                                     <AnimatePresence>
-                                        {isHovered && (
+                                        {(isHovered || window.innerWidth < 768) && ( // Optional: Always show description on mobile? Or keep expand interaction?
+                                            // Let's keep hover/click interaction even on mobile for consistency, or users can tap.
                                             <motion.div
                                                 initial={{ opacity: 0, height: 0 }}
                                                 animate={{ opacity: 1, height: 'auto' }}
