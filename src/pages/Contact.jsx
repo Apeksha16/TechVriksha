@@ -1,428 +1,204 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Loader } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageSquare, Clock, ArrowRight, Instagram, Linkedin, Twitter, Facebook } from 'lucide-react';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
+        name: '',
         email: '',
-        phone: '',
-        company: '',
         subject: '',
         message: ''
     });
-    const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
 
-    const validateEmail = (email) => {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-    };
-
-    const validatePhone = (phone) => {
-        const re = /^[\d\s\-\+\(\)]+$/;
-        return re.test(phone) && phone.replace(/\D/g, '').length >= 10;
-    };
-
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
-        // Clear error when user starts typing
-        if (errors[name]) {
-            setErrors(prev => ({ ...prev, [name]: '' }));
-        }
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const validateForm = () => {
-        const newErrors = {};
-
-        if (!formData.firstName.trim()) {
-            newErrors.firstName = 'First name is required';
-        }
-
-        if (!formData.lastName.trim()) {
-            newErrors.lastName = 'Last name is required';
-        }
-
-        if (!formData.email.trim()) {
-            newErrors.email = 'Email is required';
-        } else if (!validateEmail(formData.email)) {
-            newErrors.email = 'Please enter a valid email address';
-        }
-
-        if (!formData.phone.trim()) {
-            newErrors.phone = 'Phone number is required';
-        } else if (!validatePhone(formData.phone)) {
-            newErrors.phone = 'Please enter a valid phone number';
-        }
-
-        if (!formData.subject.trim()) {
-            newErrors.subject = 'Subject is required';
-        }
-
-        if (!formData.message.trim()) {
-            newErrors.message = 'Message is required';
-        } else if (formData.message.trim().length < 10) {
-            newErrors.message = 'Message must be at least 10 characters';
-        }
-
-        setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
-    };
-
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        
-        if (!validateForm()) {
-            return;
-        }
-
         setIsSubmitting(true);
-        
-        // Simulate API call
+        // Simulate sending
         setTimeout(() => {
             setIsSubmitting(false);
             setSubmitted(true);
-            setFormData({
-                firstName: '',
-                lastName: '',
-                email: '',
-                phone: '',
-                company: '',
-                subject: '',
-                message: ''
-            });
-            
-            setTimeout(() => {
-                setSubmitted(false);
-            }, 5000);
+            setFormData({ name: '', email: '', subject: '', message: '' });
+            setTimeout(() => setSubmitted(false), 5000);
         }, 1500);
     };
 
     return (
-        <div className="bg-[#FAF9F6] min-h-screen py-20 px-4">
-            <div className="max-w-7xl mx-auto">
-                {/* Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="text-center mb-16"
-                >
-                    <span className="text-vedic-saffron tracking-widest uppercase font-semibold text-sm sanskrit-text">
-                        Get in Touch
-                    </span>
-                    <h1 className="mt-4 text-4xl md:text-6xl font-serif font-bold text-vedic-black sanskrit-accent">
-                        Let's Create Something Timeless
-                    </h1>
-                    <p className="mt-6 text-lg md:text-xl text-vedic-brown/70 max-w-3xl mx-auto leading-relaxed">
-                        Whether you have a project in mind or just want to explore the possibilities, we're here to guide you on your digital journey.
-                    </p>
-                </motion.div>
+        <div className="bg-[#FFF9F3] min-h-screen pt-20">
+            {/* Header Section */}
+            <div className="text-center py-16 px-4">
+                <h4 className="text-vedic-saffron font-bold text-sm tracking-[0.2em] uppercase mb-4">Contact Us</h4>
+                <h1 className="text-4xl md:text-6xl font-serif font-bold text-vedic-black">Let's Discuss Your Project</h1>
+                <p className="mt-4 text-vedic-brown/60 text-lg max-w-2xl mx-auto">
+                    We'd love to hear from you. Let's create something amazing together.
+                </p>
+            </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-                    {/* Contact Info */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="space-y-8"
-                    >
-                        <div>
-                            <h2 className="text-2xl md:text-3xl font-serif font-bold text-vedic-black mb-6">
-                                Connect With Us
+            {/* Main Content Split */}
+            <div className="max-w-7xl mx-auto px-4 md:px-8 pb-20">
+                <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+
+                    {/* LEFT: Form Section */}
+                    <div className="flex-1 w-full lg:w-3/5">
+                        <div className="mb-8">
+                            <h2 className="text-3xl md:text-4xl font-serif font-bold text-vedic-black mb-2">
+                                Get Your <span className="text-vedic-saffron italic font-serif">Free Quote Today!</span>
                             </h2>
-                            <p className="text-vedic-brown/70 text-lg leading-relaxed">
-                                We're here to answer your questions and discuss how we can bring your digital vision to life. Reach out through any of these channels.
-                            </p>
+                            <p className="text-vedic-brown/60">Fill out the form and we'll get back to you within 24 hours.</p>
                         </div>
 
-                        <div className="space-y-6">
-                            {[
-                                { 
-                                    icon: MapPin, 
-                                    title: "Our Studio", 
-                                    text: "123 Innovation Drive, Tech Park", 
-                                    subtext: "Mumbai, Maharashtra, India - 400001"
-                                },
-                                { 
-                                    icon: Phone, 
-                                    title: "Phone", 
-                                    text: "+91 98765 43210",
-                                    subtext: "Mon - Sat, 9:00 AM - 6:00 PM IST"
-                                },
-                                { 
-                                    icon: Mail, 
-                                    title: "Email", 
-                                    text: "hello@techvriksha.com",
-                                    subtext: "We respond within 24 hours"
-                                }
-                            ].map((item, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.2 + idx * 0.1, duration: 0.5 }}
-                                    whileHover={{ x: 10 }}
-                                    className="flex items-start space-x-4 p-4 rounded-xl hover:bg-vedic-white/50 transition-colors"
-                                >
-                                    <div className="bg-gradient-vedic text-white p-3 rounded-xl shadow-lg flex-shrink-0">
-                                        <item.icon size={24} />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-serif font-semibold text-lg text-vedic-black mb-1">
-                                            {item.title}
-                                        </h3>
-                                        <p className="text-vedic-brown font-medium">{item.text}</p>
-                                        {item.subtext && (
-                                            <p className="text-vedic-brown/60 text-sm mt-1">{item.subtext}</p>
-                                        )}
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
+                        <form onSubmit={handleSubmit} className="space-y-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label className="block text-sm font-bold text-vedic-black mb-2">Your Name *</label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        placeholder="Ex. John Doe"
+                                        required
+                                        className="w-full bg-[#f4f1ea] border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-vedic-saffron/20 transition-all outline-none"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-bold text-vedic-black mb-2">Email *</label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        placeholder="example@gmail.com"
+                                        required
+                                        className="w-full bg-[#f4f1ea] border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-vedic-saffron/20 transition-all outline-none"
+                                    />
+                                </div>
+                            </div>
 
-                        {/* Additional Info */}
-                        <div className="bg-gradient-to-br from-vedic-saffron/10 to-vedic-gold/5 rounded-2xl p-6 vedic-card">
-                            <h3 className="font-serif font-bold text-vedic-black mb-2">
-                                Why Choose Us?
-                            </h3>
-                            <ul className="space-y-2 text-sm text-vedic-brown/80">
-                                <li className="flex items-start">
-                                    <CheckCircle className="w-5 h-5 text-vedic-saffron mr-2 flex-shrink-0 mt-0.5" />
-                                    <span>Quick response time (within 24 hours)</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <CheckCircle className="w-5 h-5 text-vedic-saffron mr-2 flex-shrink-0 mt-0.5" />
-                                    <span>Free initial consultation</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <CheckCircle className="w-5 h-5 text-vedic-saffron mr-2 flex-shrink-0 mt-0.5" />
-                                    <span>Transparent pricing and timelines</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </motion.div>
+                            <div>
+                                <label className="block text-sm font-bold text-vedic-black mb-2">Subject *</label>
+                                <input
+                                    type="text"
+                                    name="subject"
+                                    value={formData.subject}
+                                    onChange={handleChange}
+                                    placeholder="Enter Subject"
+                                    required
+                                    className="w-full bg-[#f4f1ea] border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-vedic-saffron/20 transition-all outline-none"
+                                />
+                            </div>
 
-                    {/* Form */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="vedic-card p-8 md:p-10 relative"
-                    >
-                        {submitted ? (
-                            <motion.div
-                                initial={{ scale: 0.8, opacity: 0 }}
-                                animate={{ scale: 1, opacity: 1 }}
-                                className="text-center py-12"
+                            <div>
+                                <label className="block text-sm font-bold text-vedic-black mb-2">Your Message *</label>
+                                <textarea
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    rows="6"
+                                    placeholder="Enter here.."
+                                    required
+                                    className="w-full bg-[#f4f1ea] border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-vedic-saffron/20 transition-all outline-none resize-none"
+                                />
+                            </div>
+
+                            <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                className="inline-flex items-center gap-2 bg-[#FD7503] hover:bg-[#e06502] text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
                             >
+                                {isSubmitting ? 'Sending...' : 'Send Message'}
+                                {!isSubmitting && <ArrowRight className="w-5 h-5" />}
+                            </button>
+
+                            {submitted && (
                                 <motion.div
-                                    initial={{ scale: 0 }}
-                                    animate={{ scale: 1 }}
-                                    transition={{ type: "spring", duration: 0.6 }}
-                                    className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6"
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="p-4 bg-green-100 text-green-700 rounded-xl flex items-center gap-2"
                                 >
-                                    <CheckCircle size={40} className="text-white" />
+                                    <MessageSquare className="w-5 h-5" />
+                                    <span>Message sent successfully! We'll contact you shortly.</span>
                                 </motion.div>
-                                <h3 className="text-2xl font-serif font-bold text-vedic-black mb-2">
-                                    Thank You!
-                                </h3>
-                                <p className="text-vedic-brown/70">
-                                    We've received your message and will get back to you within 24 hours.
-                                </p>
-                            </motion.div>
-                        ) : (
-                            <>
-                                <h2 className="text-2xl md:text-3xl font-serif font-bold text-vedic-black mb-6">
-                                    Send Us a Message
-                                </h2>
-                                <form onSubmit={handleSubmit} className="space-y-6">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        <div>
-                                            <label className="block text-sm font-medium text-vedic-black mb-2">
-                                                First Name <span className="text-vedic-saffron">*</span>
-                                            </label>
-                                            <input
-                                                type="text"
-                                                name="firstName"
-                                                value={formData.firstName}
-                                                onChange={handleChange}
-                                                className={`w-full px-4 py-3 rounded-lg border-2 ${
-                                                    errors.firstName 
-                                                        ? 'border-red-500' 
-                                                        : 'border-vedic-black/20 focus:border-vedic-saffron'
-                                                } focus:ring-2 focus:ring-vedic-saffron/20 outline-none transition-all bg-vedic-white`}
-                                                placeholder="John"
-                                            />
-                                            {errors.firstName && (
-                                                <p className="mt-1 text-sm text-red-600 flex items-center">
-                                                    <AlertCircle size={16} className="mr-1" />
-                                                    {errors.firstName}
-                                                </p>
-                                            )}
+                            )}
+                        </form>
+                    </div>
+
+                    {/* RIGHT: Info Card */}
+                    <div className="w-full lg:w-2/5 mt-8 lg:mt-0">
+                        <div className="bg-[#2D1B15] text-white rounded-[2.5rem] p-10 lg:p-12 shadow-2xl relative overflow-hidden">
+                            {/* Decorative Background Elements */}
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-[#FD7503] rounded-full filter blur-[80px] opacity-10 translate-x-1/3 -translate-y-1/3"></div>
+
+                            <h3 className="text-2xl font-serif font-bold mb-8">Contact Information</h3>
+
+                            <div className="space-y-8 relative z-10">
+                                {/* Address */}
+                                <div>
+                                    <h4 className="text-lg font-bold text-[#FD7503] mb-2">Address</h4>
+                                    <p className="text-white/80 leading-relaxed">
+                                        123 Innovation Drive, Tech Park<br />
+                                        Mumbai, Maharashtra, India - 400001
+                                    </p>
+                                </div>
+
+                                {/* Contact */}
+                                <div>
+                                    <h4 className="text-lg font-bold text-[#FD7503] mb-2">Contact</h4>
+                                    <p className="text-white/80 mb-1">Phone : +91 98765 43210</p>
+                                    <p className="text-white/80">Email : hello@techvriksha.com</p>
+                                </div>
+
+                                {/* Open Time */}
+                                <div>
+                                    <h4 className="text-lg font-bold text-[#FD7503] mb-2">Open Time</h4>
+                                    <div className="text-white/80 space-y-1">
+                                        <div className="flex justify-between max-w-[200px]">
+                                            <span>Monday - Friday</span>
+                                            <span>: 10:00 - 20:00</span>
                                         </div>
-                                        <div>
-                                            <label className="block text-sm font-medium text-vedic-black mb-2">
-                                                Last Name <span className="text-vedic-saffron">*</span>
-                                            </label>
-                                            <input
-                                                type="text"
-                                                name="lastName"
-                                                value={formData.lastName}
-                                                onChange={handleChange}
-                                                className={`w-full px-4 py-3 rounded-lg border-2 ${
-                                                    errors.lastName 
-                                                        ? 'border-red-500' 
-                                                        : 'border-vedic-black/20 focus:border-vedic-saffron'
-                                                } focus:ring-2 focus:ring-vedic-saffron/20 outline-none transition-all bg-vedic-white`}
-                                                placeholder="Doe"
-                                            />
-                                            {errors.lastName && (
-                                                <p className="mt-1 text-sm text-red-600 flex items-center">
-                                                    <AlertCircle size={16} className="mr-1" />
-                                                    {errors.lastName}
-                                                </p>
-                                            )}
+                                        <div className="flex justify-between max-w-[200px]">
+                                            <span>Saturday - Sunday</span>
+                                            <span>: 11:00 - 18:00</span>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        <div>
-                                            <label className="block text-sm font-medium text-vedic-black mb-2">
-                                                Email Address <span className="text-vedic-saffron">*</span>
-                                            </label>
-                                            <input
-                                                type="email"
-                                                name="email"
-                                                value={formData.email}
-                                                onChange={handleChange}
-                                                className={`w-full px-4 py-3 rounded-lg border-2 ${
-                                                    errors.email 
-                                                        ? 'border-red-500' 
-                                                        : 'border-vedic-black/20 focus:border-vedic-saffron'
-                                                } focus:ring-2 focus:ring-vedic-saffron/20 outline-none transition-all bg-vedic-white`}
-                                                placeholder="john@example.com"
-                                            />
-                                            {errors.email && (
-                                                <p className="mt-1 text-sm text-red-600 flex items-center">
-                                                    <AlertCircle size={16} className="mr-1" />
-                                                    {errors.email}
-                                                </p>
-                                            )}
-                                        </div>
-                                        <div>
-                                            <label className="block text-sm font-medium text-vedic-black mb-2">
-                                                Phone Number <span className="text-vedic-saffron">*</span>
-                                            </label>
-                                            <input
-                                                type="tel"
-                                                name="phone"
-                                                value={formData.phone}
-                                                onChange={handleChange}
-                                                className={`w-full px-4 py-3 rounded-lg border-2 ${
-                                                    errors.phone 
-                                                        ? 'border-red-500' 
-                                                        : 'border-vedic-black/20 focus:border-vedic-saffron'
-                                                } focus:ring-2 focus:ring-vedic-saffron/20 outline-none transition-all bg-vedic-white`}
-                                                placeholder="+91 98765 43210"
-                                            />
-                                            {errors.phone && (
-                                                <p className="mt-1 text-sm text-red-600 flex items-center">
-                                                    <AlertCircle size={16} className="mr-1" />
-                                                    {errors.phone}
-                                                </p>
-                                            )}
-                                        </div>
+                                {/* Stay Connected */}
+                                <div>
+                                    <h4 className="text-lg font-bold text-[#FD7503] mb-4">Stay Connected</h4>
+                                    <div className="flex gap-4">
+                                        {[Instagram, Facebook, Twitter, Linkedin].map((Icon, i) => (
+                                            <a key={i} href="#" className="w-10 h-10 rounded-full bg-[#FD7503] flex items-center justify-center text-white hover:bg-white hover:text-[#FD7503] transition-all duration-300">
+                                                <Icon className="w-5 h-5" />
+                                            </a>
+                                        ))}
                                     </div>
-
-                                    <div>
-                                        <label className="block text-sm font-medium text-vedic-black mb-2">
-                                            Company (Optional)
-                                        </label>
-                                        <input
-                                            type="text"
-                                            name="company"
-                                            value={formData.company}
-                                            onChange={handleChange}
-                                            className="w-full px-4 py-3 rounded-lg border-2 border-vedic-black/20 focus:border-vedic-saffron focus:ring-2 focus:ring-vedic-saffron/20 outline-none transition-all bg-vedic-white"
-                                            placeholder="Your Company Name"
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <label className="block text-sm font-medium text-vedic-black mb-2">
-                                            Subject <span className="text-vedic-saffron">*</span>
-                                        </label>
-                                        <input
-                                            type="text"
-                                            name="subject"
-                                            value={formData.subject}
-                                            onChange={handleChange}
-                                            className={`w-full px-4 py-3 rounded-lg border-2 ${
-                                                errors.subject 
-                                                    ? 'border-red-500' 
-                                                    : 'border-vedic-black/20 focus:border-vedic-saffron'
-                                            } focus:ring-2 focus:ring-vedic-saffron/20 outline-none transition-all bg-vedic-white`}
-                                            placeholder="What can we help you with?"
-                                        />
-                                        {errors.subject && (
-                                            <p className="mt-1 text-sm text-red-600 flex items-center">
-                                                <AlertCircle size={16} className="mr-1" />
-                                                {errors.subject}
-                                            </p>
-                                        )}
-                                    </div>
-
-                                    <div>
-                                        <label className="block text-sm font-medium text-vedic-black mb-2">
-                                            Message <span className="text-vedic-saffron">*</span>
-                                        </label>
-                                        <textarea
-                                            rows="5"
-                                            name="message"
-                                            value={formData.message}
-                                            onChange={handleChange}
-                                            className={`w-full px-4 py-3 rounded-lg border-2 ${
-                                                errors.message 
-                                                    ? 'border-red-500' 
-                                                    : 'border-vedic-black/20 focus:border-vedic-saffron'
-                                            } focus:ring-2 focus:ring-vedic-saffron/20 outline-none transition-all bg-vedic-white resize-none`}
-                                            placeholder="Tell us about your project..."
-                                        />
-                                        {errors.message && (
-                                            <p className="mt-1 text-sm text-red-600 flex items-center">
-                                                <AlertCircle size={16} className="mr-1" />
-                                                {errors.message}
-                                            </p>
-                                        )}
-                                    </div>
-
-                                    <motion.button
-                                        type="submit"
-                                        disabled={isSubmitting}
-                                        whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-                                        whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                                        className="w-full py-4 bg-gradient-vedic text-white font-bold rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-300 flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed premium-glow-hover"
-                                    >
-                                        {isSubmitting ? (
-                                            <>
-                                                <Loader className="animate-spin mr-2" size={20} />
-                                                Sending...
-                                            </>
-                                        ) : (
-                                            <>
-                                                Send Message <Send size={20} className="ml-2" />
-                                            </>
-                                        )}
-                                    </motion.button>
-                                </form>
-                            </>
-                        )}
-                    </motion.div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+            {/* MAP SECTION */}
+            <div className="w-full h-[400px] md:h-[500px] bg-[#E5E0D8] relative">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15224.9973284063!2d78.53205735541992!3d17.4477818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9975e81d7631%3A0xdc727abb61b4d081!2sApartment%20Complex!5e0!3m2!1sen!2sin!4v1709664654321!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0, filter: 'grayscale(100%)' }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="TechVriksha Location"
+                ></iframe>
+                {/* Note: Updated generic Hyderabad map coordinates from the user link approximation logic or placeholder. 
+                    Ideally verify exact embed link if possible. For now, using a clean grayscale map. */}
             </div>
         </div>
     );

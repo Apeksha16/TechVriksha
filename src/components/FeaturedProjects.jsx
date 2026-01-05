@@ -1,381 +1,205 @@
-import React from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
-    Lightbulb, Globe, Smartphone, Laptop,
-    Code2, BarChart3, ArrowRight, Mouse,
-    Settings, Clock, TrendingUp, Link as LinkIcon
+    Lightbulb, Globe, Laptop, Code2,
+    Mouse, Clock, Link as LinkIcon, ArrowRight,
+    Share2, ShieldCheck
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import finovaImage from '../assets/finova-project2.png';
+import miraImage from '../assets/mira-project1.webp';
+import rasoiwareImage from '../assets/rasoiware-project3.png';
+import svasthaImage from '../assets/Svastha-project4.png';
 
 const FeaturedProjects = () => {
-    const projects = [
+    // Split projects into two arrays for the two rows
+    const allProjects = [
         {
             id: 1,
-            title: "An Enriched Web Development",
-            highlight: "Web Development",
-            description: "Platform",
+            title: "Finova Financial Clarity",
+            highlight: "Financial",
             icon: Globe,
-            graphic: "lightbulb",
-            isDark: false,
-            feature: "AI-powered solutions"
+            isDark: false, // Light Card
+            description: "Finova is a unified financial dashboard designed specifically for small Indian businesses managing online sales, expenses, and cash flow without requiring accounting expertise.",
+            image: finovaImage,
+            link: "https://www.behance.net/gallery/239404941/Finova-Financial-Clarity-for-SMBs"
         },
         {
             id: 2,
-            title: "Easy to Create and Share",
-            highlight: "Create and Share",
-            description: "Applications",
-            icon: Laptop,
-            graphic: "laptop",
-            isDark: true,
-            feature: "Seamless collaboration"
+            title: "Mira Smart Home App",
+            highlight: "Smart Home",
+            icon: Share2,
+            isDark: true, // Dark Card
+            description: "A complete UI overhaul for a smart home app, resolving critical usability issues and modernizing the outdated dark theme for a cohesive experience.",
+            image: miraImage,
+            link: "https://manavuix.framer.website/work/mira"
         },
         {
             id: 3,
-            title: "Allows to add Your Domain name",
-            highlight: "Your Domain",
-            description: "Custom domains",
+            title: "Rasoiware E-Commerce",
+            highlight: "E-Commerce",
             icon: Code2,
-            graphic: "domain",
-            isDark: false,
-            feature: "Custom branding"
+            isDark: false, // Light Card
+            description: "Rasoiware is a modern e-commerce platform designed for a home décor and kitchenware brand that promotes Make in India products, providing a seamless online shopping experience.",
+            image: rasoiwareImage,
+            link: "https://rasoiwaree.vercel.app/"
         },
         {
             id: 4,
-            title: "Easily Redirects Link to Landing Page",
-            highlight: "Redirects Link",
-            description: "Smart routing",
-            icon: LinkIcon,
-            graphic: "redirect",
-            isDark: true,
-            feature: "Dynamic routing"
+            title: "Svastha Fitness App",
+            highlight: "Fitness",
+            icon: ShieldCheck,
+            isDark: true, // Dark Card
+            description: "Introducing a mobile application designed for fitness and workout routines that aids users on selecting the best training regimen for their requirement and tailored to their needs.",
+            image: svasthaImage,
+            link: "https://www.behance.net/gallery/187407025/Svastha-UIUX-case-study?tracking_source=project_owner_other_projects"
         },
         {
             id: 5,
             title: "Track the number of Clicks",
             highlight: "Clicks",
-            description: "Analytics",
             icon: Mouse,
-            graphic: "analytics",
-            isDark: false,
-            feature: "Real-time tracking"
+            isDark: false, // Light Card
+            description: "Comprehensive analytics dashboard providing real-time insights into user engagement and click-through rates."
         },
         {
             id: 6,
             title: "Projects Never Expire",
             highlight: "Never Expire",
-            description: "Lifetime access",
-            icon: Clock,
-            graphic: "permanent",
-            isDark: true,
-            feature: "Permanent hosting"
+            icon: ShieldCheck,
+            isDark: true, // Dark Card
+            description: "Lifetime hosting and support ensuring your digital assets remain accessible and functional indefinitely."
         }
     ];
 
-    // 3D Animated Project Card
-    const ProjectCard3D = ({ project, idx }) => {
-        const rotateX = useSpring(useMotionValue(0), { stiffness: 300, damping: 30 });
-        const rotateY = useSpring(useMotionValue(0), { stiffness: 300, damping: 30 });
-        const zIndex = useSpring(useMotionValue(0), { stiffness: 400, damping: 30 });
+    const row1 = allProjects.slice(0, 3);
+    const row2 = allProjects.slice(3, 6);
 
-        const handleMouseMove = (e) => {
-            const rect = e.currentTarget.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
-
-            const rotateXValue = ((e.clientY - centerY) / 15) * -1;
-            const rotateYValue = ((e.clientX - centerX) / 15);
-
-            rotateX.set(rotateXValue);
-            rotateY.set(rotateYValue);
-            zIndex.set(50);
-        };
-
-        const handleMouseLeave = () => {
-            rotateX.set(0);
-            rotateY.set(0);
-            zIndex.set(0);
-        };
+    const ExpandableRow = ({ projects, rowIndex }) => {
+        const [hoveredId, setHoveredId] = useState(null);
 
         return (
-            <motion.div
-                initial={{ opacity: 0, scale: 0.8, y: 50 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{
-                    delay: idx * 0.1,
-                    duration: 0.6,
-                    type: "spring",
-                    stiffness: 100
-                }}
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
-                whileHover={{ scale: 1.02 }}
-                className="relative group cursor-pointer"
-                style={{
-                    perspective: '1000px'
-                }}
-            >
-                {/* Glowing Platform Effect */}
-                <motion.div
-                    className={`absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-[90%] h-4 rounded-lg blur-xl transition-all duration-500 ${project.isDark ? 'bg-vedic-saffron/40' : 'bg-vedic-saffron/25'
-                        }`}
-                    animate={{
-                        scale: [1, 1.1, 1],
-                        opacity: [0.5, 0.8, 0.5]
-                    }}
-                    transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: idx * 0.2
-                    }}
-                />
+            <div className="flex flex-col md:flex-row gap-4 w-full h-[500px]">
+                {projects.map((project, idx) => {
+                    const isHovered = hoveredId === project.id;
+                    const isSomeoneHovered = hoveredId !== null;
 
-                {/* Main Card */}
-                <motion.div
-                    style={{
-                        rotateX,
-                        rotateY,
-                        transformStyle: 'preserve-3d',
-                    }}
-                    className={`relative ${project.isDark
-                            ? 'bg-vedic-brown border-2 border-white/10'
-                            : 'bg-white border-2 border-vedic-black/10'
-                        } rounded-3xl p-8 h-full min-h-[350px] shadow-2xl group-hover:shadow-[0_25px_60px_rgba(255,153,51,0.3)] transition-all duration-300 overflow-hidden`}
-                >
-                    {/* Animated Background Pattern */}
-                    <motion.div
-                        className={`absolute inset-0 opacity-5 ${project.isDark ? 'bg-white' : 'bg-vedic-black'
-                            }`}
-                        style={{
-                            backgroundImage: 'radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)',
-                            backgroundSize: '40px 40px'
-                        }}
-                        animate={{
-                            x: [0, 40, 0],
-                            y: [0, 40, 0]
-                        }}
-                        transition={{
-                            duration: 20,
-                            repeat: Infinity,
-                            ease: "linear"
-                        }}
-                    />
+                    // Colors
+                    const bgColor = project.isDark ? 'bg-[#6D5446]' : 'bg-white';
+                    const textColor = project.isDark ? 'text-white' : 'text-vedic-black';
+                    const iconColor = project.isDark ? 'text-white' : 'text-[#FB9D36]';
+                    const iconBg = project.isDark ? 'bg-[#564138]' : 'bg-[#FBE9D8]';
 
-                    {/* Top Right Logo/Icon */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: idx * 0.1 + 0.3, type: "spring" }}
-                        className="absolute top-6 right-6 w-12 h-12 rounded-lg bg-vedic-saffron/20 flex items-center justify-center"
-                    >
-                        <Lightbulb className="w-6 h-6 text-vedic-saffron" />
-                    </motion.div>
-
-                    {/* Main Graphic - Lightbulb with Icon */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: idx * 0.1 + 0.4 }}
-                        className="relative mb-8 mt-4"
-                        style={{ transform: 'translateZ(20px)' }}
-                    >
-                        {/* Lightbulb Outline */}
+                    return (
                         <motion.div
+                            key={project.id}
+                            onHoverStart={() => setHoveredId(project.id)}
+                            onHoverEnd={() => setHoveredId(null)}
+                            layout
+                            className={`relative rounded-[2.5rem] overflow-hidden ${bgColor} ${textColor} shadow-xl cursor-pointer`}
                             animate={{
-                                y: [0, -10, 0],
-                                rotate: [0, 2, -2, 0]
+                                flex: isHovered ? 3 : 1,
+                                opacity: isSomeoneHovered && !isHovered ? 0.7 : 1
                             }}
-                            transition={{
-                                duration: 4,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                                delay: idx * 0.3
-                            }}
-                            className="relative w-24 h-24 mx-auto"
+                            transition={{ type: "spring", stiffness: 200, damping: 25 }}
                         >
-                            {/* Bulb Shape */}
-                            <div className={`absolute inset-0 rounded-full border-4 ${project.isDark ? 'border-white/30' : 'border-vedic-black/30'
-                                }`} />
-                            <div className="absolute inset-2 rounded-full bg-gradient-to-br from-transparent via-vedic-saffron/10 to-vedic-saffron/20" />
-
-                            {/* Crumpled Object Inside */}
-                            <motion.div
-                                animate={{
-                                    rotate: [0, 360],
-                                    scale: [1, 1.1, 1]
-                                }}
-                                transition={{
-                                    rotate: {
-                                        duration: 20,
-                                        repeat: Infinity,
-                                        ease: "linear"
-                                    },
-                                    scale: {
-                                        duration: 3,
-                                        repeat: Infinity,
-                                        ease: "easeInOut",
-                                        delay: idx * 0.2
-                                    }
-                                }}
-                                className={`absolute inset-4 rounded-lg ${project.isDark ? 'bg-white/20' : 'bg-vedic-saffron/30'
-                                    } flex items-center justify-center`}
-                                style={{
-                                    clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)'
-                                }}
-                            >
-                                <project.icon
-                                    className={`w-8 h-8 ${project.isDark ? 'text-white' : 'text-vedic-saffron'
-                                        }`}
-                                />
-                            </motion.div>
-
-                            {/* Base Line */}
-                            <motion.div
-                                initial={{ scaleX: 0 }}
-                                whileInView={{ scaleX: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1 + 0.6, duration: 0.5 }}
-                                className={`absolute top-full left-1/2 transform -translate-x-1/2 w-0.5 h-12 ${project.isDark ? 'bg-white/30' : 'bg-vedic-black/30'
-                                    }`}
-                            />
-                        </motion.div>
-
-                        {/* Secondary Graphic (Laptop/Mouse/etc) */}
-                        {project.graphic === 'laptop' && (
-                            <motion.div
-                                initial={{ opacity: 0, x: 50, rotate: -10 }}
-                                whileInView={{ opacity: 1, x: 0, rotate: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1 + 0.7, type: "spring" }}
-                                className="absolute top-0 right-0"
-                                style={{ transform: 'translateZ(30px)' }}
-                            >
-                                <div className="w-16 h-12 bg-white/20 backdrop-blur-sm rounded-lg shadow-lg border border-white/30 p-2">
-                                    <div className="w-full h-full bg-gradient-to-br from-vedic-saffron/20 to-vedic-gold/20 rounded" />
+                            <div className="relative h-full w-full p-8 flex flex-col">
+                                {/* Top Content (Always Visible) */}
+                                <div className="flex justify-between items-start mb-6">
+                                    <div className={`p-4 rounded-2xl ${iconBg}`}>
+                                        <project.icon className={`w-8 h-8 ${iconColor}`} />
+                                    </div>
+                                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${project.isDark ? 'bg-white/10' : 'bg-black/5'}`}>
+                                        <ArrowRight className={`w-5 h-5 ${textColor}`} />
+                                    </div>
                                 </div>
-                            </motion.div>
-                        )}
-                    </motion.div>
 
-                    {/* Text Content */}
-                    <div className="relative z-10" style={{ transform: 'translateZ(20px)' }}>
-                        <motion.h3
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: idx * 0.1 + 0.5 }}
-                            className={`text-xl md:text-2xl font-bold mb-6 leading-tight ${project.isDark ? 'text-white' : 'text-vedic-black'
-                                }`}
-                        >
-                            {project.title.includes(project.highlight) ? (
-                                <>
-                                    {project.title.split(project.highlight)[0]}
-                                    <span className="text-vedic-saffron">{project.highlight}</span>
-                                    {project.title.split(project.highlight)[1]}
-                                </>
-                            ) : (
-                                project.title
-                            )}
-                        </motion.h3>
+                                <motion.div layout="position" className="mt-auto relative z-10">
+                                    <h3 className="text-2xl md:text-3xl font-bold font-serif leading-none mb-2 break-words">
+                                        {project.title}
+                                    </h3>
+                                    <p className={`text-sm font-medium uppercase tracking-wider mb-4 ${project.isDark ? 'text-[#FB9D36]' : 'text-vedic-brown/60'}`}>
+                                        {project.highlight}
+                                    </p>
 
-                        {/* Bottom Detail - Dashed Line & Arrows */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: idx * 0.1 + 0.8 }}
-                            className="flex items-center gap-2 mt-auto pt-4"
-                        >
-                            <div className="flex-1 h-0.5 border-t-2 border-dashed border-vedic-saffron/40" />
-                            <motion.div
-                                animate={{ x: [0, 5, 0] }}
-                                transition={{
-                                    duration: 1.5,
-                                    repeat: Infinity,
-                                    ease: "easeInOut"
-                                }}
-                                className="flex gap-1"
-                            >
-                                {[0, 1, 2].map((i) => (
-                                    <ArrowRight
-                                        key={i}
-                                        className={`w-3 h-3 ${project.isDark ? 'text-white/40' : 'text-vedic-black/40'
-                                            }`}
-                                    />
-                                ))}
-                            </motion.div>
+                                    {/* Expanded Content */}
+                                    <AnimatePresence>
+                                        {isHovered && (
+                                            <motion.div
+                                                initial={{ opacity: 0, height: 0 }}
+                                                animate={{ opacity: 1, height: 'auto' }}
+                                                exit={{ opacity: 0, height: 0 }}
+                                                className="overflow-hidden"
+                                            >
+                                                <p className="text-sm md:text-base opacity-80 mb-6 max-w-lg">
+                                                    {project.description}
+                                                </p>
+                                                <div className="w-full h-40 bg-gradient-to-br from-vedic-saffron/10 to-vedic-brown/10 rounded-xl mb-4 overflow-hidden relative group-hover:shadow-inner">
+                                                    {project.image ? (
+                                                        <img
+                                                            src={project.image}
+                                                            alt={project.title}
+                                                            className="w-full h-full object-cover"
+                                                        />
+                                                    ) : (
+                                                        <div className="flex items-center justify-center h-full">
+                                                            <div className="text-center opacity-50">
+                                                                <project.icon className="w-12 h-12 mx-auto mb-2 opacity-50" />
+                                                                <span className="text-xs uppercase tracking-widest">Project Preview</span>
+                                                            </div>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                                {/* View Button */}
+                                                {project.link && (
+                                                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-block text-xs font-bold uppercase tracking-wider hover:underline">
+                                                        View Case Study &rarr;
+                                                    </a>
+                                                )}
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </motion.div>
+                            </div>
                         </motion.div>
-                    </div>
-
-                    {/* 3D Side Shadow */}
-                    <div
-                        className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-30 transition-opacity"
-                        style={{
-                            background: 'linear-gradient(90deg, transparent 60%, rgba(255,153,51,0.5) 100%)',
-                            transform: 'translateZ(-20px) rotateY(45deg)',
-                            transformStyle: 'preserve-3d',
-                        }}
-                    />
-                </motion.div>
-            </motion.div>
+                    );
+                })}
+            </div>
         );
     };
 
     return (
-        <section className="relative py-20 md:py-32 bg-[#FFF9F3] overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                {/* Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8 }}
-                    className="text-center mb-16"
-                >
-                    <motion.span
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className="inline-block w-3 h-3 rounded-full bg-vedic-saffron mb-6"
-                    />
-                    <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold text-vedic-black leading-[0.95] mb-6 tracking-tight">
+        <section className="py-20 md:py-32 bg-[#FFF9F3]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Section Header */}
+                <div className="text-center mb-16">
+                    <h2 className="text-5xl md:text-7xl font-serif font-bold text-vedic-black mb-4">
                         Top Projects
                     </h2>
-                    <p className="text-lg md:text-xl text-vedic-black/60 max-w-2xl mx-auto leading-relaxed">
-                        A showcase of our finest work, combining cutting-edge technology with beautiful design
+                    <p className="text-lg text-vedic-black/60 max-w-2xl mx-auto">
+                        Hover over cards to explore our finest work and case studies
                     </p>
-                </motion.div>
+                </div>
 
-                {/* 2x3 Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                    {projects.map((project, idx) => (
-                        <ProjectCard3D key={project.id} project={project} idx={idx} />
-                    ))}
+                {/* Rows */}
+                <div className="space-y-6">
+                    <ExpandableRow projects={row1} rowIndex={0} />
+                    <ExpandableRow projects={row2} rowIndex={1} />
                 </div>
 
                 {/* View All Button */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.8 }}
-                    className="text-center mt-16"
-                >
+                <div className="text-center mt-16">
                     <Link
                         to="/projects"
-                        className="inline-flex items-center gap-2 px-8 py-4 bg-vedic-black text-white rounded-full font-bold hover:bg-vedic-saffron transition-all duration-300 group shadow-xl hover:shadow-2xl"
+                        className="inline-flex items-center gap-2 px-8 py-4 bg-vedic-black text-white rounded-full font-bold hover:bg-[#FB9D36] transition-all duration-300 group shadow-xl hover:shadow-2xl"
                     >
                         View All Projects
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                     </Link>
-                </motion.div>
+                </div>
             </div>
         </section>
     );
 };
 
 export default FeaturedProjects;
-

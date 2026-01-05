@@ -81,7 +81,7 @@ const Footer = () => {
                             </div>
 
                             <ul className="space-y-4 font-medium text-sm tracking-wide">
-                                {['About Us', 'Services', 'Projects', 'Blog', 'Join Our Team'].map((item) => (
+                                {['About Us', 'Services', 'Projects', 'Blog'].map((item) => (
                                     <li key={item}>
                                         <NavLink
                                             to="#"
