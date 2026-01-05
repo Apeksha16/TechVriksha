@@ -7,35 +7,29 @@ export default {
   theme: {
     extend: {
       colors: {
-        'vedic-black': '#1a1412', // Deep brown-black (Blank Brown)
-        'vedic-saffron': '#FF9933', // Saffron/Orange
-        'vedic-saffron-dark': '#CC7A00',
-        'vedic-saffron-light': '#FFB366',
-        'vedic-gold': '#D4AF37', // Gold accents
-        'vedic-white': '#F5F5F0', // Off-white/Parchment
-        'vedic-brown': '#3E2723', // Rich brown
-        'vedic-brown-light': '#5D4037',
-        'vedic-cream': '#FFF8E7',
-        // Modern Purple/Blue accents
-        'brand-purple': '#8B5CF6',
-        'brand-purple-dark': '#6D28D9',
-        'brand-purple-light': '#A78BFA',
-        'brand-blue': '#3B82F6',
-        'brand-blue-dark': '#2563EB',
-        'brand-blue-light': '#60A5FA',
-        'brand-pink': '#EC4899',
-        'brand-dark': '#0F172A',
+        'vedic-black': '#000000', // Pure Black
+        'vedic-saffron': '#FD7503', // The Vibrant Orange from the image
+        'vedic-saffron-dark': '#C25A00',
+        'vedic-saffron-light': '#FE9E4D',
+        'vedic-gold': '#FD7503', // Mapping gold to Saffron to adhere to 5-color limit
+        'vedic-white': '#FFFFFF', // Pure White
+        'vedic-brown': '#6A3914', // The Dark Brown from the image
+        'vedic-brown-light': '#8B4B1B',
+        'vedic-cream': '#FFF9F3', // The Off-White/Cream from the image
+        
+        // Removing extra brand colors to enforce the 5-color palette
       },
       fontFamily: {
         serif: ['"Playfair Display"', 'serif'], // Elegant serif for headings
         sans: ['"Inter"', '"Space Grotesk"', 'sans-serif'], // Clean sans for body
         sanskrit: ['"Noto Sans Devanagari"', '"Poppins"', 'sans-serif'], // For Sanskrit text
         modern: ['"Space Grotesk"', '"Inter"', 'sans-serif'], // Modern sans-serif
+        rozha: ['"Rozha One"', 'serif'], // High contrast serif for brand
       },
       backgroundImage: {
         'vedic-pattern': "url('/path/to/pattern.png')",
-        'gradient-vedic': 'linear-gradient(135deg, #FF9933 0%, #D4AF37 100%)',
-        'gradient-brown': 'linear-gradient(135deg, #3E2723 0%, #1a1412 100%)',
+        'gradient-vedic': 'linear-gradient(135deg, #FD7503 0%, #6A3914 100%)', // Saffron to Brown
+        'gradient-brown': 'linear-gradient(135deg, #6A3914 0%, #000000 100%)', // Brown to Black
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

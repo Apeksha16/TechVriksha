@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
-import { 
-    Lightbulb, Globe, Smartphone, Laptop, 
-    Code2, BarChart3, ArrowRight, Mouse, 
+import {
+    Lightbulb, Globe, Smartphone, Laptop,
+    Code2, BarChart3, ArrowRight, Mouse,
     Settings, Clock, TrendingUp, Link as LinkIcon
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -81,10 +81,10 @@ const FeaturedProjects = () => {
             const rect = e.currentTarget.getBoundingClientRect();
             const centerX = rect.left + rect.width / 2;
             const centerY = rect.top + rect.height / 2;
-            
+
             const rotateXValue = ((e.clientY - centerY) / 15) * -1;
             const rotateYValue = ((e.clientX - centerX) / 15);
-            
+
             rotateX.set(rotateXValue);
             rotateY.set(rotateYValue);
             zIndex.set(50);
@@ -101,8 +101,8 @@ const FeaturedProjects = () => {
                 initial={{ opacity: 0, scale: 0.8, y: 50 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ 
-                    delay: idx * 0.1, 
+                transition={{
+                    delay: idx * 0.1,
                     duration: 0.6,
                     type: "spring",
                     stiffness: 100
@@ -111,15 +111,14 @@ const FeaturedProjects = () => {
                 onMouseLeave={handleMouseLeave}
                 whileHover={{ scale: 1.02 }}
                 className="relative group cursor-pointer"
-                style={{ 
+                style={{
                     perspective: '1000px'
                 }}
             >
                 {/* Glowing Platform Effect */}
                 <motion.div
-                    className={`absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-[90%] h-4 rounded-lg blur-xl transition-all duration-500 ${
-                        project.isDark ? 'bg-vedic-saffron/40' : 'bg-vedic-saffron/25'
-                    }`}
+                    className={`absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-[90%] h-4 rounded-lg blur-xl transition-all duration-500 ${project.isDark ? 'bg-vedic-saffron/40' : 'bg-vedic-saffron/25'
+                        }`}
                     animate={{
                         scale: [1, 1.1, 1],
                         opacity: [0.5, 0.8, 0.5]
@@ -139,17 +138,15 @@ const FeaturedProjects = () => {
                         rotateY,
                         transformStyle: 'preserve-3d',
                     }}
-                    className={`relative ${
-                        project.isDark 
-                            ? 'bg-vedic-brown border-2 border-white/10' 
+                    className={`relative ${project.isDark
+                            ? 'bg-vedic-brown border-2 border-white/10'
                             : 'bg-white border-2 border-vedic-black/10'
-                    } rounded-3xl p-8 h-full min-h-[350px] shadow-2xl group-hover:shadow-[0_25px_60px_rgba(255,153,51,0.3)] transition-all duration-300 overflow-hidden`}
+                        } rounded-3xl p-8 h-full min-h-[350px] shadow-2xl group-hover:shadow-[0_25px_60px_rgba(255,153,51,0.3)] transition-all duration-300 overflow-hidden`}
                 >
                     {/* Animated Background Pattern */}
                     <motion.div
-                        className={`absolute inset-0 opacity-5 ${
-                            project.isDark ? 'bg-white' : 'bg-vedic-black'
-                        }`}
+                        className={`absolute inset-0 opacity-5 ${project.isDark ? 'bg-white' : 'bg-vedic-black'
+                            }`}
                         style={{
                             backgroundImage: 'radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)',
                             backgroundSize: '40px 40px'
@@ -200,11 +197,10 @@ const FeaturedProjects = () => {
                             className="relative w-24 h-24 mx-auto"
                         >
                             {/* Bulb Shape */}
-                            <div className={`absolute inset-0 rounded-full border-4 ${
-                                project.isDark ? 'border-white/30' : 'border-vedic-black/30'
-                            }`} />
+                            <div className={`absolute inset-0 rounded-full border-4 ${project.isDark ? 'border-white/30' : 'border-vedic-black/30'
+                                }`} />
                             <div className="absolute inset-2 rounded-full bg-gradient-to-br from-transparent via-vedic-saffron/10 to-vedic-saffron/20" />
-                            
+
                             {/* Crumpled Object Inside */}
                             <motion.div
                                 animate={{
@@ -224,17 +220,15 @@ const FeaturedProjects = () => {
                                         delay: idx * 0.2
                                     }
                                 }}
-                                className={`absolute inset-4 rounded-lg ${
-                                    project.isDark ? 'bg-white/20' : 'bg-vedic-saffron/30'
-                                } flex items-center justify-center`}
+                                className={`absolute inset-4 rounded-lg ${project.isDark ? 'bg-white/20' : 'bg-vedic-saffron/30'
+                                    } flex items-center justify-center`}
                                 style={{
                                     clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)'
                                 }}
                             >
-                                <project.icon 
-                                    className={`w-8 h-8 ${
-                                        project.isDark ? 'text-white' : 'text-vedic-saffron'
-                                    }`}
+                                <project.icon
+                                    className={`w-8 h-8 ${project.isDark ? 'text-white' : 'text-vedic-saffron'
+                                        }`}
                                 />
                             </motion.div>
 
@@ -244,9 +238,8 @@ const FeaturedProjects = () => {
                                 whileInView={{ scaleX: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 + 0.6, duration: 0.5 }}
-                                className={`absolute top-full left-1/2 transform -translate-x-1/2 w-0.5 h-12 ${
-                                    project.isDark ? 'bg-white/30' : 'bg-vedic-black/30'
-                                }`}
+                                className={`absolute top-full left-1/2 transform -translate-x-1/2 w-0.5 h-12 ${project.isDark ? 'bg-white/30' : 'bg-vedic-black/30'
+                                    }`}
                             />
                         </motion.div>
 
@@ -274,9 +267,8 @@ const FeaturedProjects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 + 0.5 }}
-                            className={`text-xl md:text-2xl font-bold mb-6 leading-tight ${
-                                project.isDark ? 'text-white' : 'text-vedic-black'
-                            }`}
+                            className={`text-xl md:text-2xl font-bold mb-6 leading-tight ${project.isDark ? 'text-white' : 'text-vedic-black'
+                                }`}
                         >
                             {project.title.includes(project.highlight) ? (
                                 <>
@@ -308,11 +300,10 @@ const FeaturedProjects = () => {
                                 className="flex gap-1"
                             >
                                 {[0, 1, 2].map((i) => (
-                                    <ArrowRight 
+                                    <ArrowRight
                                         key={i}
-                                        className={`w-3 h-3 ${
-                                            project.isDark ? 'text-white/40' : 'text-vedic-black/40'
-                                        }`}
+                                        className={`w-3 h-3 ${project.isDark ? 'text-white/40' : 'text-vedic-black/40'
+                                            }`}
                                     />
                                 ))}
                             </motion.div>
@@ -320,7 +311,7 @@ const FeaturedProjects = () => {
                     </div>
 
                     {/* 3D Side Shadow */}
-                    <div 
+                    <div
                         className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-30 transition-opacity"
                         style={{
                             background: 'linear-gradient(90deg, transparent 60%, rgba(255,153,51,0.5) 100%)',
@@ -334,7 +325,7 @@ const FeaturedProjects = () => {
     };
 
     return (
-        <section className="relative py-20 md:py-32 bg-white overflow-hidden">
+        <section className="relative py-20 md:py-32 bg-[#FFF9F3] overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Header */}
                 <motion.div

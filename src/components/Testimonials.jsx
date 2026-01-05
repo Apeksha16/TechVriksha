@@ -1,135 +1,125 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { Star, Quote, ArrowLeft, ArrowRight } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Quote, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const testimonials = [
     {
         id: 1,
         name: "Priya Sharma",
-        role: "Founder",
-        company: "Vedic Roots",
-        content: "TechVriksha completely transformed our digital presence. Their understanding of our traditional values combined with modern tech was exactly what we needed. The new eCommerce platform has increased our sales by 200%.",
+        role: "Founder, Vedic Roots",
+        content: "TechVriksha transformed our digital presence. Their understanding of traditional values combined with modern tech was exactly what we needed.",
         image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&q=80",
-        rating: 5
     },
     {
         id: 2,
         name: "Rahul Verma",
-        role: "CTO",
-        company: "FinTech Solutions",
-        content: "The level of technical expertise at TechVriksha is outstanding. They delivered a complex React Native app ahead of schedule and the code quality was impeccable. Highly recommended for scalable solutions.",
+        role: "CTO, FinTech Solutions",
+        content: "The technical expertise is outstanding. Delivered a complex React Native app ahead of schedule with impeccable code quality.",
         image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&q=80",
-        rating: 5
     },
     {
         id: 3,
         name: "Sarah Jenkins",
         role: "Marketing Director",
-        company: "Global Wellness",
-        content: "We needed a website that felt premium and 'alive'. The team delivered beyond our expectations with stunning animations and a seamless user experience. Our bounce rate dropped significantly.",
+        content: "We needed a website that felt premium. The team delivered stunning animations and a seamless user experience.",
         image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&q=80",
-        rating: 5
     }
 ];
 
 const Testimonials = () => {
-    const containerRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start end", "end start"]
-    });
-
-    const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-
     return (
-        <section id="testimonials" ref={containerRef} className="relative py-24 md:py-32 bg-vedic-black overflow-hidden">
-            {/* Background Elements */}
-            <div className="absolute inset-0 opacity-20">
-                <div className="absolute top-0 left-0 w-96 h-96 bg-vedic-saffron rounded-full blur-[100px]" />
-                <div className="absolute bottom-0 right-0 w-96 h-96 bg-vedic-gold rounded-full blur-[100px]" />
-            </div>
+        <section className="relative py-24 md:py-32 bg-[#FFF9F3] overflow-hidden">
+            <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                {/* Header */}
+                {/* Decorative Star Icon (Floating) */}
                 <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="text-center mb-20"
+                    animate={{ rotate: 360, y: [0, -10, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                    className="absolute top-10 left-1/2 -translate-x-1/2 md:left-[45%] lg:left-[40%] text-vedic-saffron hidden md:block"
                 >
-                    <span className="inline-block px-4 py-2 rounded-full bg-vedic-saffron/10 border border-vedic-saffron/20 text-vedic-saffron text-sm font-semibold tracking-wider mb-6">
-                        CLIENT STORIES
-                    </span>
-                    <h2 className="text-5xl md:text-7xl font-bold text-white mb-6">
-                        Trusted by Visionaries
-                    </h2>
-                    <p className="text-xl text-white/60 max-w-2xl mx-auto">
-                        See what our value-driven approach has achieved for businesses worldwide.
-                    </p>
+                    <Sparkles className="w-12 h-12 fill-vedic-saffron/20" />
                 </motion.div>
 
-                {/* Testimonials Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {testimonials.map((testimonial, index) => (
-                        <motion.div
-                            key={testimonial.id}
-                            initial={{ opacity: 0, y: 50 }}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+                    {/* Left content */}
+                    <div className="space-y-8 text-center lg:text-left">
+                        <motion.h2
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.2, duration: 0.6 }}
-                            whileHover={{ y: -10 }}
-                            className="relative group"
+                            className="text-5xl md:text-7xl font-serif font-bold text-vedic-black leading-tight"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-br from-vedic-saffron/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            Trusted by <br />
+                            <span className="text-vedic-saffron">Visionaries</span>
+                        </motion.h2>
 
-                            <div className="relative bg-white/5 border border-white/10 backdrop-blur-sm p-8 rounded-3xl h-full flex flex-col justify-between hover:border-vedic-saffron/30 transition-colors">
-                                <div>
-                                    <Quote className="w-12 h-12 text-vedic-saffron/40 mb-6" />
+                        <motion.p
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                            className="text-lg text-vedic-black/60 max-w-md mx-auto lg:mx-0 leading-relaxed"
+                        >
+                            Relation so in confined smallest children unpacked delicate. Why sir end believe uncivil respect.
+                        </motion.p>
 
-                                    <div className="flex gap-1 mb-6">
-                                        {[...Array(testimonial.rating)].map((_, i) => (
-                                            <Star key={i} className="w-5 h-5 fill-vedic-saffron text-vedic-saffron" />
-                                        ))}
-                                    </div>
-
-                                    <p className="text-lg text-white/80 leading-relaxed mb-8 font-light italic">
-                                        "{testimonial.content}"
-                                    </p>
-                                </div>
-
-                                <div className="flex items-center gap-4 border-t border-white/10 pt-6">
-                                    <img
-                                        src={testimonial.image}
-                                        alt={testimonial.name}
-                                        className="w-12 h-12 rounded-full object-cover border-2 border-vedic-saffron/50"
-                                    />
-                                    <div>
-                                        <h4 className="text-lg font-bold text-white">{testimonial.name}</h4>
-                                        <p className="text-sm text-white/50">{testimonial.role}, {testimonial.company}</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.4 }}
+                        >
+                            <Link to="/testimonials" className="inline-block px-8 py-4 rounded-full bg-gradient-to-r from-vedic-saffron to-[#FF9933] text-white font-bold shadow-lg shadow-vedic-saffron/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                                View More
+                            </Link>
                         </motion.div>
-                    ))}
-                </div>
-
-                {/* Call to Action */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    className="mt-20 text-center"
-                >
-                    <div className="inline-flex flex-col items-center">
-                        <div className="w-px h-16 bg-gradient-to-b from-transparent to-vedic-saffron mb-6" />
-                        <p className="text-white/60 mb-4">Ready to start your journey?</p>
-                        <a href="/contact" className="group flex items-center gap-2 text-vedic-saffron text-xl font-bold hover:text-white transition-colors">
-                            Let's Talk
-                            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                        </a>
                     </div>
-                </motion.div>
+
+                    {/* Right Content - Staggered Cards */}
+                    <div className="relative space-y-6 md:space-y-8 perspective-1000">
+                        {testimonials.map((item, idx) => (
+                            <motion.div
+                                key={item.id}
+                                initial={{ opacity: 0, x: 50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: idx * 0.2 }}
+                                whileHover={{ scale: 1.02, x: -10 }}
+                                className={`relative bg-white p-6 md:p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group ${idx === 1 ? 'lg:-translate-x-12 z-20 border-vedic-saffron/20 shadow-lg' : 'z-10 opacity-90 hover:opacity-100'
+                                    }`}
+                            >
+                                {/* Left Accent Line (The "Purple Line" in reference) */}
+                                <div className={`absolute left-0 top-8 bottom-8 w-1 rounded-r-full group-hover:h-full group-hover:top-0 group-hover:bottom-0 transition-all duration-300 ${idx === 1 ? 'bg-vedic-saffron' : 'bg-gray-200 group-hover:bg-vedic-saffron/50'
+                                    }`} />
+
+                                <div className="flex gap-6 items-start pl-4">
+                                    <div className="shrink-0">
+                                        <img
+                                            src={item.image}
+                                            alt={item.name}
+                                            className="w-16 h-16 rounded-full object-cover border-4 border-[#FFF9F3]"
+                                        />
+                                    </div>
+                                    <div className="flex-grow">
+                                        <div className="flex justify-between items-start mb-2">
+                                            <div>
+                                                <h4 className="font-bold text-lg text-vedic-black">{item.name}</h4>
+                                                <p className="text-xs font-semibold uppercase tracking-wider text-vedic-saffron/80">{item.role}</p>
+                                            </div>
+                                            <Quote className="w-8 h-8 text-gray-100 fill-gray-50 -mt-2" />
+                                        </div>
+                                        <p className="text-sm text-vedic-black/60 leading-relaxed font-medium">
+                                            {item.content}
+                                        </p>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                </div>
             </div>
         </section>
     );

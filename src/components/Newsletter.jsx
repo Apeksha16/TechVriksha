@@ -1,157 +1,123 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Send, CheckCircle, Sparkles } from 'lucide-react';
+import { Send, ArrowRight } from 'lucide-react';
 
 const Newsletter = () => {
     const [email, setEmail] = useState('');
-    const [submitted, setSubmitted] = useState(false);
+    const [status, setStatus] = useState('idle'); // idle, loading, success
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (email) {
-            setSubmitted(true);
-            // Here you would typically send to your backend
-            setTimeout(() => {
-                setSubmitted(false);
-                setEmail('');
-            }, 3000);
-        }
+        setStatus('loading');
+        setTimeout(() => {
+            setStatus('success');
+            setEmail('');
+            setTimeout(() => setStatus('idle'), 3000);
+        }, 2000);
     };
 
     return (
-        <section className="py-20 md:py-32 bg-gradient-to-br from-vedic-saffron/10 via-vedic-gold/5 to-vedic-brown/10 relative overflow-hidden">
-            {/* Decorative elements */}
-            <div className="absolute inset-0 vedic-pattern opacity-20" />
-            <motion.div
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute top-10 left-10 text-6xl text-vedic-saffron/10 font-sanskrit pointer-events-none select-none"
-            >
-                ॐ
-            </motion.div>
-            <motion.div
-                animate={{ rotate: [360, 0] }}
-                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                className="absolute bottom-10 right-10 text-6xl text-vedic-gold/10 font-sanskrit pointer-events-none select-none"
-            >
-                श्री
-            </motion.div>
-
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="text-center"
-                >
-                    <motion.div
-                        whileHover={{ scale: 1.1, rotate: 360 }}
-                        transition={{ duration: 0.6 }}
-                        className="inline-block mb-6"
-                    >
-                        <div className="w-20 h-20 mx-auto bg-gradient-vedic rounded-full flex items-center justify-center text-white shadow-xl">
-                            <Mail size={40} />
-                        </div>
-                    </motion.div>
-
-                    <span className="text-vedic-saffron tracking-widest uppercase font-semibold text-sm sanskrit-text block mb-4">
-                        Stay Connected
-                    </span>
-                    
-                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-vedic-black mb-4">
-                        Join Our Newsletter
-                    </h2>
-                    
-                    <p className="text-lg md:text-xl text-vedic-brown/70 mb-2 max-w-2xl mx-auto">
-                        Get the latest updates on technology trends, project showcases, and exclusive insights
-                    </p>
-                    
-
-                    <motion.form
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2, duration: 0.6 }}
-                        onSubmit={handleSubmit}
-                        className="max-w-2xl mx-auto"
-                    >
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <div className="flex-1 relative">
-                                <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-vedic-brown/40 w-5 h-5" />
-                                <input
-                                    type="email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="Enter your email address"
-                                    required
-                                    className="w-full pl-12 pr-4 py-4 rounded-full border-2 border-vedic-black/20 focus:border-vedic-saffron focus:ring-2 focus:ring-vedic-saffron/20 outline-none bg-white text-vedic-black placeholder-vedic-brown/40 transition-all"
-                                />
-                            </div>
-                            <motion.button
-                                type="submit"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                disabled={submitted}
-                                className={`px-8 py-4 rounded-full font-semibold text-white flex items-center justify-center gap-2 vedic-button ${
-                                    submitted 
-                                        ? 'bg-green-600 cursor-not-allowed' 
-                                        : 'bg-gradient-vedic premium-glow-hover'
-                                }`}
-                            >
-                                {submitted ? (
-                                    <>
-                                        <CheckCircle className="w-5 h-5" />
-                                        Subscribed!
-                                    </>
-                                ) : (
-                                    <>
-                                        <Send className="w-5 h-5" />
-                                        Subscribe
-                                    </>
-                                )}
-                            </motion.button>
-                        </div>
-                    </motion.form>
-
-                    {/* Benefits */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.4, duration: 0.6 }}
-                        className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto"
-                    >
-                        {[
-                            { icon: Sparkles, text: 'Latest Tech Insights' },
-                            { icon: Mail, text: 'Project Showcases' },
-                            { icon: CheckCircle, text: 'Exclusive Offers' }
-                        ].map((item, idx) => (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.5 + idx * 0.1, duration: 0.5 }}
-                                whileHover={{ y: -5 }}
-                                className="flex flex-col items-center text-center p-4"
-                            >
-                                <div className="w-12 h-12 bg-vedic-saffron/10 rounded-full flex items-center justify-center text-vedic-saffron mb-3">
-                                    <item.icon size={24} />
-                                </div>
-                                <p className="text-sm text-vedic-brown/70 font-medium">{item.text}</p>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-
-                    <p className="mt-8 text-xs text-vedic-brown/50">
-                        We respect your privacy. Unsubscribe at any time.
-                    </p>
-                </motion.div>
+        <section className="relative pt-32 pb-48 bg-vedic-saffron overflow-hidden flex flex-col items-center justify-center min-h-[800px]">
+            {/* Spinning Text Decor - Top Right */}
+            <div className="absolute top-10 -right-10 md:right-10 animate-spin-slow opacity-20 pointer-events-none">
+                <svg viewBox="0 0 100 100" className="w-40 h-40">
+                    <path id="curve" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
+                    <text className="text-[10px] fill-white font-bold tracking-widest uppercase">
+                        <textPath href="#curve">
+                            TechVriksha • Join the Club • TechVriksha • Join the Club •
+                        </textPath>
+                    </text>
+                </svg>
             </div>
+
+            {/* Huge Headline */}
+            <motion.div
+                initial={{ y: -50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                className="text-center mb-56 z-30 relative"
+            >
+                <h2 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter mb-2" style={{ textShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
+                    Join The Club
+                </h2>
+                <p className="text-white/80 text-sm md:text-base font-medium tracking-widest uppercase">
+                    Subscribe to our mailing list
+                </p>
+            </motion.div>
+
+            {/* Envelope & Form Container - Refined Scalable SVG */}
+            <motion.div
+                className="relative w-full max-w-lg px-4 flex justify-center perspective-1000 mb-20 mt-12"
+                initial={{ y: 200, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+            >
+                {/* Main Envelope Wrapper (Fixed Aspect Ratio) */}
+                <div className="relative w-full aspect-[1.6/1] max-w-[550px]">
+
+                    {/* 1. Back Body (Inside Color) */}
+                    <div className="absolute inset-x-0 bottom-0 top-[20%] bg-[#F2E6D8] rounded-b-lg shadow-inner z-0" />
+
+                    {/* 2. Top Flap (Open) - SVG */}
+                    <svg className="absolute w-full h-[55%] -top-[54%] left-0 z-0 origin-bottom" viewBox="0 0 500 200" preserveAspectRatio="none">
+                        <path d="M0,200 L250,0 L500,200" fill="#F2E6D8" stroke="#E6DCCF" strokeWidth="1" />
+                    </svg>
+
+                    {/* 3. The Interactive Card (Form) */}
+                    <motion.div
+                        initial={{ y: '20%' }}
+                        whileInView={{ y: '-60%' }} // Slides up dramatically
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.4, type: "spring", stiffness: 40, damping: 12 }}
+                        className="absolute left-[5%] right-[5%] z-10 bg-white p-6 md:p-8 rounded-lg shadow-xl border border-gray-100 flex flex-col justify-end min-h-[120%]"
+                        style={{ bottom: '5%' }}
+                    >
+                        <h3 className="text-xl md:text-2xl font-bold text-vedic-black mb-2 text-center">
+                            Stay Updated!
+                        </h3>
+                        <p className="text-vedic-black/60 text-xs md:text-sm text-center mb-6">
+                            Join our community for exclusive tech insights.
+                        </p>
+                        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+                            <input
+                                type="email"
+                                required
+                                placeholder="Enter your email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-vedic-black text-sm focus:outline-none focus:border-vedic-saffron focus:ring-1 focus:ring-vedic-saffron transition-colors"
+                            />
+                            <button
+                                type="submit"
+                                disabled={status === 'loading' || status === 'success'}
+                                className={`rounded-lg px-4 py-3 font-bold text-sm text-white shadow-md transition-all
+                                    ${status === 'success' ? 'bg-green-500' : 'bg-gradient-to-r from-vedic-saffron to-vedic-saffron-dark hover:shadow-lg hover:-translate-y-0.5'}
+                                `}
+                            >
+                                {status === 'loading' ? 'Sending...' : status === 'success' ? 'Subscribed!' : 'Subscribe Now'}
+                            </button>
+                        </form>
+                    </motion.div>
+
+                    {/* 4. Front Pocket (Overlay) - SVG */}
+                    <svg className="absolute inset-0 w-full h-full z-20 pointer-events-none drop-shadow-2xl" viewBox="0 0 500 312" preserveAspectRatio="none">
+                        {/* Main Pocket Shape - Cream Color */}
+                        <path d="M0,0 L250,170 L500,0 L500,312 L0,312 Z" fill="#FFF9F3" stroke="#F2E6D8" strokeWidth="1" />
+                        {/* Side Shading for 3D effect */}
+                        <path d="M0,0 L250,170 L0,312" fill="#6A3914" fillOpacity="0.05" />
+                        <path d="M500,0 L250,170 L500,312" fill="#6A3914" fillOpacity="0.08" />
+                    </svg>
+
+                </div>
+            </motion.div>
+
+            {/* Decorative Tape / Elements */}
+            <div className="absolute top-1/4 left-10 -rotate-12 w-24 h-8 bg-white/20 backdrop-blur-sm shadow-sm rotate-[-15deg]" />
+            <div className="absolute bottom-1/4 right-10 rotate-12 w-16 h-16 rounded-full border-2 border-white/20 border-dashed" />
+
         </section>
     );
 };
 
 export default Newsletter;
-

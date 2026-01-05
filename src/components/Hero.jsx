@@ -8,44 +8,100 @@ const Hero = () => {
     const y1 = useTransform(scrollY, [0, 300], [0, 100]);
 
     return (
-        <section className="relative min-h-screen bg-white overflow-hidden">
+        <section className="relative min-h-screen bg-[#6A3914] overflow-hidden">
             {/* Abstract Graphic Blob */}
             <motion.div
                 style={{ y: y1 }}
-                className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-vedic-saffron/20 via-vedic-gold/20 to-vedic-brown/20 rounded-full blur-3xl pointer-events-none"
+                className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-vedic-saffron/20 via-vedic-gold/10 to-white/5 rounded-full blur-3xl pointer-events-none"
             />
 
             <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-20">
 
-                {/* Main Headline Section */}
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="mb-20 relative"
-                >
-                    <div className="flex items-center gap-4 flex-wrap">
-                        <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-[10rem] font-bold text-vedic-black leading-[0.95] tracking-tight">
-                            CREATIVE
-                        </h1>
-                        {/* Abstract Circular Element */}
+                {/* Main Headline Section - Unique Redesign */}
+                <div className="mb-24 relative pt-10">
+                    <div className="relative z-10">
+                        {/* Line 1: CREATIVE */}
                         <motion.div
-                            initial={{ scale: 0, rotate: -180 }}
-                            animate={{ scale: 1, rotate: 0 }}
-                            transition={{ delay: 0.3, type: "spring" }}
-                            className="relative w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full bg-gradient-to-br from-vedic-saffron via-vedic-gold to-vedic-brown flex items-center justify-center overflow-hidden"
+                            initial={{ x: -100, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                            className="flex items-center gap-6"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/20 to-transparent" />
-                            <div className="absolute inset-4 bg-gradient-to-br from-vedic-saffron/50 to-vedic-gold/50 rounded-full blur-xl" />
-                            <div className="w-1/2 h-1/2 bg-white/30 rounded-full blur-md" />
+                            <h1 className="text-[12vw] md:text-[9rem] leading-[0.8] font-bold text-[#FFF9F3] tracking-tighter">
+                                CREATIVE
+                            </h1>
+                            <motion.div
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                transition={{ delay: 0.5, type: "spring" }}
+                                className="hidden lg:flex items-center justify-center w-32 h-12 rounded-full border border-[#FFF9F3]/20"
+                            >
+                                <span className="text-sm font-mono text-[#FFF9F3]/60">EST. 2024</span>
+                            </motion.div>
                         </motion.div>
-                        <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-[10rem] font-bold text-vedic-black leading-[0.95] tracking-tight">
-                            DIGITAL BRANDING
-                            <br />
-                            AGENCY
-                        </h1>
+
+                        {/* Line 2: DIGITAL (Outline) */}
+                        <motion.div
+                            initial={{ x: 100, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                            className="relative"
+                        >
+                            <h1 className="text-[12vw] md:text-[9rem] leading-[0.8] font-black tracking-tighter text-transparent"
+                                style={{ WebkitTextStroke: "2px #FD7503" }} // Saffron stroke
+                            >
+                                DIGITAL
+                            </h1>
+                            {/* Floating Visual Element on top of text */}
+                            <motion.div
+                                animate={{ y: [-15, 15, -15], rotate: [0, 5, -5, 0] }}
+                                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                                className="absolute -top-10 right-[10%] w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-vedic-saffron to-vedic-gold rounded-full mix-blend-multiply opacity-80 blur-xl"
+                            />
+                        </motion.div>
+
+                        {/* Line 3: BRANDING + AGENCY */}
+                        <div className="flex flex-col md:flex-row items-end md:items-start gap-4 md:ml-20">
+                            <motion.h1
+                                initial={{ y: 100, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                                className="text-[12vw] md:text-[9rem] leading-[0.8] font-serif italic text-[#FFF9F3] z-10"
+                            >
+                                BRANDING
+                            </motion.h1>
+
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.8 }}
+                                className="flex flex-row md:flex-col items-center gap-4 mt-4 md:mt-0"
+                            >
+                                <h1 className="text-4xl md:text-5xl font-bold text-[#FFF9F3]/20">
+                                    AGENCY
+                                </h1>
+                                {/* Rotating Text Badge */}
+                                <div className="relative w-24 h-24 md:w-32 md:h-32 flex items-center justify-center">
+                                    <motion.div
+                                        animate={{ rotate: 360 }}
+                                        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                                        className="absolute inset-0"
+                                    >
+                                        <svg viewBox="0 0 100 100" className="w-full h-full overflow-visible">
+                                            <path id="curve" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
+                                            <text className="text-[10px] uppercase font-bold tracking-widest fill-[#FFF9F3]">
+                                                <textPath href="#curve">
+                                                    Scroll Down • Explore • Discover •
+                                                </textPath>
+                                            </text>
+                                        </svg>
+                                    </motion.div>
+                                    <ArrowRight className="w-6 h-6 md:w-8 md:h-8 text-vedic-saffron -rotate-45" />
+                                </div>
+                            </motion.div>
+                        </div>
                     </div>
-                </motion.div>
+                </div>
 
                 {/* Main Hero Content - Redesigned */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center min-h-[60vh]">
@@ -63,27 +119,27 @@ const Hero = () => {
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.4 }}
-                                className="inline-block px-4 py-1.5 rounded-full bg-vedic-saffron/10 text-vedic-saffron text-sm font-bold tracking-wider uppercase border border-vedic-saffron/20"
+                                className="inline-block px-4 py-1.5 rounded-full bg-[#FFF9F3]/10 text-[#FFF9F3] text-sm font-bold tracking-wider uppercase border border-[#FFF9F3]/20"
                             >
                                 Who We Are
                             </motion.span>
 
-                            <h2 className="text-4xl md:text-5xl font-bold text-vedic-black leading-tight">
+                            <h2 className="text-4xl md:text-5xl font-bold text-[#FFF9F3] leading-tight">
                                 Bridging <span className="text-vedic-saffron">Tradition</span> <br />
                                 & Future Tech.
                             </h2>
                         </div>
 
-                        <p className="text-lg text-vedic-black/70 leading-relaxed font-light">
+                        <p className="text-lg text-[#FFF9F3]/70 leading-relaxed font-light">
                             We are a specialized agency that helps businesses establish a commanding online presence. By fusing ancient wisdom with cutting-edge digital solutions, we create legacies, not just websites.
                         </p>
 
                         <Link
                             to="/about"
-                            className="inline-flex items-center gap-3 bg-vedic-black text-white pl-8 pr-6 py-4 rounded-full font-semibold hover:bg-vedic-saffron transition-all duration-300 group shadow-lg shadow-vedic-black/20 hover:shadow-vedic-saffron/30"
+                            className="inline-flex items-center gap-3 bg-[#FFF9F3] text-[#6A3914] pl-8 pr-6 py-4 rounded-full font-semibold hover:bg-vedic-saffron hover:text-white transition-all duration-300 group shadow-lg shadow-black/20"
                         >
                             <span>Read Our Story</span>
-                            <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <div className="w-8 h-8 rounded-full bg-[#6A3914]/20 flex items-center justify-center group-hover:bg-white/20 transition-colors group-hover:scale-110 transition-transform">
                                 <ArrowRight className="w-4 h-4" />
                             </div>
                         </Link>
@@ -98,10 +154,10 @@ const Hero = () => {
                         className="lg:col-span-7 relative h-full min-h-[500px] flex items-center"
                     >
                         {/* Abstract Background Elements */}
-                        <div className="absolute inset-0 bg-gradient-to-tr from-vedic-saffron/5 via-transparent to-vedic-brown/5 rounded-[3rem] -rotate-3 transform scale-95" />
+                        <div className="absolute inset-0 bg-gradient-to-tr from-vedic-saffron/5 via-transparent to-white/5 rounded-[3rem] -rotate-3 transform scale-95" />
 
                         {/* Main Glass Card */}
-                        <div className="relative w-full bg-white/60 backdrop-blur-xl border border-white/40 rounded-[2.5rem] p-8 md:p-12 shadow-2xl overflow-hidden">
+                        <div className="relative w-full bg-[#FFF9F3]/5 backdrop-blur-xl border border-[#FFF9F3]/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl overflow-hidden">
                             {/* Decorative Shine */}
                             <div className="absolute -top-20 -right-20 w-64 h-64 bg-vedic-saffron/10 rounded-full blur-3xl" />
                             <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-vedic-gold/10 rounded-full blur-3xl" />
@@ -110,14 +166,14 @@ const Hero = () => {
                             <div className="mb-12 relative z-10">
                                 <div className="flex items-start justify-between mb-6">
                                     <div>
-                                        <h3 className="text-2xl font-bold text-vedic-black mb-2">Innovation at Scale</h3>
-                                        <p className="text-vedic-black/60">Delivering excellence across dimensions</p>
+                                        <h3 className="text-2xl font-bold text-[#FFF9F3] mb-2">Innovation at Scale</h3>
+                                        <p className="text-[#FFF9F3]/60">Delivering excellence across dimensions</p>
                                     </div>
                                     <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-vedic-saffron to-vedic-gold flex items-center justify-center shadow-lg transform rotate-12">
                                         <Award className="text-white w-6 h-6" />
                                     </div>
                                 </div>
-                                <div className="h-2 w-full bg-gray-100 rounded-full overflow-hidden">
+                                <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
                                     <motion.div
                                         initial={{ width: 0 }}
                                         whileInView={{ width: "85%" }}
@@ -131,7 +187,7 @@ const Hero = () => {
                             </div>
 
                             {/* Stats Grid - Integrated */}
-                            <div className="grid grid-cols-3 gap-4 md:gap-8 relative z-10 border-t border-vedic-black/5 pt-8">
+                            <div className="grid grid-cols-3 gap-4 md:gap-8 relative z-10 border-t border-[#FFF9F3]/10 pt-8">
                                 {[
                                     { number: '12+', label: 'Years Exp', icon: TrendingUp },
                                     { number: '800+', label: 'Projects', icon: Laptop }, // Changed icon to Laptop for variety
@@ -141,8 +197,8 @@ const Hero = () => {
                                         <div className="mb-3 mx-auto w-10 h-10 rounded-full bg-vedic-saffron/5 group-hover:bg-vedic-saffron/10 flex items-center justify-center transition-colors">
                                             <stat.icon className="w-5 h-5 text-vedic-saffron group-hover:scale-110 transition-transform" />
                                         </div>
-                                        <div className="text-2xl md:text-3xl font-bold text-vedic-black mb-1">{stat.number}</div>
-                                        <div className="text-xs uppercase tracking-wide text-vedic-black/50 font-semibold">{stat.label}</div>
+                                        <div className="text-2xl md:text-3xl font-bold text-[#FFF9F3] mb-1">{stat.number}</div>
+                                        <div className="text-xs uppercase tracking-wide text-[#FFF9F3]/50 font-semibold">{stat.label}</div>
                                     </div>
                                 ))}
                             </div>
@@ -152,11 +208,11 @@ const Hero = () => {
                         <motion.div
                             animate={{ y: [0, -10, 0] }}
                             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute -bottom-6 -right-6 lg:right-8 lg:-bottom-8 bg-vedic-black text-white p-4 rounded-2xl shadow-xl flex items-center gap-3 z-20"
+                            className="absolute -bottom-6 -right-6 lg:right-8 lg:-bottom-8 bg-[#FFF9F3] text-[#6A3914] p-4 rounded-2xl shadow-xl flex items-center gap-3 z-20"
                         >
                             <div className="flex -space-x-3">
                                 {[1, 2, 3].map(i => (
-                                    <div key={i} className="w-8 h-8 rounded-full bg-gray-200 border-2 border-vedic-black" />
+                                    <div key={i} className="w-8 h-8 rounded-full bg-gray-200 border-2 border-[#FFF9F3]" />
                                 ))}
                             </div>
                             <div className="text-xs font-semibold">

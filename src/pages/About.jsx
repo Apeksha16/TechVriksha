@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Linkedin, Twitter, Github, Mail, Code, Palette, Award, Users, Briefcase, Target, Heart, Zap, Sparkles, TrendingUp, Rocket, ArrowRight } from 'lucide-react';
 import apekshaImage from '../assets/apeksha.jpg';
 import pranavImage from '../assets/pranav.jpg';
+import manavImage from '../assets/manav.png';
 import { Link } from 'react-router-dom';
 
 const partners = [
@@ -40,6 +41,24 @@ const partners = [
             twitter: "#",
             github: "#",
             email: "pranav@techvriksha.com"
+        }
+    },
+    {
+        name: "MANAV SHARMA",
+        role: "UI/UX Designer",
+        bio: "Creative designer specializing in crafting user-centric digital experiences. Blends artistic vision with technical precision to deliver stunning interfaces.",
+        fullBio: "Manav is a talented UI/UX designer with a sharp eye for detail and a passion for creating immersive digital experiences. His work focuses on accessibility and user engagement, ensuring that every interface is not only visually striking but also intuitive and easy to use. He excels in translating complex requirements into elegant, simple design solutions.",
+        skills: ["User Research", "Prototyping", "Interaction Design", "Visual Design", "Wireframing"],
+        experience: "5+ Years",
+        projects: "80+ Projects",
+        image: manavImage,
+        bgColor: "bg-gradient-to-br from-purple-300 via-violet-400 to-purple-500",
+        accentColor: "purple",
+        social: {
+            linkedin: "#",
+            twitter: "#",
+            github: "#",
+            email: "manav@techvriksha.com"
         }
     }
 ];
@@ -109,9 +128,10 @@ const About = () => {
     const { scrollYProgress } = useScroll();
     const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
     const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+    const [hoveredCard, setHoveredCard] = useState(null);
 
     return (
-        <div className="relative min-h-screen bg-gradient-to-b from-vedic-black via-vedic-brown to-vedic-black overflow-hidden">
+        <div className="relative min-h-screen bg-[#6A3914] overflow-hidden">
             {/* Animated Background Elements */}
             <motion.div
                 style={{ y, opacity }}
@@ -140,7 +160,7 @@ const About = () => {
                                 <Sparkles className="inline w-4 h-4 mr-2" />
                                 Our Journey
                             </motion.span>
-                            
+
                             <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-serif font-bold text-white leading-[0.9] mb-8 tracking-tight">
                                 <motion.span
                                     initial={{ opacity: 0, x: -50 }}
@@ -167,7 +187,7 @@ const About = () => {
                                     Excellence
                                 </motion.span>
                             </h1>
-                            
+
                             <motion.p
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -220,8 +240,10 @@ const About = () => {
                     </div>
                 </section>
 
-                {/* Team Profiles Section - Completely Redesigned */}
-                <section className="py-32 px-4 relative overflow-hidden">
+
+
+                {/* Team Profiles Section - Cream Background */}
+                <section className="py-32 px-4 relative overflow-hidden bg-[#FFF9F3]">
                     {/* Background Elements */}
                     <div className="absolute inset-0">
                         <div className="absolute top-1/4 left-0 w-96 h-96 bg-vedic-saffron/5 rounded-full blur-3xl"></div>
@@ -244,10 +266,10 @@ const About = () => {
                             >
                                 The Founders
                             </motion.span>
-                            <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white leading-tight mb-6">
+                            <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-vedic-black leading-tight mb-6">
                                 Meet The Team
                             </h2>
-                            <p className="text-xl text-white/60 max-w-2xl mx-auto">
+                            <p className="text-xl text-vedic-black/60 max-w-2xl mx-auto">
                                 The brilliant minds behind Tech Vriksha
                             </p>
                         </motion.div>
@@ -257,224 +279,114 @@ const About = () => {
                             {partners.map((partner, index) => (
                                 <motion.div
                                     key={partner.name}
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-100px" }}
-                                    transition={{ duration: 1 }}
-                                    className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 lg:gap-20`}
+                                    transition={{ duration: 0.8 }}
+                                    className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-start gap-12 lg:gap-20`}
                                 >
-                                    {/* Image Section - Large & Prominent */}
-                                    <motion.div
-                                        initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: 0.2, duration: 0.8 }}
-                                        className="flex-1 w-full lg:w-auto"
-                                    >
+                                    {/* Image Section */}
+                                    <div className="flex-1 w-full lg:w-1/2">
                                         <div className="relative group">
-                                            {/* Glow Effect */}
-                                            <div className={`absolute inset-0 ${partner.bgColor} rounded-3xl blur-2xl opacity-50 group-hover:opacity-70 transition-opacity duration-500`}></div>
-                                            
-                                            {/* Image Container */}
-                                            <motion.div
-                                                whileHover={{ scale: 1.05, rotate: 2 }}
-                                                transition={{ duration: 0.4 }}
-                                                className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10"
-                                            >
+                                            {/* Glow */}
+                                            <div className="absolute inset-0 bg-vedic-saffron/20 rounded-[2.5rem] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+                                            <div className="relative rounded-[2.5rem] overflow-hidden aspect-[3/4] border border-vedic-black/10 shadow-2xl">
                                                 {partner.image ? (
-                                                    <img 
-                                                        src={partner.image} 
+                                                    <img
+                                                        src={partner.image}
                                                         alt={partner.name}
-                                                        className="w-full h-[500px] md:h-[600px] object-cover"
+                                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                                                     />
                                                 ) : (
-                                                    <div className={`w-full h-[500px] md:h-[600px] ${partner.bgColor} flex items-center justify-center text-white text-9xl font-serif`}>
+                                                    <div className={`w-full h-full ${partner.bgColor} flex items-center justify-center text-white text-9xl font-rozha`}>
                                                         {partner.name.charAt(0)}
                                                     </div>
                                                 )}
-                                                
-                                                {/* Gradient Overlay */}
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                                                
-                                                {/* Name Badge on Image */}
-                                                <div className="absolute bottom-8 left-8 right-8">
-                                                    <motion.div
-                                                        initial={{ opacity: 0, y: 20 }}
-                                                        whileInView={{ opacity: 1, y: 0 }}
-                                                        viewport={{ once: true }}
-                                                        transition={{ delay: 0.4 }}
-                                                        className="bg-white/90 backdrop-blur-md rounded-2xl p-6 border border-white/20"
-                                                    >
-                                                        <h3 className="text-3xl md:text-4xl font-bold text-vedic-black mb-2">
-                                                            {partner.name}
-                                                        </h3>
-                                                        <p className="text-lg text-vedic-saffron font-semibold">
-                                                            {partner.role}
-                                                        </p>
-                                                    </motion.div>
-                                                </div>
-                                            </motion.div>
-                                        </div>
-                                    </motion.div>
 
-                                    {/* Content Section */}
-                                    <motion.div
-                                        initial={{ opacity: 0, x: index % 2 === 0 ? 100 : -100 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: 0.3, duration: 0.8 }}
-                                        className="flex-1 w-full lg:w-auto"
-                                    >
-                                        <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/10">
+                                                {/* Name Overlay */}
+                                                <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/90 to-transparent">
+                                                    <h3 className="text-3xl font-rozha text-white mb-2">{partner.name}</h3>
+                                                    <p className="text-vedic-saffron font-medium tracking-wide border-l-2 border-vedic-saffron pl-3">{partner.role}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Content Card - Matching the Reference Image */}
+                                    <div className="flex-1 w-full lg:w-1/2">
+                                        <div className="bg-[#6A3914]/90 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-10 border border-white/10 shadow-xl">
+
                                             {/* Bio */}
-                                            <motion.p
-                                                initial={{ opacity: 0, y: 20 }}
-                                                whileInView={{ opacity: 1, y: 0 }}
-                                                viewport={{ once: true }}
-                                                transition={{ delay: 0.4 }}
-                                                className="text-xl md:text-2xl text-white/90 leading-relaxed mb-10 font-light"
-                                            >
+                                            <p className="text-xl md:text-2xl text-[#E8DCC4] font-light leading-relaxed mb-10">
                                                 {partner.bio}
-                                            </motion.p>
+                                            </p>
 
                                             {/* Stats Grid */}
-                                            <motion.div
-                                                initial={{ opacity: 0, y: 20 }}
-                                                whileInView={{ opacity: 1, y: 0 }}
-                                                viewport={{ once: true }}
-                                                transition={{ delay: 0.5 }}
-                                                className="grid grid-cols-2 gap-6 mb-10"
-                                            >
-                                                <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
-                                                    <div className="flex items-center gap-4 mb-3">
-                                                        <div className="w-12 h-12 rounded-xl bg-gradient-vedic flex items-center justify-center">
-                                                            <Briefcase className="w-6 h-6 text-white" />
-                                                        </div>
-                                                        <div>
-                                                            <div className="text-3xl font-bold text-white">{partner.experience}</div>
-                                                            <div className="text-sm text-white/60">Experience</div>
-                                                        </div>
+                                            <div className="grid grid-cols-2 gap-5 mb-10">
+                                                {/* Experience Stat */}
+                                                <div className="bg-[#3E2723]/50 rounded-3xl p-6 flex flex-col items-start gap-4 border border-white/5 hover:bg-[#3E2723] transition-colors">
+                                                    <div className="p-3 rounded-xl bg-gradient-to-br from-orange-500 to-amber-700 text-white shadow-lg">
+                                                        <Briefcase size={24} />
+                                                    </div>
+                                                    <div>
+                                                        <div className="text-3xl font-bold text-white mb-1">{partner.experience}</div>
+                                                        <div className="text-sm text-white/50 uppercase tracking-wider font-medium">Experience</div>
                                                     </div>
                                                 </div>
-                                                <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
-                                                    <div className="flex items-center gap-4 mb-3">
-                                                        <div className="w-12 h-12 rounded-xl bg-gradient-vedic flex items-center justify-center">
-                                                            <Award className="w-6 h-6 text-white" />
-                                                        </div>
-                                                        <div>
-                                                            <div className="text-3xl font-bold text-white">{partner.projects}</div>
-                                                            <div className="text-sm text-white/60">Projects</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </motion.div>
 
-                                            {/* Skills */}
-                                            <motion.div
-                                                initial={{ opacity: 0, y: 20 }}
-                                                whileInView={{ opacity: 1, y: 0 }}
-                                                viewport={{ once: true }}
-                                                transition={{ delay: 0.6 }}
-                                                className="mb-10"
-                                            >
-                                                <h4 className="text-sm font-semibold text-white/60 uppercase tracking-wider mb-4">Expertise</h4>
+                                                {/* Projects Stat */}
+                                                <div className="bg-[#3E2723]/50 rounded-3xl p-6 flex flex-col items-start gap-4 border border-white/5 hover:bg-[#3E2723] transition-colors">
+                                                    <div className="p-3 rounded-xl bg-gradient-to-br from-orange-500 to-amber-700 text-white shadow-lg">
+                                                        <Award size={24} />
+                                                    </div>
+                                                    <div>
+                                                        <div className="text-3xl font-bold text-white mb-1">{partner.projects}</div>
+                                                        <div className="text-sm text-white/50 uppercase tracking-wider font-medium">Projects</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Expertise */}
+                                            <div className="mb-10">
+                                                <h4 className="text-xs font-bold text-[#D7CCC8] uppercase tracking-[0.2em] mb-4">Expertise</h4>
                                                 <div className="flex flex-wrap gap-3">
                                                     {partner.skills.map((skill, idx) => (
-                                                        <motion.span
+                                                        <span
                                                             key={idx}
-                                                            initial={{ opacity: 0, scale: 0 }}
-                                                            whileInView={{ opacity: 1, scale: 1 }}
-                                                            viewport={{ once: true }}
-                                                            transition={{ delay: 0.7 + idx * 0.05, type: "spring" }}
-                                                            whileHover={{ scale: 1.1, y: -3 }}
-                                                            className="px-4 py-2 bg-gradient-to-r from-vedic-saffron/20 to-vedic-gold/20 border border-vedic-saffron/30 rounded-full text-white font-medium text-sm cursor-pointer hover:from-vedic-saffron/30 hover:to-vedic-gold/30 transition-all"
+                                                            className="px-5 py-2.5 rounded-full bg-[#3E2723] text-[#E8DCC4] text-sm font-medium border border-[#5D4037] hover:border-vedic-saffron transition-colors cursor-default"
                                                         >
                                                             {skill}
-                                                        </motion.span>
+                                                        </span>
                                                     ))}
                                                 </div>
-                                            </motion.div>
+                                            </div>
 
-                                            {/* Social Links */}
-                                            <motion.div
-                                                initial={{ opacity: 0, y: 20 }}
-                                                whileInView={{ opacity: 1, y: 0 }}
-                                                viewport={{ once: true }}
-                                                transition={{ delay: 0.8 }}
-                                                className="flex items-center gap-4 pt-8 border-t border-white/10"
-                                            >
-                                                <span className="text-sm font-semibold text-white/60 uppercase tracking-wider mr-2">Connect:</span>
-                                                {[
-                                                    { icon: Linkedin, href: partner.social.linkedin, label: "LinkedIn", color: "hover:bg-blue-600" },
-                                                    { icon: Twitter, href: partner.social.twitter, label: "Twitter", color: "hover:bg-sky-500" },
-                                                    { icon: Github, href: partner.social.github, label: "GitHub", color: "hover:bg-gray-800" },
-                                                    { icon: Mail, href: `mailto:${partner.social.email}`, label: "Email", color: "hover:bg-vedic-saffron" }
-                                                ].map((social, idx) => (
-                                                    <motion.a
-                                                        key={idx}
-                                                        href={social.href}
-                                                        target={social.href.startsWith('mailto') ? undefined : "_blank"}
-                                                        rel={social.href.startsWith('mailto') ? undefined : "noopener noreferrer"}
-                                                        whileHover={{ scale: 1.15, y: -4, rotate: 5 }}
-                                                        whileTap={{ scale: 0.9 }}
-                                                        className={`p-3 bg-white/10 backdrop-blur-sm rounded-full text-white border border-white/20 ${social.color} transition-all duration-300 shadow-lg`}
-                                                        aria-label={social.label}
-                                                    >
-                                                        <social.icon size={20} />
-                                                    </motion.a>
-                                                ))}
-                                            </motion.div>
+                                            {/* Connect Divider */}
+                                            <div className="h-px w-full bg-white/10 mb-8" />
+
+                                            {/* Social Connect */}
+                                            <div className="flex items-center justify-between">
+                                                <span className="text-xs font-bold text-[#D7CCC8] uppercase tracking-[0.2em]">Connect:</span>
+                                                <div className="flex gap-4">
+                                                    {[
+                                                        { icon: Linkedin, href: partner.social.linkedin },
+                                                        { icon: Twitter, href: partner.social.twitter },
+                                                        { icon: Github, href: partner.social.github },
+                                                        { icon: Mail, href: `mailto:${partner.social.email}` }
+                                                    ].map((social, idx) => (
+                                                        <a
+                                                            key={idx}
+                                                            href={social.href}
+                                                            className="w-10 h-10 rounded-full border border-[#8D6E63] flex items-center justify-center text-[#E8DCC4] hover:bg-vedic-saffron hover:border-vedic-saffron hover:text-white transition-all duration-300"
+                                                        >
+                                                            <social.icon size={18} />
+                                                        </a>
+                                                    ))}
+                                                </div>
+                                            </div>
+
                                         </div>
-                                    </motion.div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* Values Section */}
-                <section className="py-32 px-4">
-                    <div className="max-w-7xl mx-auto">
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className="text-center mb-20"
-                        >
-                            <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white leading-tight mb-6">
-                                Our Values
-                            </h2>
-                            <p className="text-xl text-white/60 max-w-2xl mx-auto">
-                                The principles that guide everything we do
-                            </p>
-                        </motion.div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                            {values.map((value, index) => (
-                                <motion.div
-                                    key={value.title}
-                                    initial={{ opacity: 0, y: 50 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true, margin: "-50px" }}
-                                    transition={{ delay: index * 0.15, duration: 0.6 }}
-                                    whileHover={{ y: -15, scale: 1.05 }}
-                                    className="group relative"
-                                >
-                                    <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-vedic-saffron/50 transition-all duration-300 h-full flex flex-col">
-                                        <motion.div
-                                            whileHover={{ rotate: 360, scale: 1.2 }}
-                                            transition={{ duration: 0.6 }}
-                                            className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${value.color} flex items-center justify-center text-white shadow-xl mb-6`}
-                                        >
-                                            <value.icon size={32} />
-                                        </motion.div>
-                                        <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-vedic-saffron transition-colors">
-                                            {value.title}
-                                        </h3>
-                                        <p className="text-white/70 leading-relaxed flex-grow">
-                                            {value.description}
-                                        </p>
                                     </div>
                                 </motion.div>
                             ))}
@@ -482,140 +394,385 @@ const About = () => {
                     </div>
                 </section>
 
-                {/* Timeline Section */}
-                <section className="py-32 px-4">
+                {/* Values & Vision Section - Brown Background */}
+                <section className="py-32 px-4 bg-[#6A3914]">
                     <div className="max-w-7xl mx-auto">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="text-center mb-20"
+                            className="text-center mb-16"
                         >
-                            <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white leading-tight mb-6">
-                                Our Journey
+                            <h2 className="text-sm font-bold text-vedic-saffron tracking-widest uppercase mb-4">About Us</h2>
+                            <h2 className="text-5xl md:text-6xl font-serif font-bold text-white leading-tight mb-6">
+                                Unveiling Our Identity,<br /> Vision and Values
                             </h2>
-                            <p className="text-xl text-white/60 max-w-2xl mx-auto">
-                                Milestones that shaped our story
+                            <p className="text-xl text-white/60 max-w-3xl mx-auto">
+                                We're passionate about digital innovation. With years of experience in the industry, we've established ourselves as leaders in providing high-quality technical solutions.
                             </p>
                         </motion.div>
 
                         <div className="relative">
-                            {/* Timeline Line */}
-                            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-vedic-saffron via-vedic-gold to-vedic-saffron hidden md:block"></div>
-
-                            <div className="space-y-24">
-                                {timeline.map((item, index) => (
-                                    <motion.div
-                                        key={item.year}
-                                        initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true, margin: "-100px" }}
-                                        transition={{ delay: index * 0.2, duration: 0.8 }}
-                                        className={`flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-                                    >
-                                        <div className="md:w-1/2">
-                                            <motion.div
-                                                whileHover={{ scale: 1.05, y: -10 }}
-                                                className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-vedic-saffron/50 transition-all duration-300"
-                                            >
-                                                <div className="flex items-center gap-4 mb-4">
-                                                    <div className="w-12 h-12 rounded-full bg-gradient-vedic flex items-center justify-center text-white">
-                                                        <item.icon size={24} />
-                                                    </div>
-                                                    <span className="text-vedic-saffron font-bold text-xl">{item.year}</span>
-                                                </div>
-                                                <h3 className="text-2xl font-bold text-white mb-3">{item.title}</h3>
-                                                <p className="text-white/70 leading-relaxed">{item.description}</p>
-                                            </motion.div>
+                            {/* Floating Stats Bar - The "Green" pill from reference, now Brown */}
+                            <motion.div
+                                initial={{ y: 50, opacity: 0 }}
+                                whileInView={{ y: 0, opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.2 }}
+                                className="relative z-20 max-w-4xl mx-auto -mb-16"
+                            >
+                                <div className="bg-gradient-to-r from-[#6A3914] to-[#3E2723] rounded-[3rem] p-8 md:p-12 shadow-2xl border border-white/10 flex flex-wrap justify-between items-center gap-8 md:gap-4 text-center">
+                                    {values.map((value, idx) => (
+                                        <div key={idx} className="flex flex-col items-center gap-3 min-w-[120px] flex-1">
+                                            <div className="p-3 bg-white/10 rounded-full text-vedic-saffron">
+                                                <value.icon size={28} />
+                                            </div>
+                                            <span className="text-white font-medium tracking-wide">{value.title}</span>
                                         </div>
-                                        <div className="md:w-1/2"></div>
+                                    ))}
+                                </div>
+                            </motion.div>
+
+                            {/* White/Cream Content Card */}
+                            <div className="bg-[#FFF9F3] rounded-[3rem] pt-32 pb-20 px-8 md:px-20 relative z-10 text-vedic-black">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-32 relative">
+                                    {/* Vertical Divider */}
+                                    <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-vedic-brown/10 -translate-x-1/2"></div>
+
+                                    {/* Vision */}
+                                    <motion.div
+                                        initial={{ opacity: 0, x: -30 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 0.4 }}
+                                        className="text-center md:text-left"
+                                    >
+                                        <div className="flex flex-col items-center md:items-start gap-4 mb-6">
+                                            <div className="w-12 h-12 rounded-full bg-vedic-saffron/10 flex items-center justify-center text-vedic-saffron">
+                                                <Target size={24} />
+                                            </div>
+                                            <h3 className="text-3xl font-serif font-bold text-[#6A3914]">Our Vision</h3>
+                                        </div>
+                                        <p className="text-vedic-black/70 text-lg leading-relaxed">
+                                            To lead the way in digital transformation by delivering innovative, sustainable, and scalable solutions that bridge the gap between ancient wisdom and modern technology.
+                                        </p>
                                     </motion.div>
-                                ))}
+
+                                    {/* Mission */}
+                                    <motion.div
+                                        initial={{ opacity: 0, x: 30 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 0.4 }}
+                                        className="text-center md:text-left"
+                                    >
+                                        <div className="flex flex-col items-center md:items-start gap-4 mb-6">
+                                            <div className="w-12 h-12 rounded-full bg-vedic-saffron/10 flex items-center justify-center text-vedic-saffron">
+                                                <Rocket size={24} />
+                                            </div>
+                                            <h3 className="text-3xl font-serif font-bold text-[#6A3914]">Our Mission</h3>
+                                        </div>
+                                        <p className="text-vedic-black/70 text-lg leading-relaxed">
+                                            To leverage our expertise, resources, and passion to manufacture digital products that exceed industry standards and empower businesses to reach their full potential.
+                                        </p>
+                                    </motion.div>
+                                </div>
+
+                                {/* Bottom Button */}
+                                <div className="text-center mt-20">
+                                    <button className="bg-[#0F5A48] hover:bg-[#0A4033] text-white px-8 py-4 rounded-lg font-medium transition-colors shadow-lg">
+                                        Know More About Us
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* Company Story - Enhanced */}
-                <section className="py-32 px-4">
+                {/* Journey Section - Winding Road Redesign - Cream Background */}
+                <section className="py-32 px-4 overflow-hidden text-center bg-[#FFF9F3]">
                     <div className="max-w-7xl mx-auto">
                         <motion.div
-                            initial={{ opacity: 0, y: 50 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative"
+                            className="text-center mb-24"
                         >
-                            <div className="bg-gradient-to-br from-vedic-saffron/20 via-vedic-gold/10 to-vedic-brown/20 backdrop-blur-xl rounded-3xl p-12 md:p-16 border border-white/10 relative overflow-hidden">
-                                {/* Decorative elements */}
-                                <div className="absolute top-0 right-0 w-96 h-96 bg-vedic-saffron/10 rounded-full blur-3xl"></div>
-                                <div className="absolute bottom-0 left-0 w-96 h-96 bg-vedic-gold/10 rounded-full blur-3xl"></div>
-
-                                <div className="relative z-10">
-                                    <motion.h2
-                                        initial={{ opacity: 0, y: 30 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        className="text-4xl md:text-6xl font-serif font-bold text-white mb-8 text-center"
-                                    >
-                                        Our Story
-                                    </motion.h2>
-                                    <div className="max-w-4xl mx-auto space-y-8 text-lg md:text-xl text-white/90 leading-relaxed">
-                                        <motion.p
-                                            initial={{ opacity: 0, y: 20 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay: 0.1 }}
-                                        >
-                                            Tech Vriksha was born from a vision to combine the depth of Vedic wisdom with the power of modern technology. 
-                                            Founded by Apeksha and Pranav, we set out to create digital solutions that not only solve problems but 
-                                            also inspire and elevate.
-                                        </motion.p>
-                                        <motion.p
-                                            initial={{ opacity: 0, y: 20 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay: 0.2 }}
-                                        >
-                                            The name "Vriksha", meaning tree, represents our belief in building strong foundations. 
-                                            Just as a tree grows from deep roots to reach great heights, we build applications on solid principles that 
-                                            scale and thrive over time.
-                                        </motion.p>
-                                        <motion.p
-                                            initial={{ opacity: 0, y: 20 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay: 0.3 }}
-                                        >
-                                            Today, we're proud to have worked with clients across the globe, from innovative startups to established 
-                                            enterprises. Our commitment to excellence, combined with our unique blend of cultural aesthetics and 
-                                            cutting-edge technology, continues to set us apart in the digital landscape.
-                                        </motion.p>
-                                    </div>
-
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 30 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: 0.4 }}
-                                        className="mt-12 text-center"
-                                    >
-                                        <Link
-                                            to="/contact"
-                                            className="inline-flex items-center gap-3 px-8 py-4 bg-white text-vedic-black rounded-full font-semibold hover:bg-vedic-saffron hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
-                                        >
-                                            <span>Get In Touch</span>
-                                            <ArrowRight className="w-5 h-5" />
-                                        </Link>
-                                    </motion.div>
-                                </div>
-                            </div>
+                            <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-vedic-black leading-tight mb-6">
+                                Company Journey
+                            </h2>
+                            <p className="text-xl text-vedic-black/60 max-w-2xl mx-auto">
+                                From 2015 to Today: A path of constant innovation
+                            </p>
                         </motion.div>
+
+                        {/* Desktop Winding Road Visualization */}
+                        <div className="hidden lg:block relative h-[700px] w-full max-w-6xl mx-auto select-none">
+                            {/* SVG Road Path */}
+                            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1100 600" preserveAspectRatio="none">
+                                <defs>
+                                    <linearGradient id="roadGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stopColor="#4E2C11" />
+                                        <stop offset="50%" stopColor="#6A3914" />
+                                        <stop offset="100%" stopColor="#4E2C11" />
+                                    </linearGradient>
+                                    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                                        <feDropShadow dx="0" dy="10" stdDeviation="15" floodColor="black" floodOpacity="0.2" />
+                                    </filter>
+                                </defs>
+
+                                {/* The Road Shadows/Border */}
+                                <path
+                                    d="M -50 550 C 300 550, 400 300, 600 350 S 900 450, 1150 100"
+                                    fill="none"
+                                    stroke="#E8DCC4"
+                                    strokeWidth="140"
+                                    opacity="0.5"
+                                    filter="url(#shadow)"
+                                />
+
+                                {/* The Road Surface */}
+                                <path
+                                    d="M -50 550 C 300 550, 400 300, 600 350 S 900 450, 1150 100"
+                                    fill="none"
+                                    stroke="url(#roadGradient)"
+                                    strokeWidth="120"
+                                    strokeLinecap="round"
+                                />
+
+                                {/* Center Dashed Line */}
+                                <path
+                                    d="M -50 550 C 300 550, 400 300, 600 350 S 900 450, 1150 100"
+                                    fill="none"
+                                    stroke="#FDFBF7"
+                                    strokeWidth="4"
+                                    strokeDasharray="20 20"
+                                    strokeOpacity="0.6"
+                                    className="animate-dash"
+                                />
+                            </svg>
+
+
+                            {/* Milestones positioned absolutely along the path */}
+                            {/* 2015: Start/Bottom Left */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.2 }}
+                                className="absolute left-[5%] bottom-[15%] w-72 text-left"
+                            >
+                                <div className="absolute left-1/2 bottom-[-40px] h-[100px] w-1 bg-[#6A3914]/20">
+                                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-vedic-saffron"></div>
+                                </div>
+                                <div className="bg-[#FFF9F3]/80 backdrop-blur-md p-6 rounded-2xl border border-[#6A3914]/10 hover:border-vedic-saffron transition-colors cursor-pointer group shadow-lg">
+                                    <h3 className="text-4xl font-bold text-vedic-saffron mb-2">2015</h3>
+                                    <h4 className="text-lg font-semibold text-[#6A3914] mb-2">{timeline[0].title}</h4>
+                                    <p className="text-sm text-[#6A3914]/70">{timeline[0].description}</p>
+                                </div>
+                            </motion.div>
+
+                            {/* 2018: First Curve */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.4 }}
+                                className="absolute left-[35%] top-[55%] w-72 text-left"
+                            >
+                                <div className="absolute left-1/2 top-full h-[60px] w-1 bg-[#6A3914]/20">
+                                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-vedic-saffron"></div>
+                                </div>
+                                <div className="bg-[#FFF9F3]/80 backdrop-blur-md p-6 rounded-2xl border border-[#6A3914]/10 hover:border-vedic-saffron transition-colors cursor-pointer group shadow-lg">
+                                    <h3 className="text-4xl font-bold text-vedic-saffron mb-2">2018</h3>
+                                    <h4 className="text-lg font-semibold text-[#6A3914] mb-2">{timeline[1].title}</h4>
+                                    <p className="text-sm text-[#6A3914]/70">{timeline[1].description}</p>
+                                </div>
+                            </motion.div>
+
+                            {/* 2020: Second Curve - Higher up */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.6 }}
+                                className="absolute left-[60%] top-[25%] w-72 text-left"
+                            >
+                                <div className="absolute left-1/2 top-full h-[100px] w-1 bg-[#6A3914]/20">
+                                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-vedic-saffron"></div>
+                                </div>
+                                <div className="bg-[#FFF9F3]/80 backdrop-blur-md p-6 rounded-2xl border border-[#6A3914]/10 hover:border-vedic-saffron transition-colors cursor-pointer group shadow-lg">
+                                    <h3 className="text-4xl font-bold text-vedic-saffron mb-2">2020</h3>
+                                    <h4 className="text-lg font-semibold text-[#6A3914] mb-2">{timeline[2].title}</h4>
+                                    <p className="text-sm text-[#6A3914]/70">{timeline[2].description}</p>
+                                </div>
+                            </motion.div>
+
+                            {/* 2024: End/Top Right */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.8 }}
+                                className="absolute right-[5%] top-[5%] w-72 text-left"
+                            >
+                                <div className="absolute left-1/2 top-full h-[80px] w-1 bg-[#6A3914]/20">
+                                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-vedic-saffron"></div>
+                                </div>
+                                <div className="bg-[#FFF9F3]/80 backdrop-blur-md p-6 rounded-2xl border border-[#6A3914]/10 hover:border-vedic-saffron transition-colors cursor-pointer group shadow-lg">
+                                    <h3 className="text-4xl font-bold text-vedic-saffron mb-2">2024</h3>
+                                    <h4 className="text-lg font-semibold text-[#6A3914] mb-2">{timeline[3].title}</h4>
+                                    <p className="text-sm text-[#6A3914]/70">{timeline[3].description}</p>
+                                </div>
+                            </motion.div>
+                        </div>
+
+                        {/* Mobile Vertical Timeline (Fallback) */}
+                        <div className="lg:hidden relative border-l-2 border-dashed border-vedic-saffron/30 ml-8 space-y-12">
+                            {timeline.map((item, index) => (
+                                <div key={item.year} className="relative pl-12 text-left">
+                                    <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-vedic-saffron"></div>
+                                    <div className="bg-[#6A3914] backdrop-blur-md p-6 rounded-2xl border border-vedic-black/5 shadow-xl">
+                                        <span className="text-3xl font-bold text-vedic-saffron block mb-2">{item.year}</span>
+                                        <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                                        <p className="text-white/80">{item.description}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Company Story - Redesigned Stacked Cards - Brown Background */}
+                <section className="py-32 px-4 relative bg-[#6A3914]">
+                    <div className="max-w-4xl mx-auto">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="text-center mb-20"
+                        >
+                            <h2 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6">Our Story</h2>
+                            <p className="text-xl text-white/60">The chapters that define who we are</p>
+                        </motion.div>
+
+                        <div className="relative isolate px-4 md:px-0 space-y-[-120px] pb-32">
+                            {/* Card 1: The Vision (Dark Brown) */}
+                            <motion.div
+                                onMouseEnter={() => setHoveredCard('vision')}
+                                onMouseLeave={() => setHoveredCard(null)}
+                                initial={{ opacity: 0, y: 50, rotate: -2 }}
+                                whileInView={{ opacity: 1, y: 0, rotate: -2 }}
+                                animate={{
+                                    y: hoveredCard === 'vision' ? -60 : (hoveredCard ? 20 : 0),
+                                    rotate: hoveredCard === 'vision' ? 0 : (hoveredCard ? -1 : -2),
+                                    scale: hoveredCard === 'vision' ? 1.05 : (hoveredCard ? 0.95 : 1),
+                                    opacity: hoveredCard && hoveredCard !== 'vision' ? 0.6 : 1,
+                                    filter: hoveredCard && hoveredCard !== 'vision' ? 'blur(2px)' : 'blur(0px)'
+                                }}
+                                viewport={{ once: true }}
+                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                style={{ zIndex: hoveredCard === 'vision' ? 50 : 10 }}
+                                className="relative bg-[#3E2723] rounded-[2.5rem] p-10 md:p-14 border border-white/5 shadow-2xl transform origin-bottom-left transition-all"
+                            >
+                                <div className="absolute -right-4 -top-4 w-24 h-24 bg-vedic-saffron rounded-full opacity-20 blur-2xl"></div>
+                                <div className="flex flex-col md:flex-row gap-8 items-start">
+                                    <div className="bg-white/10 p-4 rounded-2xl text-vedic-saffron">
+                                        <Sparkles size={32} />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-3xl font-serif font-bold text-white mb-4">The Vision</h3>
+                                        <p className="text-lg text-[#E8DCC4] leading-relaxed">
+                                            Tech Vriksha was born from a vision to combine the depth of Vedic wisdom with the power of modern technology.
+                                            Founded by Apeksha and Pranav, we set out to create digital solutions that not only solve problems but
+                                            also inspire and elevate.
+                                        </p>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Card 2: The Meaning (Saffron) */}
+                            <motion.div
+                                onMouseEnter={() => setHoveredCard('meaning')}
+                                onMouseLeave={() => setHoveredCard(null)}
+                                initial={{ opacity: 0, y: 50, rotate: 2 }}
+                                whileInView={{ opacity: 1, y: 0, rotate: 2 }}
+                                animate={{
+                                    y: hoveredCard === 'meaning' ? -60 : (hoveredCard ? 20 : 0),
+                                    rotate: hoveredCard === 'meaning' ? 0 : (hoveredCard ? 1 : 2),
+                                    scale: hoveredCard === 'meaning' ? 1.05 : (hoveredCard ? 0.95 : 1),
+                                    opacity: hoveredCard && hoveredCard !== 'meaning' ? 0.6 : 1,
+                                    filter: hoveredCard && hoveredCard !== 'meaning' ? 'blur(2px)' : 'blur(0px)'
+                                }}
+                                viewport={{ once: true }}
+                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                style={{ zIndex: hoveredCard === 'meaning' ? 50 : 20 }}
+                                className="relative bg-[#FD7503] rounded-[2.5rem] p-10 md:p-14 shadow-2xl transform origin-bottom-right transition-all"
+                            >
+                                <div className="absolute -left-4 -top-4 w-24 h-24 bg-white rounded-full opacity-20 blur-2xl"></div>
+                                <div className="flex flex-col md:flex-row gap-8 items-start">
+                                    <div className="bg-white/20 p-4 rounded-2xl text-white">
+                                        <Heart size={32} />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-3xl font-serif font-bold text-white mb-4">The Meaning</h3>
+                                        <p className="text-lg text-white/90 leading-relaxed font-medium">
+                                            The name "Vriksha", meaning tree, represents our belief in building strong foundations.
+                                            Just as a tree grows from deep roots to reach great heights, we build applications on solid principles that
+                                            scale and thrive over time.
+                                        </p>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Card 3: The Impact (Cream) */}
+                            <motion.div
+                                onMouseEnter={() => setHoveredCard('impact')}
+                                onMouseLeave={() => setHoveredCard(null)}
+                                initial={{ opacity: 0, y: 50, rotate: -1 }}
+                                whileInView={{ opacity: 1, y: 0, rotate: -1 }}
+                                animate={{
+                                    y: hoveredCard === 'impact' ? -60 : (hoveredCard ? 20 : 0),
+                                    rotate: hoveredCard === 'impact' ? 0 : (hoveredCard ? -0.5 : -1),
+                                    scale: hoveredCard === 'impact' ? 1.05 : (hoveredCard ? 0.95 : 1),
+                                    opacity: hoveredCard && hoveredCard !== 'impact' ? 0.6 : 1,
+                                    filter: hoveredCard && hoveredCard !== 'impact' ? 'blur(2px)' : 'blur(0px)'
+                                }}
+                                viewport={{ once: true }}
+                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                style={{ zIndex: hoveredCard === 'impact' ? 50 : 30 }}
+                                className="relative bg-[#FFF9F3] rounded-[2.5rem] p-10 md:p-14 shadow-2xl transform origin-center transition-all"
+                            >
+                                <div className="absolute right-10 bottom-10 w-32 h-32 bg-vedic-saffron rounded-full opacity-10 blur-3xl"></div>
+                                <div className="flex flex-col md:flex-row gap-8 items-start">
+                                    <div className="bg-[#6A3914]/10 p-4 rounded-2xl text-[#6A3914]">
+                                        <Target size={32} />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-3xl font-serif font-bold text-[#6A3914] mb-4">The Impact</h3>
+                                        <p className="text-lg text-[#3E2723]/80 leading-relaxed">
+                                            Today, we're proud to have worked with clients across the globe, from innovative startups to established
+                                            enterprises. Our commitment to excellence continues to set us apart in the digital landscape.
+                                        </p>
+                                        <div className="mt-8">
+                                            <Link
+                                                to="/contact"
+                                                className="inline-flex items-center gap-2 text-[#FD7503] font-bold hover:gap-4 transition-all uppercase tracking-wider text-sm"
+                                            >
+                                                <span>Join Our Journey</span>
+                                                <ArrowRight size={18} />
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
                     </div>
                 </section>
             </div>
-        </div>
+        </div >
     );
 };
 
