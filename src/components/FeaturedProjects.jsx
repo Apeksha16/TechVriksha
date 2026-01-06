@@ -145,6 +145,15 @@ const FeaturedProjects = () => {
                                     </div>
                                 )}
 
+                                {/* Large Background Number */}
+                                {!isHovered && (
+                                    <div className="absolute top-6 right-8 md:top-8 md:right-10 z-0 pointer-events-none select-none">
+                                        <span className={`text-8xl md:text-[10rem] font-serif font-bold leading-none ${project.isDark ? 'text-white/5' : 'text-slate-900/5'}`}>
+                                            {project.id < 10 ? `0${project.id}` : project.id}
+                                        </span>
+                                    </div>
+                                )}
+
                                 <motion.div layout="position" className="mt-auto relative z-10">
                                     <h3 className="text-2xl md:text-3xl font-bold font-serif leading-none mb-2 break-words">
                                         {project.title}
