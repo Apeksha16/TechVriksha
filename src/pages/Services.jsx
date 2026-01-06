@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Database, Server, Smartphone, Globe, Layout, Zap, Shield, BarChart, Settings, Cloud, Palette, Check } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import ProcessSection from '../components/ProcessSection';
+import IndustriesSection from '../components/IndustriesSection';
 
 const Services = () => {
     const services = [
@@ -56,43 +55,7 @@ const Services = () => {
         }
     ];
 
-    const pricingPlans = [
-        {
-            id: 'starter',
-            name: 'Small Plan',
-            displayPrice: "$39",
-            period: "per month",
-            features: ['Free domain', 'Monthly Bandwidth 1GB', 'SSD Storage 1TB', 'SSL Certificate', 'Website SEO', 'Google Analytics', 'Messenger Live Chat', 'Full Support'],
-            // Reference: Smooth matte Brown/Taupe
-            gradient: "from-[#1E293B] to-[#0F172A]",
-            buttonColor: "text-[#1E293B]",
-            shadowColor: "shadow-[#1E293B]/30"
-        },
-        {
-            id: 'professional',
-            name: 'Medium Plan',
-            displayPrice: "$69",
-            period: "per month",
-            features: ['Free domain', 'Monthly Bandwidth 1GB', 'SSD Storage 1TB', 'SSL Certificate', 'Website SEO', 'Google Analytics', 'Messenger Live Chat', 'Full Support'],
-            // Reference: Vibrant Orange/Saffron
-            // Reference: Blue/Cyan
-            gradient: "from-[#3B82F6] to-[#0EA5E9]",
-            buttonColor: "text-[#3B82F6]",
-            shadowColor: "shadow-[#3B82F6]/30"
-        },
-        {
-            id: 'enterprise',
-            name: 'Large Plan',
-            displayPrice: "$99",
-            period: "per month",
-            features: ['Free domain', 'Monthly Bandwidth 1GB', 'SSD Storage 1TB', 'SSL Certificate', 'Website SEO', 'Google Analytics', 'Messenger Live Chat', 'Full Support'],
-            // Reference: Fresh, slightly muted Green
-            // Reference: Purple/Pink
-            gradient: "from-[#8B5CF6] to-[#D946EF]",
-            buttonColor: "text-[#8B5CF6]",
-            shadowColor: "shadow-[#8B5CF6]/30"
-        }
-    ];
+
 
     return (
         <div className="min-h-screen">
@@ -152,6 +115,13 @@ const Services = () => {
                     </div>
                 </div>
             </div>
+
+
+            {/* Section 2: Process - How We Work */}
+            <ProcessSection />
+
+            {/* Section 3: Industries We Serve */}
+            <IndustriesSection />
 
             {/* Section 2: CTA Section - Brown Background */}
             <div className="bg-[#0F172A] relative pt-20 overflow-hidden text-center">
@@ -294,84 +264,8 @@ const Services = () => {
             </div>
 
             {/* Section 3: Pricing Section - Cream Background */}
-            <div className="bg-[#F8FAFC] py-20 px-4 relative overflow-hidden">
-                <div className="max-w-7xl mx-auto">
-                    {/* Header */}
-                    <div className="text-center mb-16">
-                        <div className="flex items-center justify-center mb-6">
-                            <div className="w-10 h-10 bg-gradient-to-br from-slate-200 to-slate-100 rounded-xl flex items-center justify-center">
-                                <div className="w-4 h-4 bg-slate-400 rotate-45"></div>
-                            </div>
-                        </div>
-                        <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-2">
-                            Choose your best plan
-                        </h2>
-                    </div>
 
-                    {/* Cards Container */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
-                        {pricingPlans.map((plan, index) => (
-                            <motion.div
-                                key={plan.id}
-                                initial={{ opacity: 0, y: 50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.2 }}
-                                whileHover={{ y: -10 }}
-                                className={`relative rounded-[2.5rem] overflow-hidden ${plan.shadowColor} hover:shadow-2xl transition-all duration-300 isolate min-h-[500px]`}
-                            >
-                                {/* Card Gradient Background */}
-                                <div className={`absolute inset-0 bg-gradient-to-br ${plan.gradient} z-0`} />
-
-                                {/* Content */}
-                                <div className="relative z-10 p-8 pt-12 pb-32 h-full flex flex-col text-white">
-                                    <h3 className="text-2xl font-bold mb-8">{plan.name}</h3>
-
-                                    <ul className="space-y-4 mb-8 text-sm font-medium text-white/90">
-                                        {plan.features.map((feature, idx) => (
-                                            <li key={idx} className="flex items-center gap-3">
-                                                <Check className="w-4 h-4 text-white/70" strokeWidth={3} />
-                                                <span>{feature}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                {/* Bottom Cutout Area */}
-                                <div className="absolute bottom-0 left-0 w-full z-20 text-white">
-                                    <div className="flex items-end justify-between">
-                                        {/* Price Area */}
-                                        <div className="pl-8 pb-10">
-                                            <div className="text-5xl font-bold">{plan.displayPrice}</div>
-                                            <div className="text-white/70 text-sm font-medium">per month</div>
-                                        </div>
-
-                                        {/* Custom Button Container */}
-                                        <div className="relative w-[180px] h-[100px]">
-                                            {/* SVG Shape for the inverse corner - matching Page BG color for cutout effect */}
-                                            {/* Since page bg is Cream (#FFF9F3), use that fill */}
-                                            <svg className="absolute -top-[40px] right-0 w-[40px] h-[40px] z-10" width="40" height="40" viewBox="0 0 40 40">
-                                                <path d="M40 40 L0 40 L0 0 C0 22 18 40 40 40 Z" fill="#F8FAFC" transform="rotate(270 20 20) translate(0 15)" />
-                                            </svg>
-
-                                            {/* The Button Container itself */}
-                                            <div className="absolute bottom-0 right-0 w-full h-full bg-[#F8FAFC] rounded-tl-[2.5rem] flex items-center justify-center p-2">
-                                                <button className="flex items-center gap-2 text-sm font-bold text-slate-900 group cursor-pointer hover:opacity-80 transition-opacity">
-                                                    Sign up
-                                                    <div className={`w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center`}>
-                                                        <ArrowRight className="w-3 h-3" />
-                                                    </div>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div >
     );
 };
 
