@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ProcessSection from '../components/ProcessSection';
 import IndustriesSection from '../components/IndustriesSection';
+import { Code, Database, Server, Smartphone, Globe, Layout, Zap, Shield, BarChart, Settings, Cloud, Palette, Check } from 'lucide-react';
 
 const Services = () => {
     const services = [
