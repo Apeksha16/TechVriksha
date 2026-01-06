@@ -39,7 +39,7 @@ const ProcessSection = () => {
     ];
 
     return (
-        <section className="py-24 bg-[#F8FAFC] relative overflow-hidden">
+        <section className="py-24 bg-[#0F172A] relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
 
                 {/* Header */}
@@ -54,7 +54,7 @@ const ProcessSection = () => {
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="mt-4 text-4xl md:text-5xl font-serif font-bold text-slate-900"
+                        className="mt-4 text-4xl md:text-5xl font-serif font-bold text-white"
                     >
                         Our Process
                     </motion.h2>
@@ -63,7 +63,7 @@ const ProcessSection = () => {
                 {/* Steps Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
                     {/* Connecting Line (Desktop) */}
-                    <div className="absolute top-12 left-0 w-full h-1 bg-slate-200 hidden lg:block -z-10" />
+                    <div className="absolute top-12 left-0 w-full h-1 bg-slate-800 hidden lg:block -z-10" />
 
                     {steps.map((step, idx) => (
                         <motion.div
@@ -75,7 +75,7 @@ const ProcessSection = () => {
                             className="relative flex flex-col items-center text-center group"
                         >
                             {/* Icon Circle */}
-                            <div className={`w-24 h-24 rounded-full ${step.lightColor} border-8 border-[#F8FAFC] flex items-center justify-center mb-6 relative z-10 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                            <div className={`w-24 h-24 rounded-full ${step.lightColor} border-8 border-[#0F172A] flex items-center justify-center mb-6 relative z-10 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                                 <step.icon className={`w-10 h-10 ${step.color.replace('bg-', 'text-')}`} strokeWidth={1.5} />
                                 <div className={`absolute -right-2 -bottom-2 w-8 h-8 rounded-full ${step.color} text-white flex items-center justify-center font-bold text-sm shadow-md`}>
                                     {step.id}
@@ -83,11 +83,11 @@ const ProcessSection = () => {
                             </div>
 
                             {/* Content */}
-                            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 h-full w-full hover:shadow-xl transition-shadow duration-300">
-                                <h3 className="text-xl font-bold text-slate-900 mb-3 font-serif">
+                            <div className="bg-[#1E293B] p-8 rounded-2xl shadow-lg border border-slate-700 h-full w-full hover:shadow-2xl transition-all duration-300">
+                                <h3 className="text-xl font-bold text-white mb-3 font-serif">
                                     {step.title}
                                 </h3>
-                                <p className="text-slate-600 text-sm leading-relaxed">
+                                <p className="text-slate-400 text-sm leading-relaxed">
                                     {step.desc}
                                 </p>
                             </div>

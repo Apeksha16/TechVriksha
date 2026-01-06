@@ -62,14 +62,8 @@ const Services = () => {
 
     return (
         <div className="min-h-screen">
-            {/* Section 1: Header and Grid - Dark Background */}
-            <div className="bg-[#0F172A] py-20 px-4 relative overflow-hidden">
-                {/* Decorative Background Elements */}
-                <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-                    <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px]" />
-                    <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[100px]" />
-                </div>
-
+            {/* Section 1: Header and Grid - Light Background */}
+            <div className="bg-[#F8FAFC] py-20 px-4 relative overflow-hidden">
                 <div className="max-w-7xl mx-auto relative z-10">
                     {/* Header */}
                     <motion.div
@@ -78,13 +72,13 @@ const Services = () => {
                         transition={{ duration: 0.8 }}
                         className="text-center mb-16"
                     >
-                        <span className="text-blue-400 tracking-widest uppercase font-semibold text-sm sanskrit-text">
+                        <span className="text-blue-500 tracking-widest uppercase font-semibold text-sm sanskrit-text">
                             Our Capabilities
                         </span>
-                        <h1 className="mt-4 text-4xl md:text-6xl font-serif font-bold text-white sanskrit-accent">
+                        <h1 className="mt-4 text-4xl md:text-6xl font-serif font-bold text-slate-900 sanskrit-accent">
                             Services We Offer
                         </h1>
-                        <p className="mt-6 text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                        <p className="mt-6 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
                             Comprehensive digital solutions from design to deployment, covering all aspects of your digital journey
                         </p>
                     </motion.div>
@@ -99,7 +93,7 @@ const Services = () => {
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1, duration: 0.6 }}
                                 whileHover={{ y: -5 }}
-                                className="bg-[#1E293B] p-8 rounded-tr-3xl rounded-br-3xl border-l-[6px] border-[#3B82F6] shadow-lg shadow-black/20 hover:shadow-2xl hover:shadow-blue-900/20 transition-all duration-300 group flex flex-col items-start h-full border-t border-r border-b border-slate-700/50"
+                                className="bg-white p-8 rounded-tr-3xl rounded-br-3xl border-l-[6px] border-[#3B82F6] shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col items-start h-full"
                             >
                                 {/* Icon */}
                                 <div className="mb-6 p-4 bg-[#3B82F6]/10 rounded-2xl group-hover:bg-[#3B82F6] transition-colors duration-300">
@@ -107,10 +101,10 @@ const Services = () => {
                                 </div>
 
                                 {/* Content */}
-                                <h3 className="text-xl font-bold font-serif text-white mb-3">
+                                <h3 className="text-xl font-bold font-serif text-slate-900 mb-3">
                                     {service.title}
                                 </h3>
-                                <p className="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3 group-hover:text-slate-300 transition-colors">
+                                <p className="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-3">
                                     {service.desc}
                                 </p>
 
@@ -135,10 +129,10 @@ const Services = () => {
             {/* Section 4: Why Choose Us - Light Theme */}
             <WhyChooseUs />
 
-            {/* Section 5: CTA Section - Dark Background */}
-            <div className="bg-[#0F172A] relative pt-20 overflow-hidden text-center">
+            {/* Section 5: CTA Section - Light Background */}
+            <div className="bg-[#F8FAFC] relative pt-20 overflow-hidden text-center">
                 <div className="max-w-7xl mx-auto px-4 pb-20">
-                    <h2 className="text-4xl md:text-6xl font-serif font-bold text-[#F8FAFC] mb-12 relative z-10">
+                    <h2 className="text-4xl md:text-6xl font-serif font-bold text-slate-900 mb-12 relative z-10">
                         Let's Create an <span className="text-[#3B82F6]">Amazing</span><br />
                         Project Together!
                     </h2>
