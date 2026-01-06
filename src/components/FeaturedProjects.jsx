@@ -90,9 +90,9 @@ const FeaturedProjects = () => {
 
                     // Colors
                     const bgColor = project.isDark ? 'bg-[#1E293B]' : 'bg-white';
-                    const textColor = project.isDark ? 'text-white' : 'text-vedic-black';
-                    const iconColor = project.isDark ? 'text-white' : 'text-[#3B82F6]';
-                    const iconBg = project.isDark ? 'bg-[#334155]' : 'bg-[#DBEAFE]';
+                    const textColor = project.isDark ? 'text-white' : 'text-slate-900';
+                    const iconColor = project.isDark ? 'text-white' : 'text-blue-500';
+                    const iconBg = project.isDark ? 'bg-[#334155]' : 'bg-blue-50';
 
                     return (
                         <motion.div
@@ -108,10 +108,12 @@ const FeaturedProjects = () => {
                                 opacity: isSomeoneHovered && !isHovered ? 0.7 : 1
                             }}
                             transition={{ type: "spring", stiffness: 200, damping: 25 }}
-                        // On mobile this "flex" animation might be weird if height is auto.
-                        // But since we set min-h-[400px], they will just stack. 
-                        // Flex-grow on column with auto-height parent doesn't collapse them.
-                        // So effectively this animation only works visibly on MD where parent is fixed h-500 & row.
+                            // So effectively this animation only works visibly on MD where parent is fixed h-500 & row.
+                            onClick={(e) => {
+                                // Don't trigger if clicking the specific link or if there is no link
+                                if (e.target.closest('a') || !project.link) return;
+                                window.open(project.link, '_blank');
+                            }}
                         >
                             <div className="relative h-full w-full p-8 flex flex-col">
                                 {/* Top Content (Always Visible) */}
@@ -124,11 +126,30 @@ const FeaturedProjects = () => {
                                     </div>
                                 </div>
 
+                                {/* Decorative Pattern for Collapsed State */}
+                                {!isHovered && (
+                                    <div className="absolute inset-0 z-0 pointer-events-none">
+                                        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                            <path d="M0 100 C 20 0 50 0 100 100 Z" fill={project.isDark ? "url(#gradDark)" : "url(#gradLight)"} />
+                                            <defs>
+                                                <linearGradient id="gradDark" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.06" />
+                                                    <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.03" />
+                                                </linearGradient>
+                                                <linearGradient id="gradLight" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.08" />
+                                                    <stop offset="100%" stopColor="#0EA5E9" stopOpacity="0.06" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                )}
+
                                 <motion.div layout="position" className="mt-auto relative z-10">
                                     <h3 className="text-2xl md:text-3xl font-bold font-serif leading-none mb-2 break-words">
                                         {project.title}
                                     </h3>
-                                    <p className={`text-sm font-medium uppercase tracking-wider mb-4 ${project.isDark ? 'text-[#3B82F6]' : 'text-vedic-black/60'}`}>
+                                    <p className={`text-sm font-medium uppercase tracking-wider mb-4 ${project.isDark ? 'text-blue-500' : 'text-slate-500'}`}>
                                         {project.highlight}
                                     </p>
 
@@ -145,7 +166,7 @@ const FeaturedProjects = () => {
                                                 <p className="text-sm md:text-base opacity-80 mb-6 max-w-lg">
                                                     {project.description}
                                                 </p>
-                                                <div className="w-full h-40 bg-gradient-to-br from-vedic-saffron/10 to-vedic-black/10 rounded-xl mb-4 overflow-hidden relative group-hover:shadow-inner">
+                                                <div className="w-full h-40 bg-gradient-to-br from-blue-500/10 to-slate-900/10 rounded-xl mb-4 overflow-hidden relative group-hover:shadow-inner">
                                                     {project.image ? (
                                                         <img
                                                             src={project.image}
@@ -184,10 +205,10 @@ const FeaturedProjects = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-5xl md:text-7xl font-serif font-bold text-vedic-black mb-4">
+                    <h2 className="text-5xl md:text-7xl font-serif font-bold text-slate-900 mb-4">
                         Top Projects
                     </h2>
-                    <p className="text-lg text-vedic-black/60 max-w-2xl mx-auto">
+                    <p className="text-lg text-slate-600 max-w-2xl mx-auto">
                         Hover over cards to explore our finest work and case studies
                     </p>
                 </div>
@@ -202,7 +223,7 @@ const FeaturedProjects = () => {
                 <div className="text-center mt-16">
                     <Link
                         to="/projects"
-                        className="inline-flex items-center gap-2 px-8 py-4 bg-vedic-black text-white rounded-full font-bold hover:bg-[#FB9D36] transition-all duration-300 group shadow-xl hover:shadow-2xl"
+                        className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-blue-600 transition-all duration-300 group shadow-xl hover:shadow-2xl"
                     >
                         View All Projects
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />

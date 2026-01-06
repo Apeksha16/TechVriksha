@@ -36,9 +36,9 @@ const Testimonials = () => {
                 <motion.div
                     animate={{ rotate: 360, y: [0, -10, 0] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                    className="absolute top-10 left-1/2 -translate-x-1/2 md:left-[45%] lg:left-[40%] text-vedic-saffron hidden md:block"
+                    className="absolute top-10 left-1/2 -translate-x-1/2 md:left-[45%] lg:left-[40%] text-blue-500 hidden md:block"
                 >
-                    <Sparkles className="w-12 h-12 fill-vedic-saffron/20" />
+                    <Sparkles className="w-12 h-12 fill-blue-500/20" />
                 </motion.div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
@@ -49,10 +49,10 @@ const Testimonials = () => {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-5xl md:text-7xl font-serif font-bold text-vedic-black leading-tight"
+                            className="text-5xl md:text-7xl font-serif font-bold text-slate-900 leading-tight"
                         >
                             Trusted by <br />
-                            <span className="text-vedic-saffron">Visionaries</span>
+                            <span className="text-blue-500">Visionaries</span>
                         </motion.h2>
 
                         <motion.p
@@ -60,7 +60,7 @@ const Testimonials = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="text-lg text-vedic-black/60 max-w-md mx-auto lg:mx-0 leading-relaxed"
+                            className="text-lg text-slate-600 max-w-md mx-auto lg:mx-0 leading-relaxed"
                         >
                             Relation so in confined smallest children unpacked delicate. Why sir end believe uncivil respect.
                         </motion.p>
@@ -71,7 +71,7 @@ const Testimonials = () => {
                             viewport={{ once: true }}
                             transition={{ delay: 0.4 }}
                         >
-                            <Link to="/testimonials" className="inline-block px-8 py-4 rounded-full bg-gradient-to-r from-vedic-saffron to-[#FF9933] text-white font-bold shadow-lg shadow-vedic-saffron/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <Link to="/testimonials" className="inline-block px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold shadow-lg shadow-blue-500/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                                 View More
                             </Link>
                         </motion.div>
@@ -87,11 +87,11 @@ const Testimonials = () => {
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.2 }}
                                 whileHover={{ scale: 1.02, x: -10 }}
-                                className={`relative bg-white p-6 md:p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group ${idx === 1 ? 'lg:-translate-x-12 z-20 border-vedic-saffron/20 shadow-lg' : 'z-10 opacity-90 hover:opacity-100'
+                                className={`relative bg-white p-6 md:p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group ${idx === 1 ? 'lg:-translate-x-12 z-20 border-blue-500/20 shadow-lg' : 'z-10 opacity-90 hover:opacity-100'
                                     }`}
                             >
                                 {/* Left Accent Line (The "Purple Line" in reference) */}
-                                <div className={`absolute left-0 top-8 bottom-8 w-1 rounded-r-full group-hover:h-full group-hover:top-0 group-hover:bottom-0 transition-all duration-300 ${idx === 1 ? 'bg-vedic-saffron' : 'bg-gray-200 group-hover:bg-vedic-saffron/50'
+                                <div className={`absolute left-0 top-8 bottom-8 w-1 rounded-r-full group-hover:h-full group-hover:top-0 group-hover:bottom-0 transition-all duration-300 ${idx === 1 ? 'bg-blue-500' : 'bg-gray-200 group-hover:bg-blue-500/50'
                                     }`} />
 
                                 <div className="flex gap-6 items-start pl-4">
@@ -105,12 +105,12 @@ const Testimonials = () => {
                                     <div className="flex-grow">
                                         <div className="flex justify-between items-start mb-2">
                                             <div>
-                                                <h4 className="font-bold text-lg text-vedic-black">{item.name}</h4>
-                                                <p className="text-xs font-semibold uppercase tracking-wider text-vedic-saffron/80">{item.role}</p>
+                                                <h4 className="font-bold text-lg text-slate-900">{item.name}</h4>
+                                                <p className="text-xs font-semibold uppercase tracking-wider text-blue-500/80">{item.role}</p>
                                             </div>
                                             <Quote className="w-8 h-8 text-gray-100 fill-gray-50 -mt-2" />
                                         </div>
-                                        <p className="text-sm text-vedic-black/60 leading-relaxed font-medium">
+                                        <p className="text-sm text-slate-600 leading-relaxed font-medium">
                                             {item.content}
                                         </p>
                                     </div>

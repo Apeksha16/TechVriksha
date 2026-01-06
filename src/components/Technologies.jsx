@@ -41,8 +41,8 @@ const Technologies = () => {
             className={`
                 relative flex flex-col items-center justify-center p-6 rounded-2xl transition-all duration-300 cursor-pointer group
                 ${isDark
-                    ? 'bg-[#0F172A] border border-white/10 hover:border-vedic-saffron/30 hover:bg-[#1E293B] shadow-xl'
-                    : 'bg-white shadow-xl hover:shadow-2xl hover:shadow-vedic-saffron/10 border border-[#0F172A]/10'
+                    ? 'bg-[#0F172A] border border-white/10 hover:border-blue-500/30 hover:bg-[#1E293B] shadow-xl'
+                    : 'bg-white shadow-xl hover:shadow-2xl hover:shadow-blue-500/10 border border-[#0F172A]/10'
                 }
             `}
         >
@@ -50,23 +50,23 @@ const Technologies = () => {
             < div className={`
                 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 transition-all duration-300
                 ${isDark
-                    ? 'bg-gradient-to-br from-vedic-saffron/20 to-vedic-saffron/5 group-hover:from-vedic-saffron/30 group-hover:to-vedic-saffron/10'
-                    : 'bg-vedic-saffron/10 group-hover:bg-vedic-saffron/20'
+                    ? 'bg-gradient-to-br from-blue-500/20 to-blue-500/5 group-hover:from-blue-500/30 group-hover:to-blue-500/10'
+                    : 'bg-blue-500/10 group-hover:bg-blue-500/20'
                 }
             `}>
                 <item.icon
-                    className={`w-8 h-8 transition-transform duration-300 group-hover:scale-110 ${isDark ? 'text-vedic-saffron' : 'text-vedic-saffron-dark'}`}
+                    className={`w-8 h-8 transition-transform duration-300 group-hover:scale-110 ${isDark ? 'text-white' : 'text-blue-600'}`}
                     strokeWidth={1.5}
                 />
             </div>
 
             {/* Label */}
-            <span className={`text-sm font-semibold tracking-wide ${isDark ? 'text-white/90' : 'text-vedic-black'}`}>
+            <span className={`text-sm font-semibold tracking-wide ${isDark ? 'text-white/90' : 'text-slate-900'}`}>
                 {item.label}
             </span>
 
             {/* Category (Optional subtext) */}
-            <span className={`text-[10px] mt-1 font-medium uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity ${isDark ? 'text-white/40' : 'text-vedic-black/40'}`}>
+            <span className={`text-[10px] mt-1 font-medium uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity ${isDark ? 'text-white/40' : 'text-slate-500/40'}`}>
                 {item.category}
             </span>
         </motion.div >
@@ -84,8 +84,8 @@ const Technologies = () => {
                         viewport={{ once: true }}
                         className="mb-16"
                     >
-                        <h2 className="text-5xl lg:text-6xl font-serif text-vedic-black leading-tight">
-                            <span className="text-vedic-saffron">Technologies library</span> <br />
+                        <h2 className="text-5xl lg:text-6xl font-serif text-slate-900 leading-tight">
+                            <span className="text-blue-500">Technologies library</span> <br />
                             to build your own solutions
                         </h2>
                     </motion.div>
@@ -112,7 +112,7 @@ const Technologies = () => {
                         transition={{ delay: 0.5 }}
                         className="absolute bottom-10 right-10"
                     >
-                        <a href="/services" className="text-[#0F172A]/60 hover:text-vedic-saffron text-sm font-medium flex items-center gap-2 group transition-colors">
+                        <a href="/services" className="text-[#0F172A]/60 hover:text-blue-500 text-sm font-medium flex items-center gap-2 group transition-colors">
                             Explore All Technologies
                             <span className="group-hover:translate-x-1 transition-transform">→</span>
                         </a>

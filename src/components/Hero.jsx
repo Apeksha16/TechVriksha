@@ -12,7 +12,7 @@ const Hero = () => {
             {/* Abstract Graphic Blob */}
             <motion.div
                 style={{ y: y1 }}
-                className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-vedic-saffron/20 via-vedic-gold/10 to-white/5 rounded-full blur-3xl pointer-events-none"
+                className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-blue-500/20 via-cyan-500/10 to-white/5 rounded-full blur-3xl pointer-events-none"
             />
 
             <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-20">
@@ -48,7 +48,7 @@ const Hero = () => {
                             className="relative"
                         >
                             <h1 className="text-[12vw] md:text-[9rem] leading-[0.8] font-black tracking-tighter text-transparent"
-                                style={{ WebkitTextStroke: "2px #FD7503" }} // Saffron stroke
+                                style={{ WebkitTextStroke: "2px #3B82F6" }} // Blue stroke
                             >
                                 DIGITAL
                             </h1>
@@ -56,7 +56,7 @@ const Hero = () => {
                             <motion.div
                                 animate={{ y: [-15, 15, -15], rotate: [0, 5, -5, 0] }}
                                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                                className="absolute -top-10 right-[10%] w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-vedic-saffron to-vedic-gold rounded-full mix-blend-multiply opacity-80 blur-xl"
+                                className="absolute -top-10 right-[10%] w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full mix-blend-multiply opacity-80 blur-xl"
                             />
                         </motion.div>
 
@@ -96,7 +96,7 @@ const Hero = () => {
                                             </text>
                                         </svg>
                                     </motion.div>
-                                    <ArrowRight className="w-6 h-6 md:w-8 md:h-8 text-vedic-saffron -rotate-45" />
+                                    <ArrowRight className="w-6 h-6 md:w-8 md:h-8 text-blue-500 -rotate-45" />
                                 </div>
                             </motion.div>
                         </div>
@@ -125,7 +125,7 @@ const Hero = () => {
                             </motion.span>
 
                             <h2 className="text-4xl md:text-5xl font-bold text-[#F8FAFC] leading-tight">
-                                Bridging <span className="text-vedic-saffron">Tradition</span> <br />
+                                Bridging <span className="text-blue-500">Tradition</span> <br />
                                 & Future Tech.
                             </h2>
                         </div>
@@ -136,7 +136,7 @@ const Hero = () => {
 
                         <Link
                             to="/about"
-                            className="inline-flex items-center gap-3 bg-[#F8FAFC] text-[#0F172A] pl-8 pr-6 py-4 rounded-full font-semibold hover:bg-vedic-saffron hover:text-white transition-all duration-300 group shadow-lg shadow-black/20"
+                            className="inline-flex items-center gap-3 bg-[#F8FAFC] text-[#0F172A] pl-8 pr-6 py-4 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 group shadow-lg shadow-black/20"
                         >
                             <span>Read Our Story</span>
                             <div className="w-8 h-8 rounded-full bg-[#0F172A]/20 flex items-center justify-center group-hover:bg-white/20 transition-colors group-hover:scale-110 transition-transform">
@@ -154,13 +154,13 @@ const Hero = () => {
                         className="lg:col-span-7 relative h-full min-h-[500px] flex items-center"
                     >
                         {/* Abstract Background Elements */}
-                        <div className="absolute inset-0 bg-gradient-to-tr from-vedic-saffron/5 via-transparent to-white/5 rounded-[3rem] -rotate-3 transform scale-95" />
+                        <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/5 via-transparent to-white/5 rounded-[3rem] -rotate-3 transform scale-95" />
 
                         {/* Main Glass Card */}
                         <div className="relative w-full bg-[#F8FAFC]/5 backdrop-blur-xl border border-[#F8FAFC]/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl overflow-hidden">
                             {/* Decorative Shine */}
-                            <div className="absolute -top-20 -right-20 w-64 h-64 bg-vedic-saffron/10 rounded-full blur-3xl" />
-                            <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-vedic-gold/10 rounded-full blur-3xl" />
+                            <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
+                            <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl" />
 
                             {/* Feature Highlight */}
                             <div className="mb-12 relative z-10">
@@ -169,7 +169,7 @@ const Hero = () => {
                                         <h3 className="text-2xl font-bold text-[#F8FAFC] mb-2">Innovation at Scale</h3>
                                         <p className="text-[#F8FAFC]/60">Delivering excellence across dimensions</p>
                                     </div>
-                                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-vedic-saffron to-vedic-gold flex items-center justify-center shadow-lg transform rotate-12">
+                                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg transform rotate-12">
                                         <Award className="text-white w-6 h-6" />
                                     </div>
                                 </div>
@@ -178,11 +178,11 @@ const Hero = () => {
                                         initial={{ width: 0 }}
                                         whileInView={{ width: "85%" }}
                                         transition={{ duration: 1.5, ease: "easeOut" }}
-                                        className="h-full bg-gradient-to-r from-vedic-saffron to-vedic-gold rounded-full"
+                                        className="h-full bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"
                                     />
                                 </div>
                                 <div className="mt-2 flex justify-end">
-                                    <span className="text-xs font-bold text-vedic-saffron">98% Satisfaction</span>
+                                    <span className="text-xs font-bold text-blue-500">98% Satisfaction</span>
                                 </div>
                             </div>
 
@@ -194,8 +194,8 @@ const Hero = () => {
                                     { number: '500+', label: 'Clients', icon: Users }
                                 ].map((stat, idx) => (
                                     <div key={idx} className="text-center group">
-                                        <div className="mb-3 mx-auto w-10 h-10 rounded-full bg-vedic-saffron/5 group-hover:bg-vedic-saffron/10 flex items-center justify-center transition-colors">
-                                            <stat.icon className="w-5 h-5 text-vedic-saffron group-hover:scale-110 transition-transform" />
+                                        <div className="mb-3 mx-auto w-10 h-10 rounded-full bg-blue-500/5 group-hover:bg-blue-500/10 flex items-center justify-center transition-colors">
+                                            <stat.icon className="w-5 h-5 text-blue-500 group-hover:scale-110 transition-transform" />
                                         </div>
                                         <div className="text-2xl md:text-3xl font-bold text-[#F8FAFC] mb-1">{stat.number}</div>
                                         <div className="text-xs uppercase tracking-wide text-[#F8FAFC]/50 font-semibold">{stat.label}</div>
@@ -216,7 +216,7 @@ const Hero = () => {
                                 ))}
                             </div>
                             <div className="text-xs font-semibold">
-                                <span className="text-vedic-saffron">Join</span> our <br /> community
+                                <span className="text-blue-500">Join</span> our <br /> community
                             </div>
                         </motion.div>
                     </motion.div>

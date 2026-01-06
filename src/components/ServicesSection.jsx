@@ -99,9 +99,7 @@ const ServicesSection = () => {
                     transition={{ duration: 0.6 }}
                     className="flex flex-wrap items-center gap-4 mb-24"
                 >
-                    <div className="px-8 py-4 rounded-full bg-[#1E293B] shadow-md shadow-black/5 text-[#F8FAFC] font-bold tracking-wide border border-white/10">
-                        Services
-                    </div>
+
                     <div className="px-8 py-4 rounded-full bg-vedic-saffron text-white font-bold shadow-xl shadow-vedic-saffron/30 tracking-wide">
                         Innovative Branding Solutions
                     </div>

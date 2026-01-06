@@ -11,7 +11,7 @@ const OurPromise = () => {
             title: 'Rooted in Tradition',
             description: 'Timeless wisdom guiding modern innovation.',
             icon: Leaf,
-            color: 'bg-vedic-saffron',
+            color: 'bg-blue-500',
             textColor: 'text-white'
         },
         {
@@ -19,7 +19,7 @@ const OurPromise = () => {
             title: 'Premium Quality',
             description: 'Meticulous attention to every pixel and line of code.',
             icon: Award,
-            color: 'bg-[#1E293B]',
+            color: 'bg-slate-700',
             textColor: 'text-white'
         },
         {
@@ -27,7 +27,7 @@ const OurPromise = () => {
             title: 'Transparent Process',
             description: 'Clear communication throughout the journey.',
             icon: Search,
-            color: 'bg-vedic-black',
+            color: 'bg-slate-800',
             textColor: 'text-white'
         }
     ];
@@ -56,16 +56,17 @@ const OurPromise = () => {
                     whileInView={{ y: -50, opacity: 1 }}
                     animate={{ y: [-50, -60, -50] }}
                     transition={{ duration: 2, repeat: Infinity }}
-                    className="absolute -top-4 w-20 h-20 bg-white rounded-full border-4 border-vedic-saffron flex items-center justify-center shadow-xl z-50"
+                    className="absolute -top-4 w-20 h-20 bg-white rounded-full border-4 border-blue-500 flex items-center justify-center shadow-xl z-50"
                 >
-                    <Target className="w-10 h-10 text-vedic-saffron" />
+                    <Target className="w-10 h-10 text-blue-500" />
                 </motion.div>
-            )}
+            )
+            }
 
             <h3 className={`font-bold uppercase tracking-widest ${item.textColor}`}>
                 {item.title}
             </h3>
-        </motion.div>
+        </motion.div >
     );
 
     return (
@@ -90,7 +91,7 @@ const OurPromise = () => {
                             <motion.div
                                 key={item.id}
                                 className={`flex items-start gap-6 p-6 rounded-2xl cursor-pointer transition-all duration-300 ${activeStep === item.id
-                                    ? 'bg-white shadow-xl scale-105 border-l-4 border-vedic-saffron'
+                                    ? 'bg-white shadow-xl scale-105 border-l-4 border-blue-500'
                                     : 'hover:bg-[#F8FAFC]/10 border-l-4 border-transparent'
                                     }`}
                                 onMouseEnter={() => setActiveStep(item.id)}
@@ -98,16 +99,16 @@ const OurPromise = () => {
                                 whileInView={{ x: 0, opacity: 1 }}
                                 transition={{ delay: item.id * 0.1 }}
                             >
-                                <div className={`w-14 h-14 rounded-full flex items-center justify-center shrink-0 transition-colors ${activeStep === item.id ? 'bg-vedic-saffron text-white' : 'bg-[#F8FAFC]/10 text-[#F8FAFC]/40'
+                                <div className={`w-14 h-14 rounded-full flex items-center justify-center shrink-0 transition-colors ${activeStep === item.id ? 'bg-blue-500 text-white' : 'bg-slate-800 text-slate-400'
                                     }`}>
                                     <item.icon className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <h3 className={`text-xl font-bold mb-2 ${activeStep === item.id ? 'text-vedic-black' : 'text-[#F8FAFC]/80'
+                                    <h3 className={`text-xl font-bold mb-2 ${activeStep === item.id ? 'text-slate-900' : 'text-slate-300'
                                         }`}>
                                         {item.title}
                                     </h3>
-                                    <p className={`text-sm leading-relaxed ${activeStep === item.id ? 'text-vedic-black/70' : 'text-[#F8FAFC]/50'
+                                    <p className={`text-sm leading-relaxed ${activeStep === item.id ? 'text-slate-900/70' : 'text-slate-400'
                                         }`}>
                                         {item.description}
                                     </p>

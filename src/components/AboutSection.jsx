@@ -26,7 +26,7 @@ const AboutSection = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 1 }}
                         >
-                            <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif text-vedic-black leading-[0.9]">
+                            <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif text-slate-900 leading-[0.9]">
                                 Designing For <br />
                                 <span className="italic relative">
                                     Tomorrow's
@@ -34,7 +34,7 @@ const AboutSection = () => {
                                         initial={{ width: 0 }}
                                         whileInView={{ width: '100%' }}
                                         transition={{ delay: 0.5, duration: 0.8 }}
-                                        className="absolute bottom-2 left-0 h-[2px] bg-vedic-saffron"
+                                        className="absolute bottom-2 left-0 h-[2px] bg-blue-500"
                                     />
                                 </span> <br />
                                 Success Today
@@ -53,9 +53,9 @@ const AboutSection = () => {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.3 + idx * 0.1, duration: 0.8 }}
-                                    className="flex items-center gap-4 text-vedic-black/60 hover:text-[#FF9933] transition-colors cursor-default group"
+                                    className="flex items-center gap-4 text-slate-600 hover:text-blue-600 transition-colors cursor-default group"
                                 >
-                                    <span className="w-12 h-[1px] bg-vedic-black/20 group-hover:bg-[#FF9933] transition-colors" />
+                                    <span className="w-12 h-[1px] bg-slate-900/20 group-hover:bg-blue-600 transition-colors" />
                                     <span className="text-lg font-light tracking-wide">{item}</span>
                                 </motion.div>
                             ))}
@@ -91,7 +91,7 @@ const AboutSection = () => {
                                 </motion.button>
 
                                 {/* Pulse Effect */}
-                                <div className="absolute w-24 h-24 bg-vedic-saffron/20 rounded-full animate-ping pointer-events-none" />
+                                <div className="absolute w-24 h-24 bg-blue-500/20 rounded-full animate-ping pointer-events-none" />
                             </div>
                         </motion.div>
 
@@ -119,7 +119,7 @@ const AboutSection = () => {
                                     </svg>
                                 </motion.div>
                                 <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="w-12 h-12 bg-[#FF9933] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                                         <ArrowRight className="w-6 h-6 text-white -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
                                     </div>
                                 </div>
