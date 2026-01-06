@@ -131,14 +131,14 @@ const About = () => {
     const [hoveredCard, setHoveredCard] = useState(null);
 
     return (
-        <div className="relative min-h-screen bg-[#0F172A] overflow-hidden">
+        <div className="relative min-h-screen bg-[#F8FAFC] overflow-hidden">
             {/* Animated Background Elements */}
             <motion.div
                 style={{ y, opacity }}
                 className="absolute inset-0 overflow-hidden pointer-events-none"
             >
-                <div className="absolute top-20 left-10 w-96 h-96 bg-vedic-saffron/10 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-20 right-10 w-96 h-96 bg-vedic-gold/10 rounded-full blur-3xl"></div>
+                <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
             </motion.div>
 
             <div className="relative z-10">
@@ -155,13 +155,13 @@ const About = () => {
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.2, duration: 0.6 }}
-                                className="inline-block py-2 px-5 rounded-full bg-vedic-saffron/10 text-vedic-saffron border border-vedic-saffron/20 text-xs md:text-sm font-semibold tracking-widest uppercase mb-8"
+                                className="inline-block py-2 px-5 rounded-full bg-blue-500/10 text-blue-600 border border-blue-200 text-xs md:text-sm font-semibold tracking-widest uppercase mb-8"
                             >
                                 <Sparkles className="inline w-4 h-4 mr-2" />
                                 Our Journey
                             </motion.span>
 
-                            <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-serif font-bold text-white leading-[0.9] mb-8 tracking-tight">
+                            <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-serif font-bold text-slate-900 leading-[0.9] mb-8 tracking-tight">
                                 <motion.span
                                     initial={{ opacity: 0, x: -50 }}
                                     animate={{ opacity: 1, x: 0 }}
@@ -174,7 +174,7 @@ const About = () => {
                                     initial={{ opacity: 0, x: 50 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 0.5, duration: 0.8 }}
-                                    className="block text-gradient-saffron"
+                                    className="block text-blue-600"
                                 >
                                     Digital
                                 </motion.span>
@@ -192,7 +192,7 @@ const About = () => {
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.9, duration: 0.8 }}
-                                className="text-xl md:text-2xl lg:text-3xl text-white/70 max-w-3xl mx-auto leading-relaxed font-light"
+                                className="text-xl md:text-2xl lg:text-3xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light"
                             >
                                 A passionate team of technologists and designers dedicated to creating digital excellence with a touch of timeless wisdom.
                             </motion.p>
@@ -216,21 +216,21 @@ const About = () => {
                                     whileHover={{ y: -10, scale: 1.05 }}
                                     className="relative group"
                                 >
-                                    <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-vedic-saffron/30 transition-all duration-300 cursor-pointer">
+                                    <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer">
                                         <motion.div
                                             whileHover={{ rotate: 360, scale: 1.1 }}
                                             transition={{ duration: 0.6 }}
-                                            className={`w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center text-white shadow-xl`}
+                                            className={`w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center text-white shadow-lg`}
                                         >
                                             <stat.icon size={32} />
                                         </motion.div>
-                                        <div className="text-4xl md:text-5xl font-serif font-bold text-white mb-2 text-center">
+                                        <div className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-2 text-center">
                                             {stat.value}
                                         </div>
-                                        <div className="text-sm font-semibold text-white/80 mb-2 text-center">
+                                        <div className="text-sm font-semibold text-slate-600 mb-2 text-center">
                                             {stat.label}
                                         </div>
-                                        <div className="text-xs text-white/50 text-center">
+                                        <div className="text-xs text-slate-400 text-center">
                                             {stat.description}
                                         </div>
                                     </div>
@@ -242,12 +242,12 @@ const About = () => {
 
 
 
-                {/* Team Profiles Section - Cream Background */}
-                <section className="py-32 px-4 relative overflow-hidden bg-[#F8FAFC]">
+                {/* Team Profiles Section - Dark Background */}
+                <section className="py-32 px-4 relative overflow-hidden bg-[#0F172A]">
                     {/* Background Elements */}
                     <div className="absolute inset-0">
-                        <div className="absolute top-1/4 left-0 w-96 h-96 bg-vedic-saffron/5 rounded-full blur-3xl"></div>
-                        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-vedic-gold/5 rounded-full blur-3xl"></div>
+                        <div className="absolute top-1/4 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+                        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
                     </div>
 
                     <div className="max-w-7xl mx-auto relative z-10">
@@ -262,14 +262,14 @@ const About = () => {
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                className="inline-block py-2 px-5 rounded-full bg-vedic-saffron/10 text-vedic-saffron border border-vedic-saffron/20 text-xs md:text-sm font-semibold tracking-widest uppercase mb-8"
+                                className="inline-block py-2 px-5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs md:text-sm font-semibold tracking-widest uppercase mb-8"
                             >
                                 The Founders
                             </motion.span>
-                            <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-vedic-black leading-tight mb-6">
+                            <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white leading-tight mb-6">
                                 Meet The Team
                             </h2>
-                            <p className="text-xl text-vedic-black/60 max-w-2xl mx-auto">
+                            <p className="text-xl text-slate-400 max-w-2xl mx-auto">
                                 The brilliant minds behind Tech Vriksha
                             </p>
                         </motion.div>
@@ -394,8 +394,8 @@ const About = () => {
                     </div>
                 </section>
 
-                {/* Values & Vision Section - Brown Background */}
-                <section className="py-32 px-4 bg-[#0F172A]">
+                {/* Values & Vision Section - Light Background */}
+                <section className="py-32 px-4 bg-[#F8FAFC]">
                     <div className="max-w-7xl mx-auto">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
@@ -404,11 +404,11 @@ const About = () => {
                             transition={{ duration: 0.8 }}
                             className="text-center mb-16"
                         >
-                            <h2 className="text-sm font-bold text-vedic-saffron tracking-widest uppercase mb-4">About Us</h2>
-                            <h2 className="text-5xl md:text-6xl font-serif font-bold text-white leading-tight mb-6">
+                            <h2 className="text-sm font-bold text-blue-600 tracking-widest uppercase mb-4">About Us</h2>
+                            <h2 className="text-5xl md:text-6xl font-serif font-bold text-slate-900 leading-tight mb-6">
                                 Unveiling Our Identity,<br /> Vision and Values
                             </h2>
-                            <p className="text-xl text-white/60 max-w-3xl mx-auto">
+                            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
                                 We're passionate about digital innovation. With years of experience in the industry, we've established ourselves as leaders in providing high-quality technical solutions.
                             </p>
                         </motion.div>
@@ -434,8 +434,8 @@ const About = () => {
                                 </div>
                             </motion.div>
 
-                            {/* White/Cream Content Card */}
-                            <div className="bg-[#F8FAFC] rounded-[3rem] pt-32 pb-20 px-8 md:px-20 relative z-10 text-vedic-black">
+                            {/* Dark Content Card */}
+                            <div className="bg-[#0F172A] rounded-[3rem] pt-32 pb-20 px-8 md:px-20 relative z-10 text-white">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-32 relative">
                                     {/* Vertical Divider */}
                                     <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-vedic-brown/10 -translate-x-1/2"></div>
@@ -449,12 +449,12 @@ const About = () => {
                                         className="text-center md:text-left"
                                     >
                                         <div className="flex flex-col items-center md:items-start gap-4 mb-6">
-                                            <div className="w-12 h-12 rounded-full bg-vedic-saffron/10 flex items-center justify-center text-vedic-saffron">
+                                            <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500">
                                                 <Target size={24} />
                                             </div>
-                                            <h3 className="text-3xl font-serif font-bold text-[#0F172A]">Our Vision</h3>
+                                            <h3 className="text-3xl font-serif font-bold text-white">Our Vision</h3>
                                         </div>
-                                        <p className="text-vedic-black/70 text-lg leading-relaxed">
+                                        <p className="text-slate-400 text-lg leading-relaxed">
                                             To lead the way in digital transformation by delivering innovative, sustainable, and scalable solutions that bridge the gap between ancient wisdom and modern technology.
                                         </p>
                                     </motion.div>
@@ -468,12 +468,12 @@ const About = () => {
                                         className="text-center md:text-left"
                                     >
                                         <div className="flex flex-col items-center md:items-start gap-4 mb-6">
-                                            <div className="w-12 h-12 rounded-full bg-vedic-saffron/10 flex items-center justify-center text-vedic-saffron">
+                                            <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500">
                                                 <Rocket size={24} />
                                             </div>
-                                            <h3 className="text-3xl font-serif font-bold text-[#0F172A]">Our Mission</h3>
+                                            <h3 className="text-3xl font-serif font-bold text-white">Our Mission</h3>
                                         </div>
-                                        <p className="text-vedic-black/70 text-lg leading-relaxed">
+                                        <p className="text-slate-400 text-lg leading-relaxed">
                                             To leverage our expertise, resources, and passion to manufacture digital products that exceed industry standards and empower businesses to reach their full potential.
                                         </p>
                                     </motion.div>
@@ -490,8 +490,8 @@ const About = () => {
                     </div>
                 </section>
 
-                {/* Journey Section - Winding Road Redesign - Cream Background */}
-                <section className="py-32 px-4 overflow-hidden text-center bg-[#F8FAFC]">
+                {/* Journey Section - Winding Road Redesign - Dark Background */}
+                <section className="py-32 px-4 overflow-hidden text-center bg-[#0F172A]">
                     <div className="max-w-7xl mx-auto">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
@@ -500,10 +500,10 @@ const About = () => {
                             transition={{ duration: 0.8 }}
                             className="text-center mb-24"
                         >
-                            <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-vedic-black leading-tight mb-6">
+                            <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white leading-tight mb-6">
                                 Company Journey
                             </h2>
-                            <p className="text-xl text-vedic-black/60 max-w-2xl mx-auto">
+                            <p className="text-xl text-slate-400 max-w-2xl mx-auto">
                                 From 2015 to Today: A path of constant innovation
                             </p>
                         </motion.div>
@@ -564,13 +564,13 @@ const About = () => {
                                 transition={{ delay: 0.2 }}
                                 className="absolute left-[5%] bottom-[15%] w-72 text-left"
                             >
-                                <div className="absolute left-1/2 bottom-[-40px] h-[100px] w-1 bg-[#0F172A]/20">
-                                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-vedic-saffron"></div>
+                                <div className="absolute left-1/2 bottom-[-40px] h-[100px] w-1 bg-white/20">
+                                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-blue-500"></div>
                                 </div>
-                                <div className="bg-[#F8FAFC]/80 backdrop-blur-md p-6 rounded-2xl border border-[#1E293B]/10 hover:border-vedic-saffron transition-colors cursor-pointer group shadow-lg">
-                                    <h3 className="text-4xl font-bold text-vedic-saffron mb-2">2015</h3>
-                                    <h4 className="text-lg font-semibold text-[#0F172A] mb-2">{timeline[0].title}</h4>
-                                    <p className="text-sm text-[#0F172A]/70">{timeline[0].description}</p>
+                                <div className="bg-[#1E293B]/80 backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:border-blue-500 transition-colors cursor-pointer group shadow-lg">
+                                    <h3 className="text-4xl font-bold text-blue-500 mb-2">2015</h3>
+                                    <h4 className="text-lg font-semibold text-white mb-2">{timeline[0].title}</h4>
+                                    <p className="text-sm text-slate-400">{timeline[0].description}</p>
                                 </div>
                             </motion.div>
 
@@ -582,13 +582,13 @@ const About = () => {
                                 transition={{ delay: 0.4 }}
                                 className="absolute left-[35%] top-[55%] w-72 text-left"
                             >
-                                <div className="absolute left-1/2 top-full h-[60px] w-1 bg-[#0F172A]/20">
-                                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-vedic-saffron"></div>
+                                <div className="absolute left-1/2 top-full h-[60px] w-1 bg-white/20">
+                                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-blue-500"></div>
                                 </div>
-                                <div className="bg-[#F8FAFC]/80 backdrop-blur-md p-6 rounded-2xl border border-[#1E293B]/10 hover:border-vedic-saffron transition-colors cursor-pointer group shadow-lg">
-                                    <h3 className="text-4xl font-bold text-vedic-saffron mb-2">2018</h3>
-                                    <h4 className="text-lg font-semibold text-[#0F172A] mb-2">{timeline[1].title}</h4>
-                                    <p className="text-sm text-[#0F172A]/70">{timeline[1].description}</p>
+                                <div className="bg-[#1E293B]/80 backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:border-blue-500 transition-colors cursor-pointer group shadow-lg">
+                                    <h3 className="text-4xl font-bold text-blue-500 mb-2">2018</h3>
+                                    <h4 className="text-lg font-semibold text-white mb-2">{timeline[1].title}</h4>
+                                    <p className="text-sm text-slate-400">{timeline[1].description}</p>
                                 </div>
                             </motion.div>
 
@@ -600,13 +600,13 @@ const About = () => {
                                 transition={{ delay: 0.6 }}
                                 className="absolute left-[60%] top-[25%] w-72 text-left"
                             >
-                                <div className="absolute left-1/2 top-full h-[100px] w-1 bg-[#0F172A]/20">
-                                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-vedic-saffron"></div>
+                                <div className="absolute left-1/2 top-full h-[100px] w-1 bg-white/20">
+                                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-blue-500"></div>
                                 </div>
-                                <div className="bg-[#F8FAFC]/80 backdrop-blur-md p-6 rounded-2xl border border-[#1E293B]/10 hover:border-vedic-saffron transition-colors cursor-pointer group shadow-lg">
-                                    <h3 className="text-4xl font-bold text-vedic-saffron mb-2">2020</h3>
-                                    <h4 className="text-lg font-semibold text-[#0F172A] mb-2">{timeline[2].title}</h4>
-                                    <p className="text-sm text-[#0F172A]/70">{timeline[2].description}</p>
+                                <div className="bg-[#1E293B]/80 backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:border-blue-500 transition-colors cursor-pointer group shadow-lg">
+                                    <h3 className="text-4xl font-bold text-blue-500 mb-2">2020</h3>
+                                    <h4 className="text-lg font-semibold text-white mb-2">{timeline[2].title}</h4>
+                                    <p className="text-sm text-slate-400">{timeline[2].description}</p>
                                 </div>
                             </motion.div>
 
@@ -618,13 +618,13 @@ const About = () => {
                                 transition={{ delay: 0.8 }}
                                 className="absolute right-[5%] top-[5%] w-72 text-left"
                             >
-                                <div className="absolute left-1/2 top-full h-[80px] w-1 bg-[#0F172A]/20">
-                                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-vedic-saffron"></div>
+                                <div className="absolute left-1/2 top-full h-[80px] w-1 bg-white/20">
+                                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-blue-500"></div>
                                 </div>
-                                <div className="bg-[#F8FAFC]/80 backdrop-blur-md p-6 rounded-2xl border border-[#1E293B]/10 hover:border-vedic-saffron transition-colors cursor-pointer group shadow-lg">
-                                    <h3 className="text-4xl font-bold text-vedic-saffron mb-2">2024</h3>
-                                    <h4 className="text-lg font-semibold text-[#0F172A] mb-2">{timeline[3].title}</h4>
-                                    <p className="text-sm text-[#0F172A]/70">{timeline[3].description}</p>
+                                <div className="bg-[#1E293B]/80 backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:border-blue-500 transition-colors cursor-pointer group shadow-lg">
+                                    <h3 className="text-4xl font-bold text-blue-500 mb-2">2024</h3>
+                                    <h4 className="text-lg font-semibold text-white mb-2">{timeline[3].title}</h4>
+                                    <p className="text-sm text-slate-400">{timeline[3].description}</p>
                                 </div>
                             </motion.div>
                         </div>
@@ -645,8 +645,8 @@ const About = () => {
                     </div>
                 </section>
 
-                {/* Company Story - Redesigned Stacked Cards - Brown Background */}
-                <section className="py-32 px-4 relative bg-[#0F172A]">
+                {/* Company Story - Redesigned Stacked Cards - Light Background */}
+                <section className="py-32 px-4 relative bg-[#F8FAFC]">
                     <div className="max-w-4xl mx-auto">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
@@ -654,8 +654,8 @@ const About = () => {
                             viewport={{ once: true }}
                             className="text-center mb-20"
                         >
-                            <h2 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6">Our Story</h2>
-                            <p className="text-xl text-white/60">The chapters that define who we are</p>
+                            <h2 className="text-5xl md:text-7xl font-serif font-bold text-slate-900 mb-6">Our Story</h2>
+                            <p className="text-xl text-slate-600">The chapters that define who we are</p>
                         </motion.div>
 
                         <div className="relative isolate px-4 md:px-0 space-y-[-120px] pb-32">
