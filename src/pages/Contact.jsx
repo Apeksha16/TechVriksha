@@ -29,7 +29,7 @@ const Contact = () => {
     };
 
     return (
-        <div className="bg-[#FFF9F3] min-h-screen pt-20">
+        <div className="bg-[#F8FAFC] min-h-screen pt-20">
             {/* Header Section */}
             <div className="text-center py-16 px-4">
                 <h4 className="text-vedic-saffron font-bold text-sm tracking-[0.2em] uppercase mb-4">Contact Us</h4>
@@ -63,7 +63,7 @@ const Contact = () => {
                                         onChange={handleChange}
                                         placeholder="Ex. John Doe"
                                         required
-                                        className="w-full bg-[#f4f1ea] border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-vedic-saffron/20 transition-all outline-none"
+                                        className="w-full bg-[#F1F5F9] border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-vedic-saffron/20 transition-all outline-none"
                                     />
                                 </div>
                                 <div>
@@ -75,7 +75,7 @@ const Contact = () => {
                                         onChange={handleChange}
                                         placeholder="example@gmail.com"
                                         required
-                                        className="w-full bg-[#f4f1ea] border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-vedic-saffron/20 transition-all outline-none"
+                                        className="w-full bg-[#F1F5F9] border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-vedic-saffron/20 transition-all outline-none"
                                     />
                                 </div>
                             </div>
@@ -89,7 +89,7 @@ const Contact = () => {
                                     onChange={handleChange}
                                     placeholder="Enter Subject"
                                     required
-                                    className="w-full bg-[#f4f1ea] border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-vedic-saffron/20 transition-all outline-none"
+                                    className="w-full bg-[#F1F5F9] border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-vedic-saffron/20 transition-all outline-none"
                                 />
                             </div>
 
@@ -102,14 +102,14 @@ const Contact = () => {
                                     rows="6"
                                     placeholder="Enter here.."
                                     required
-                                    className="w-full bg-[#f4f1ea] border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-vedic-saffron/20 transition-all outline-none resize-none"
+                                    className="w-full bg-[#F1F5F9] border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-vedic-saffron/20 transition-all outline-none resize-none"
                                 />
                             </div>
 
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="inline-flex items-center gap-2 bg-[#FD7503] hover:bg-[#e06502] text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
+                                className="inline-flex items-center gap-2 bg-[#3B82F6] hover:bg-[#2563EB] text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
                             >
                                 {isSubmitting ? 'Sending...' : 'Send Message'}
                                 {!isSubmitting && <ArrowRight className="w-5 h-5" />}
@@ -130,16 +130,16 @@ const Contact = () => {
 
                     {/* RIGHT: Info Card */}
                     <div className="w-full lg:w-2/5 mt-8 lg:mt-0">
-                        <div className="bg-[#2D1B15] text-white rounded-[2.5rem] p-10 lg:p-12 shadow-2xl relative overflow-hidden">
+                        <div className="bg-[#1E293B] text-white rounded-[2.5rem] p-10 lg:p-12 shadow-2xl relative overflow-hidden">
                             {/* Decorative Background Elements */}
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-[#FD7503] rounded-full filter blur-[80px] opacity-10 translate-x-1/3 -translate-y-1/3"></div>
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-[#3B82F6] rounded-full filter blur-[80px] opacity-10 translate-x-1/3 -translate-y-1/3"></div>
 
                             <h3 className="text-2xl font-serif font-bold mb-8">Contact Information</h3>
 
                             <div className="space-y-8 relative z-10">
                                 {/* Address */}
                                 <div>
-                                    <h4 className="text-lg font-bold text-[#FD7503] mb-2">Address</h4>
+                                    <h4 className="text-lg font-bold text-[#3B82F6] mb-2">Address</h4>
                                     <p className="text-white/80 leading-relaxed">
                                         123 Innovation Drive, Tech Park<br />
                                         Mumbai, Maharashtra, India - 400001
@@ -148,14 +148,14 @@ const Contact = () => {
 
                                 {/* Contact */}
                                 <div>
-                                    <h4 className="text-lg font-bold text-[#FD7503] mb-2">Contact</h4>
+                                    <h4 className="text-lg font-bold text-[#3B82F6] mb-2">Contact</h4>
                                     <p className="text-white/80 mb-1">Phone : +91 98765 43210</p>
                                     <p className="text-white/80">Email : hello@techvriksha.com</p>
                                 </div>
 
                                 {/* Open Time */}
                                 <div>
-                                    <h4 className="text-lg font-bold text-[#FD7503] mb-2">Open Time</h4>
+                                    <h4 className="text-lg font-bold text-[#3B82F6] mb-2">Open Time</h4>
                                     <div className="text-white/80 space-y-1">
                                         <div className="flex justify-between max-w-[200px]">
                                             <span>Monday - Friday</span>
@@ -170,10 +170,10 @@ const Contact = () => {
 
                                 {/* Stay Connected */}
                                 <div>
-                                    <h4 className="text-lg font-bold text-[#FD7503] mb-4">Stay Connected</h4>
+                                    <h4 className="text-lg font-bold text-[#3B82F6] mb-4">Stay Connected</h4>
                                     <div className="flex gap-4">
                                         {[Instagram, Facebook, Twitter, Linkedin].map((Icon, i) => (
-                                            <a key={i} href="#" className="w-10 h-10 rounded-full bg-[#FD7503] flex items-center justify-center text-white hover:bg-white hover:text-[#FD7503] transition-all duration-300">
+                                            <a key={i} href="#" className="w-10 h-10 rounded-full bg-[#3B82F6] flex items-center justify-center text-white hover:bg-white hover:text-[#3B82F6] transition-all duration-300">
                                                 <Icon className="w-5 h-5" />
                                             </a>
                                         ))}
@@ -186,7 +186,7 @@ const Contact = () => {
             </div>
 
             {/* MAP SECTION */}
-            <div className="w-full h-[400px] md:h-[500px] bg-[#E5E0D8] relative">
+            <div className="w-full h-[400px] md:h-[500px] bg-[#E2E8F0] relative">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15224.9973284063!2d78.53205735541992!3d17.4477818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9975e81d7631%3A0xdc727abb61b4d081!2sApartment%20Complex!5e0!3m2!1sen!2sin!4v1709664654321!5m2!1sen!2sin"
                     width="100%"

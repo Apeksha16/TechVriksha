@@ -89,10 +89,10 @@ const FeaturedProjects = () => {
                     const isSomeoneHovered = hoveredId !== null;
 
                     // Colors
-                    const bgColor = project.isDark ? 'bg-[#6D5446]' : 'bg-white';
+                    const bgColor = project.isDark ? 'bg-[#1E293B]' : 'bg-white';
                     const textColor = project.isDark ? 'text-white' : 'text-vedic-black';
-                    const iconColor = project.isDark ? 'text-white' : 'text-[#FB9D36]';
-                    const iconBg = project.isDark ? 'bg-[#564138]' : 'bg-[#FBE9D8]';
+                    const iconColor = project.isDark ? 'text-white' : 'text-[#3B82F6]';
+                    const iconBg = project.isDark ? 'bg-[#334155]' : 'bg-[#DBEAFE]';
 
                     return (
                         <motion.div
@@ -128,7 +128,7 @@ const FeaturedProjects = () => {
                                     <h3 className="text-2xl md:text-3xl font-bold font-serif leading-none mb-2 break-words">
                                         {project.title}
                                     </h3>
-                                    <p className={`text-sm font-medium uppercase tracking-wider mb-4 ${project.isDark ? 'text-[#FB9D36]' : 'text-vedic-brown/60'}`}>
+                                    <p className={`text-sm font-medium uppercase tracking-wider mb-4 ${project.isDark ? 'text-[#3B82F6]' : 'text-vedic-black/60'}`}>
                                         {project.highlight}
                                     </p>
 
@@ -145,7 +145,7 @@ const FeaturedProjects = () => {
                                                 <p className="text-sm md:text-base opacity-80 mb-6 max-w-lg">
                                                     {project.description}
                                                 </p>
-                                                <div className="w-full h-40 bg-gradient-to-br from-vedic-saffron/10 to-vedic-brown/10 rounded-xl mb-4 overflow-hidden relative group-hover:shadow-inner">
+                                                <div className="w-full h-40 bg-gradient-to-br from-vedic-saffron/10 to-vedic-black/10 rounded-xl mb-4 overflow-hidden relative group-hover:shadow-inner">
                                                     {project.image ? (
                                                         <img
                                                             src={project.image}
@@ -180,7 +180,7 @@ const FeaturedProjects = () => {
     };
 
     return (
-        <section className="py-20 md:py-32 bg-[#FFF9F3]">
+        <section className="py-20 md:py-32 bg-[#F8FAFC]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center mb-16">

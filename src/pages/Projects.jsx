@@ -45,14 +45,14 @@ const Projects = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-[#FFF9F3] pt-20 px-4 md:px-8 pb-8 flex flex-col">
+        <div className="min-h-screen bg-[#F8FAFC] pt-20 px-4 md:px-8 pb-8 flex flex-col">
             {/* Page Header */}
             <div className="mb-8 pt-8 flex justify-between items-end">
                 <div>
                     <h5 className="text-vedic-saffron font-bold text-sm tracking-widest uppercase mb-2">Our Work</h5>
-                    <h1 className="text-4xl md:text-5xl font-serif font-bold text-vedic-brown">Selected Projects</h1>
+                    <h1 className="text-4xl md:text-5xl font-serif font-bold text-vedic-black">Selected Projects</h1>
                 </div>
-                <div className="hidden md:block text-vedic-brown/60 text-sm max-w-xs text-right">
+                <div className="hidden md:block text-vedic-black/60 text-sm max-w-xs text-right">
                     Explore our portfolio of digital solutions crafted with precision and purpose.
                 </div>
             </div>
@@ -67,13 +67,13 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         onHoverStart={() => setActiveId(project.id)}
                         onHoverEnd={() => setActiveId(null)}
-                        className={`relative flex-1 flex flex-col justify-between border-r last:border-r-0 border-vedic-brown/10 overflow-hidden cursor-pointer group transition-[flex] duration-700 ease-[cubic-bezier(0.32,0,0.67,0)]
+                        className={`relative flex-1 flex flex-col justify-between border-r last:border-r-0 border-vedic-black/10 overflow-hidden cursor-pointer group transition-[flex] duration-700 ease-[cubic-bezier(0.32,0,0.67,0)]
                             ${activeId === project.id ? 'md:flex-[3]' : 'md:flex-1'}
                             min-h-[250px] md:min-h-0
                         `}
                     >
                         {/* Background Image */}
-                        <div className={`absolute inset-0 bg-vedic-brown transition-opacity duration-500 z-0 
+                        <div className={`absolute inset-0 bg-vedic-black transition-opacity duration-500 z-0 
                             ${activeId === project.id ? 'opacity-100' : 'opacity-40 md:opacity-0'}
                         `}>
                             {/* Dark overlay for text readability */}
@@ -96,8 +96,8 @@ const Projects = () => {
 
                             {/* Number */}
                             <div className="flex justify-center md:block">
-                                <span className={`text-6xl md:text-8xl font-light transition-colors duration-500 ${activeId === project.id ? 'text-white/20' : 'text-vedic-brown md:text-vedic-brown'
-                                    } text-white/20 md:text-vedic-brown`}>
+                                <span className={`text-6xl md:text-8xl font-light transition-colors duration-500 ${activeId === project.id ? 'text-white/20' : 'text-vedic-black md:text-vedic-black'
+                                    } text-white/20 md:text-vedic-black`}>
                                     {/* Mobile: default white/20 because BG is visible, Desktop: Brown unless active */}
                                     {project.id}
                                 </span>
@@ -107,11 +107,11 @@ const Projects = () => {
                             <div className="mt-auto">
                                 <div className="flex justify-between items-end">
                                     <div className={`transition-transform duration-500 ${activeId === project.id ? 'translate-y-0' : 'translate-y-4'}`}>
-                                        <h3 className={`text-2xl md:text-4xl font-serif font-bold mb-2 transition-colors duration-300 ${activeId === project.id ? 'text-white' : 'text-white md:text-vedic-brown'
+                                        <h3 className={`text-2xl md:text-4xl font-serif font-bold mb-2 transition-colors duration-300 ${activeId === project.id ? 'text-white' : 'text-white md:text-vedic-black'
                                             }`}>
                                             {project.title}
                                         </h3>
-                                        <p className={`text-sm md:text-base transition-colors duration-300 ${activeId === project.id ? 'text-white/80' : 'text-white/60 md:text-vedic-brown/60'
+                                        <p className={`text-sm md:text-base transition-colors duration-300 ${activeId === project.id ? 'text-white/80' : 'text-white/60 md:text-vedic-black/60'
                                             }`}>
                                             {project.category}
                                         </p>
@@ -126,10 +126,10 @@ const Projects = () => {
 
                                     {/* Arrow Icon */}
                                     <div className={`w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 ${activeId === project.id
-                                            ? 'bg-vedic-saffron border-vedic-saffron rotate-45'
-                                            : 'border-white/20 md:border-vedic-brown/20 group-hover:border-vedic-brown'
+                                        ? 'bg-vedic-saffron border-vedic-saffron rotate-45'
+                                        : 'border-white/20 md:border-vedic-brown/20 group-hover:border-vedic-brown'
                                         }`}>
-                                        <ArrowUpRight className={`w-6 h-6 transition-colors duration-300 ${activeId === project.id ? 'text-white' : 'text-white md:text-vedic-brown'
+                                        <ArrowUpRight className={`w-6 h-6 transition-colors duration-300 ${activeId === project.id ? 'text-white' : 'text-white md:text-vedic-black'
                                             }`} />
                                     </div>
                                 </div>

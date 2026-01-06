@@ -64,9 +64,9 @@ const Services = () => {
             period: "per month",
             features: ['Free domain', 'Monthly Bandwidth 1GB', 'SSD Storage 1TB', 'SSL Certificate', 'Website SEO', 'Google Analytics', 'Messenger Live Chat', 'Full Support'],
             // Reference: Smooth matte Brown/Taupe
-            gradient: "from-[#6D5446] to-[#5D463C]",
-            buttonColor: "text-[#6D5446]",
-            shadowColor: "shadow-[#6D5446]/30"
+            gradient: "from-[#1E293B] to-[#0F172A]",
+            buttonColor: "text-[#1E293B]",
+            shadowColor: "shadow-[#1E293B]/30"
         },
         {
             id: 'professional',
@@ -75,9 +75,10 @@ const Services = () => {
             period: "per month",
             features: ['Free domain', 'Monthly Bandwidth 1GB', 'SSD Storage 1TB', 'SSL Certificate', 'Website SEO', 'Google Analytics', 'Messenger Live Chat', 'Full Support'],
             // Reference: Vibrant Orange/Saffron
-            gradient: "from-[#FB9D36] to-[#F58F1E]",
-            buttonColor: "text-[#FB9D36]",
-            shadowColor: "shadow-[#FB9D36]/30"
+            // Reference: Blue/Cyan
+            gradient: "from-[#3B82F6] to-[#0EA5E9]",
+            buttonColor: "text-[#3B82F6]",
+            shadowColor: "shadow-[#3B82F6]/30"
         },
         {
             id: 'enterprise',
@@ -86,16 +87,17 @@ const Services = () => {
             period: "per month",
             features: ['Free domain', 'Monthly Bandwidth 1GB', 'SSD Storage 1TB', 'SSL Certificate', 'Website SEO', 'Google Analytics', 'Messenger Live Chat', 'Full Support'],
             // Reference: Fresh, slightly muted Green
-            gradient: "from-[#57A757] to-[#469646]",
-            buttonColor: "text-[#57A757]",
-            shadowColor: "shadow-[#57A757]/30"
+            // Reference: Purple/Pink
+            gradient: "from-[#8B5CF6] to-[#D946EF]",
+            buttonColor: "text-[#8B5CF6]",
+            shadowColor: "shadow-[#8B5CF6]/30"
         }
     ];
 
     return (
         <div className="min-h-screen">
             {/* Section 1: Header and Grid - Cream Background */}
-            <div className="bg-[#FFF9F3] py-20 px-4">
+            <div className="bg-[#F8FAFC] py-20 px-4">
                 <div className="max-w-7xl mx-auto">
                     {/* Header */}
                     <motion.div
@@ -104,13 +106,13 @@ const Services = () => {
                         transition={{ duration: 0.8 }}
                         className="text-center mb-16"
                     >
-                        <span className="text-vedic-saffron tracking-widest uppercase font-semibold text-sm sanskrit-text">
+                        <span className="text-blue-500 tracking-widest uppercase font-semibold text-sm sanskrit-text">
                             Our Capabilities
                         </span>
-                        <h1 className="mt-4 text-4xl md:text-6xl font-serif font-bold text-vedic-black sanskrit-accent">
+                        <h1 className="mt-4 text-4xl md:text-6xl font-serif font-bold text-slate-900 sanskrit-accent">
                             Services We Offer
                         </h1>
-                        <p className="mt-6 text-lg md:text-xl text-vedic-brown/70 max-w-3xl mx-auto leading-relaxed">
+                        <p className="mt-6 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
                             Comprehensive digital solutions from design to deployment, covering all aspects of your digital journey
                         </p>
                     </motion.div>
@@ -125,23 +127,23 @@ const Services = () => {
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1, duration: 0.6 }}
                                 whileHover={{ y: -5 }}
-                                className="bg-white p-8 rounded-tr-3xl rounded-br-3xl border-l-[6px] border-[#FD7503] shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col items-start h-full"
+                                className="bg-white p-8 rounded-tr-3xl rounded-br-3xl border-l-[6px] border-[#3B82F6] shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col items-start h-full"
                             >
                                 {/* Icon */}
-                                <div className="mb-6 p-4 bg-[#FD7503]/10 rounded-2xl group-hover:bg-[#FD7503] transition-colors duration-300">
-                                    <service.icon size={32} className="text-[#FD7503] group-hover:text-white transition-colors duration-300" />
+                                <div className="mb-6 p-4 bg-[#3B82F6]/10 rounded-2xl group-hover:bg-[#3B82F6] transition-colors duration-300">
+                                    <service.icon size={32} className="text-[#3B82F6] group-hover:text-white transition-colors duration-300" />
                                 </div>
 
                                 {/* Content */}
-                                <h3 className="text-xl font-bold font-serif text-vedic-black mb-3">
+                                <h3 className="text-xl font-bold font-serif text-slate-900 mb-3">
                                     {service.title}
                                 </h3>
-                                <p className="text-vedic-brown/70 text-sm leading-relaxed mb-6 line-clamp-3">
+                                <p className="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-3">
                                     {service.desc}
                                 </p>
 
                                 {/* Learn More Link */}
-                                <div className="mt-auto flex items-center text-[#FD7503] font-semibold text-sm cursor-pointer group-hover:gap-2 transition-all">
+                                <div className="mt-auto flex items-center text-[#3B82F6] font-semibold text-sm cursor-pointer group-hover:gap-2 transition-all">
                                     <span>Learn more</span>
                                     <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
                                 </div>
@@ -152,10 +154,10 @@ const Services = () => {
             </div>
 
             {/* Section 2: CTA Section - Brown Background */}
-            <div className="bg-[#6A3914] relative pt-20 overflow-hidden text-center">
+            <div className="bg-[#0F172A] relative pt-20 overflow-hidden text-center">
                 <div className="max-w-7xl mx-auto px-4 pb-20">
-                    <h2 className="text-4xl md:text-6xl font-serif font-bold text-[#FFF9F3] mb-12 relative z-10">
-                        Let's Create an <span className="text-[#FD7503]">Amazing</span><br />
+                    <h2 className="text-4xl md:text-6xl font-serif font-bold text-[#F8FAFC] mb-12 relative z-10">
+                        Let's Create an <span className="text-[#3B82F6]">Amazing</span><br />
                         Project Together!
                     </h2>
 
@@ -165,7 +167,7 @@ const Services = () => {
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
                             <Link
                                 to="/contact"
-                                className="inline-flex items-center justify-center px-8 py-4 bg-[#FD7503] text-white rounded-full font-bold text-lg hover:shadow-xl hover:scale-105 transition-all shadow-lg shadow-[#FD7503]/20"
+                                className="inline-flex items-center justify-center px-8 py-4 bg-[#3B82F6] text-white rounded-full font-bold text-lg hover:shadow-xl hover:scale-105 transition-all shadow-lg shadow-[#3B82F6]/20"
                             >
                                 Contact Us
                             </Link>
@@ -175,19 +177,19 @@ const Services = () => {
                         {/* Highlighting Saffron Tags */}
                         <motion.div
                             animate={{ y: [0, -15, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute top-[10%] left-[15%] bg-white px-4 py-2 rounded-full shadow-md text-sm font-medium -rotate-6 text-[#6A3914]"
+                            className="absolute top-[10%] left-[15%] bg-white px-4 py-2 rounded-full shadow-md text-sm font-medium -rotate-6 text-[#0F172A]"
                         >
                             Prototype
                         </motion.div>
                         <motion.div
                             animate={{ y: [0, -10, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                            className="absolute top-[25%] left-[5%] bg-white border border-[#6A3914]/10 px-4 py-2 rounded-full text-xs text-[#6A3914]/60 rotate-3"
+                            className="absolute top-[25%] left-[5%] bg-white border border-[#0F172A]/10 px-4 py-2 rounded-full text-xs text-[#0F172A]/60 rotate-3"
                         >
                             Design System
                         </motion.div>
                         <motion.div
                             animate={{ y: [0, -20, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                            className="absolute top-[40%] left-[20%] bg-white px-5 py-2 rounded-full shadow-md text-sm font-medium rotate-6 z-10 text-[#6A3914]"
+                            className="absolute top-[40%] left-[20%] bg-white px-5 py-2 rounded-full shadow-md text-sm font-medium rotate-6 z-10 text-[#0F172A]"
                         >
                             Wireframe Design
                         </motion.div>
@@ -195,19 +197,19 @@ const Services = () => {
                         {/* Top Right */}
                         <motion.div
                             animate={{ y: [0, -12, 0] }} transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-                            className="absolute top-[15%] right-[20%] bg-[#FD7503] text-white px-4 py-2 rounded-full shadow-md text-sm font-medium rotate-6"
+                            className="absolute top-[15%] right-[20%] bg-[#3B82F6] text-white px-4 py-2 rounded-full shadow-md text-sm font-medium rotate-6"
                         >
                             Dashboard
                         </motion.div>
                         <motion.div
                             animate={{ y: [0, -8, 0] }} transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.7 }}
-                            className="absolute top-[30%] right-[10%] bg-white border border-[#6A3914]/10 px-4 py-2 rounded-full text-xs text-[#6A3914]/60 -rotate-3"
+                            className="absolute top-[30%] right-[10%] bg-white border border-[#0F172A]/10 px-4 py-2 rounded-full text-xs text-[#0F172A]/60 -rotate-3"
                         >
                             UI Design
                         </motion.div>
                         <motion.div
                             animate={{ y: [0, -18, 0] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
-                            className="absolute top-[45%] right-[25%] bg-white px-5 py-2 rounded-full shadow-md text-sm font-medium -rotate-6 text-[#6A3914]"
+                            className="absolute top-[45%] right-[25%] bg-white px-5 py-2 rounded-full shadow-md text-sm font-medium -rotate-6 text-[#0F172A]"
                         >
                             Brand Identity
                         </motion.div>
@@ -215,13 +217,13 @@ const Services = () => {
                         {/* Bottom Left */}
                         <motion.div
                             animate={{ y: [0, -14, 0] }} transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-                            className="absolute bottom-[20%] left-[10%] bg-[#FD7503] text-white px-5 py-2 rounded-full shadow-md text-sm font-medium -rotate-12"
+                            className="absolute bottom-[20%] left-[10%] bg-[#3B82F6] text-white px-5 py-2 rounded-full shadow-md text-sm font-medium -rotate-12"
                         >
                             Mobile App Design
                         </motion.div>
                         <motion.div
                             animate={{ y: [0, -9, 0] }} transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
-                            className="absolute bottom-[35%] left-[25%] bg-white border border-[#6A3914]/10 px-4 py-2 rounded-full text-xs text-[#6A3914]/60 rotate-6"
+                            className="absolute bottom-[35%] left-[25%] bg-white border border-[#0F172A]/10 px-4 py-2 rounded-full text-xs text-[#0F172A]/60 rotate-6"
                         >
                             Website Design
                         </motion.div>
@@ -229,19 +231,19 @@ const Services = () => {
                         {/* Bottom Right */}
                         <motion.div
                             animate={{ y: [0, -16, 0] }} transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-                            className="absolute bottom-[20%] right-[15%] bg-[#FD7503] text-white px-5 py-2 rounded-full shadow-md text-sm font-medium rotate-12"
+                            className="absolute bottom-[20%] right-[15%] bg-[#3B82F6] text-white px-5 py-2 rounded-full shadow-md text-sm font-medium rotate-12"
                         >
                             Product Design
                         </motion.div>
                         <motion.div
                             animate={{ y: [0, -11, 0] }} transition={{ duration: 5.8, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
-                            className="absolute bottom-[35%] right-[30%] bg-white px-4 py-2 rounded-full shadow-md text-sm font-medium -rotate-3 text-[#6A3914]"
+                            className="absolute bottom-[35%] right-[30%] bg-white px-4 py-2 rounded-full shadow-md text-sm font-medium -rotate-3 text-[#0F172A]"
                         >
                             Landing Page
                         </motion.div>
                         <motion.div
                             animate={{ y: [0, -7, 0] }} transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                            className="absolute bottom-[10%] right-[40%] bg-white border border-[#6A3914]/10 px-4 py-2 rounded-full text-xs text-[#6A3914]/60 rotate-3"
+                            className="absolute bottom-[10%] right-[40%] bg-white border border-[#0F172A]/10 px-4 py-2 rounded-full text-xs text-[#0F172A]/60 rotate-3"
                         >
                             UX/UI Design
                         </motion.div>
@@ -249,13 +251,13 @@ const Services = () => {
                         {/* Center Surrounding */}
                         <motion.div
                             animate={{ y: [0, -13, 0] }} transition={{ duration: 4.3, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-                            className="absolute top-[20%] left-[40%] bg-[#FD7503] text-white px-4 py-2 rounded-full shadow-md text-sm font-medium -rotate-6"
+                            className="absolute top-[20%] left-[40%] bg-[#3B82F6] text-white px-4 py-2 rounded-full shadow-md text-sm font-medium -rotate-6"
                         >
                             Illustration
                         </motion.div>
                         <motion.div
                             animate={{ y: [0, -15, 0] }} transition={{ duration: 5.0, repeat: Infinity, ease: "easeInOut", delay: 1.1 }}
-                            className="absolute top-[60%] left-[45%] bg-[#FD7503] text-white px-4 py-2 rounded-full shadow-md text-sm font-medium rotate-3"
+                            className="absolute top-[60%] left-[45%] bg-[#3B82F6] text-white px-4 py-2 rounded-full shadow-md text-sm font-medium rotate-3"
                         >
                             Brand Identity
                         </motion.div>
@@ -264,7 +266,7 @@ const Services = () => {
                 </div>
 
                 {/* Scrolling Bottom Banner */}
-                <div className="w-full bg-[#FD7503] py-4 overflow-hidden relative border-y-4 border-[#FD7503]">
+                <div className="w-full bg-[#3B82F6] py-4 overflow-hidden relative border-y-4 border-[#3B82F6]">
                     <motion.div
                         className="flex whitespace-nowrap"
                         animate={{ x: [0, -1000] }}
@@ -292,16 +294,16 @@ const Services = () => {
             </div>
 
             {/* Section 3: Pricing Section - Cream Background */}
-            <div className="bg-[#FFF9F3] py-20 px-4 relative overflow-hidden">
+            <div className="bg-[#F8FAFC] py-20 px-4 relative overflow-hidden">
                 <div className="max-w-7xl mx-auto">
                     {/* Header */}
                     <div className="text-center mb-16">
                         <div className="flex items-center justify-center mb-6">
-                            <div className="w-10 h-10 bg-gradient-to-br from-vedic-brown/10 to-vedic-brown/5 rounded-xl flex items-center justify-center">
-                                <div className="w-4 h-4 bg-vedic-brown/50 rotate-45"></div>
+                            <div className="w-10 h-10 bg-gradient-to-br from-slate-200 to-slate-100 rounded-xl flex items-center justify-center">
+                                <div className="w-4 h-4 bg-slate-400 rotate-45"></div>
                             </div>
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-serif font-bold text-vedic-black mb-2">
+                        <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-2">
                             Choose your best plan
                         </h2>
                     </div>
@@ -349,14 +351,14 @@ const Services = () => {
                                             {/* SVG Shape for the inverse corner - matching Page BG color for cutout effect */}
                                             {/* Since page bg is Cream (#FFF9F3), use that fill */}
                                             <svg className="absolute -top-[40px] right-0 w-[40px] h-[40px] z-10" width="40" height="40" viewBox="0 0 40 40">
-                                                <path d="M40 40 L0 40 L0 0 C0 22 18 40 40 40 Z" fill="#FFF9F3" transform="rotate(270 20 20) translate(0 15)" />
+                                                <path d="M40 40 L0 40 L0 0 C0 22 18 40 40 40 Z" fill="#F8FAFC" transform="rotate(270 20 20) translate(0 15)" />
                                             </svg>
 
                                             {/* The Button Container itself */}
-                                            <div className="absolute bottom-0 right-0 w-full h-full bg-[#FFF9F3] rounded-tl-[2.5rem] flex items-center justify-center p-2">
-                                                <button className="flex items-center gap-2 text-sm font-bold text-vedic-black group cursor-pointer hover:opacity-80 transition-opacity">
+                                            <div className="absolute bottom-0 right-0 w-full h-full bg-[#F8FAFC] rounded-tl-[2.5rem] flex items-center justify-center p-2">
+                                                <button className="flex items-center gap-2 text-sm font-bold text-slate-900 group cursor-pointer hover:opacity-80 transition-opacity">
                                                     Sign up
-                                                    <div className={`w-6 h-6 rounded-full bg-vedic-black text-white flex items-center justify-center`}>
+                                                    <div className={`w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center`}>
                                                         <ArrowRight className="w-3 h-3" />
                                                     </div>
                                                 </button>

@@ -7,17 +7,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        'vedic-black': '#000000', // Pure Black
-        'vedic-saffron': '#FD7503', // The Vibrant Orange from the image
-        'vedic-saffron-dark': '#C25A00',
-        'vedic-saffron-light': '#FE9E4D',
-        'vedic-gold': '#FD7503', // Mapping gold to Saffron to adhere to 5-color limit
+        'vedic-black': '#0F172A', // Slate 900
+        'vedic-saffron': '#3B82F6', // Blue 500
+        'vedic-saffron-dark': '#2563EB', // Blue 600
+        'vedic-saffron-light': '#60A5FA', // Blue 400
+        'vedic-gold': '#3B82F6', // Blue 500
         'vedic-white': '#FFFFFF', // Pure White
-        'vedic-brown': '#6A3914', // The Dark Brown from the image
-        'vedic-brown-light': '#8B4B1B',
-        'vedic-cream': '#FFF9F3', // The Off-White/Cream from the image
-        
-        // Removing extra brand colors to enforce the 5-color palette
+        'vedic-brown': '#0F172A', // Slate 900 (Replacing Brown)
+        'vedic-brown-light': '#1E293B', // Slate 800 (Replacing Light Brown)
+        'vedic-cream': '#F8FAFC', // Slate 50 (Replacing Cream)
       },
       fontFamily: {
         serif: ['"Playfair Display"', 'serif'], // Elegant serif for headings
@@ -28,8 +26,8 @@ export default {
       },
       backgroundImage: {
         'vedic-pattern': "url('/path/to/pattern.png')",
-        'gradient-vedic': 'linear-gradient(135deg, #FD7503 0%, #6A3914 100%)', // Saffron to Brown
-        'gradient-brown': 'linear-gradient(135deg, #6A3914 0%, #000000 100%)', // Brown to Black
+        'gradient-vedic': 'linear-gradient(135deg, #3B82F6 0%, #0F172A 100%)', // Blue to Slate
+        'gradient-brown': 'linear-gradient(135deg, #0F172A 0%, #020617 100%)', // Slate to Darker Slate
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

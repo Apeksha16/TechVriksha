@@ -29,7 +29,7 @@ const testimonials = [
 
 const Testimonials = () => {
     return (
-        <section className="relative py-24 md:py-32 bg-[#FFF9F3] overflow-hidden">
+        <section className="relative py-24 md:py-32 bg-[#F8FAFC] overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
 
                 {/* Decorative Star Icon (Floating) */}
@@ -99,7 +99,7 @@ const Testimonials = () => {
                                         <img
                                             src={item.image}
                                             alt={item.name}
-                                            className="w-16 h-16 rounded-full object-cover border-4 border-[#FFF9F3]"
+                                            className="w-16 h-16 rounded-full object-cover border-4 border-[#F8FAFC]"
                                         />
                                     </div>
                                     <div className="flex-grow">

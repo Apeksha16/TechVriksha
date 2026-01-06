@@ -14,7 +14,7 @@ const AboutSection = () => {
     const rotate = useTransform(scrollYProgress, [0, 1], [0, 180]);
 
     return (
-        <section ref={containerRef} className="relative min-h-[90vh] flex items-center bg-[#FFF9F3] overflow-hidden py-24">
+        <section ref={containerRef} className="relative min-h-[90vh] flex items-center bg-[#F8FAFC] overflow-hidden py-24">
             <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
@@ -67,7 +67,7 @@ const AboutSection = () => {
                         {/* Decorative background element */}
                         <motion.div
                             style={{ y }}
-                            className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-[#6A3914]/10 to-transparent rounded-[3rem] opacity-50 -z-10 transform translate-x-10 -translate-y-10"
+                            className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-[#0F172A]/10 to-transparent rounded-[3rem] opacity-50 -z-10 transform translate-x-10 -translate-y-10"
                         />
 
                         <motion.div
@@ -75,7 +75,7 @@ const AboutSection = () => {
                             whileInView={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)" }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, ease: "easeInOut" }}
-                            className="relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-gradient-to-br from-[#6A3914] to-[#8D6E63] shadow-2xl group"
+                            className="relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-gradient-to-br from-[#0F172A] to-[#1E293B] shadow-2xl group"
                         >
                             {/* Glass overlay */}
                             <div className="absolute inset-0 bg-white/5 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -87,7 +87,7 @@ const AboutSection = () => {
                                     whileTap={{ scale: 0.95 }}
                                     className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(0,0,0,0.1)] z-20 group/play"
                                 >
-                                    <Play className="w-8 h-8 text-[#6A3914] fill-[#6A3914] translate-x-1 group-hover/play:scale-110 transition-transform" />
+                                    <Play className="w-8 h-8 text-[#0F172A] fill-[#0F172A] translate-x-1 group-hover/play:scale-110 transition-transform" />
                                 </motion.button>
 
                                 {/* Pulse Effect */}
@@ -107,7 +107,7 @@ const AboutSection = () => {
                                 <motion.div
                                     animate={{ rotate: 360 }}
                                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                                    className="absolute inset-0 rounded-full border border-white/20 bg-[#6A3914] backdrop-blur-xl"
+                                    className="absolute inset-0 rounded-full border border-white/20 bg-[#0F172A] backdrop-blur-xl"
                                 >
                                     <svg viewBox="0 0 100 100" className="w-full h-full p-2">
                                         <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />

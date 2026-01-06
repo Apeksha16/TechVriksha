@@ -19,7 +19,7 @@ const OurPromise = () => {
             title: 'Premium Quality',
             description: 'Meticulous attention to every pixel and line of code.',
             icon: Award,
-            color: 'bg-[#8D6E63]',
+            color: 'bg-[#1E293B]',
             textColor: 'text-white'
         },
         {
@@ -69,15 +69,15 @@ const OurPromise = () => {
     );
 
     return (
-        <section className="relative py-32 bg-[#6A3914] overflow-hidden">
+        <section className="relative py-32 bg-[#0F172A] overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
                 {/* Header */}
                 <div className="text-center mb-20">
-                    <h2 className="text-5xl md:text-6xl font-serif font-bold text-[#FFF9F3] mb-4">
+                    <h2 className="text-5xl md:text-6xl font-serif font-bold text-[#F8FAFC] mb-4">
                         Our Promise
                     </h2>
-                    <p className="text-lg text-[#FFF9F3]/60">
+                    <p className="text-lg text-[#F8FAFC]/60">
                         Built on a foundation of trust and excellence
                     </p>
                 </div>
@@ -91,23 +91,23 @@ const OurPromise = () => {
                                 key={item.id}
                                 className={`flex items-start gap-6 p-6 rounded-2xl cursor-pointer transition-all duration-300 ${activeStep === item.id
                                     ? 'bg-white shadow-xl scale-105 border-l-4 border-vedic-saffron'
-                                    : 'hover:bg-[#FFF9F3]/10 border-l-4 border-transparent'
+                                    : 'hover:bg-[#F8FAFC]/10 border-l-4 border-transparent'
                                     }`}
                                 onMouseEnter={() => setActiveStep(item.id)}
                                 initial={{ x: -20, opacity: 0 }}
                                 whileInView={{ x: 0, opacity: 1 }}
                                 transition={{ delay: item.id * 0.1 }}
                             >
-                                <div className={`w-14 h-14 rounded-full flex items-center justify-center shrink-0 transition-colors ${activeStep === item.id ? 'bg-vedic-saffron text-white' : 'bg-[#FFF9F3]/10 text-[#FFF9F3]/40'
+                                <div className={`w-14 h-14 rounded-full flex items-center justify-center shrink-0 transition-colors ${activeStep === item.id ? 'bg-vedic-saffron text-white' : 'bg-[#F8FAFC]/10 text-[#F8FAFC]/40'
                                     }`}>
                                     <item.icon className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <h3 className={`text-xl font-bold mb-2 ${activeStep === item.id ? 'text-vedic-black' : 'text-[#FFF9F3]/80'
+                                    <h3 className={`text-xl font-bold mb-2 ${activeStep === item.id ? 'text-vedic-black' : 'text-[#F8FAFC]/80'
                                         }`}>
                                         {item.title}
                                     </h3>
-                                    <p className={`text-sm leading-relaxed ${activeStep === item.id ? 'text-vedic-black/70' : 'text-[#FFF9F3]/50'
+                                    <p className={`text-sm leading-relaxed ${activeStep === item.id ? 'text-vedic-black/70' : 'text-[#F8FAFC]/50'
                                         }`}>
                                         {item.description}
                                     </p>
@@ -119,7 +119,7 @@ const OurPromise = () => {
                     {/* Right: Pyramid Graphic */}
                     <div className="relative pt-20 px-8 flex flex-col items-center order-1 lg:order-2">
                         {/* Connecting Line (Visual Aid) */}
-                        <div className="absolute top-1/2 left-0 w-full h-[1px] border-t-2 border-dashed border-[#FFF9F3]/20 -z-10 hidden lg:block" />
+                        <div className="absolute top-1/2 left-0 w-full h-[1px] border-t-2 border-dashed border-[#F8FAFC]/20 -z-10 hidden lg:block" />
 
                         <PyramidStep
                             item={promises[0]}

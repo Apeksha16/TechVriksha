@@ -160,7 +160,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #FD7503, #6A3914);
+    background: linear-gradient(90deg, #3B82F6, #0F172A);
     transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
@@ -265,16 +265,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #FFF9F3;
+  background: #F8FAFC;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #FD7503 0%, #C25A00 100%);
+  background: linear-gradient(180deg, #3B82F6 0%, #2563EB 100%);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #FE9E4D 0%, #FD7503 100%);
+  background: linear-gradient(180deg, #60A5FA 0%, #3B82F6 100%);
 }
 
 /* Vedic pattern overlay */
@@ -283,8 +283,8 @@
   position: absolute;
   inset: 0;
   background-image: 
-    radial-gradient(circle at 20% 50%, rgba(253, 117, 3, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(106, 57, 20, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(15, 23, 42, 0.05) 0%, transparent 50%);
   pointer-events: none;
 }
 

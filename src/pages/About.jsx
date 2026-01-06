@@ -131,7 +131,7 @@ const About = () => {
     const [hoveredCard, setHoveredCard] = useState(null);
 
     return (
-        <div className="relative min-h-screen bg-[#6A3914] overflow-hidden">
+        <div className="relative min-h-screen bg-[#0F172A] overflow-hidden">
             {/* Animated Background Elements */}
             <motion.div
                 style={{ y, opacity }}
@@ -243,7 +243,7 @@ const About = () => {
 
 
                 {/* Team Profiles Section - Cream Background */}
-                <section className="py-32 px-4 relative overflow-hidden bg-[#FFF9F3]">
+                <section className="py-32 px-4 relative overflow-hidden bg-[#F8FAFC]">
                     {/* Background Elements */}
                     <div className="absolute inset-0">
                         <div className="absolute top-1/4 left-0 w-96 h-96 bg-vedic-saffron/5 rounded-full blur-3xl"></div>
@@ -315,18 +315,18 @@ const About = () => {
 
                                     {/* Content Card - Matching the Reference Image */}
                                     <div className="flex-1 w-full lg:w-1/2">
-                                        <div className="bg-[#6A3914]/90 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-10 border border-white/10 shadow-xl">
+                                        <div className="bg-[#0F172A]/90 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-10 border border-white/10 shadow-xl">
 
                                             {/* Bio */}
-                                            <p className="text-xl md:text-2xl text-[#E8DCC4] font-light leading-relaxed mb-10">
+                                            <p className="text-xl md:text-2xl text-[#E2E8F0] font-light leading-relaxed mb-10">
                                                 {partner.bio}
                                             </p>
 
                                             {/* Stats Grid */}
                                             <div className="grid grid-cols-2 gap-5 mb-10">
                                                 {/* Experience Stat */}
-                                                <div className="bg-[#3E2723]/50 rounded-3xl p-6 flex flex-col items-start gap-4 border border-white/5 hover:bg-[#3E2723] transition-colors">
-                                                    <div className="p-3 rounded-xl bg-gradient-to-br from-orange-500 to-amber-700 text-white shadow-lg">
+                                                <div className="bg-[#1E293B]/50 rounded-3xl p-6 flex flex-col items-start gap-4 border border-white/5 hover:bg-[#1E293B] transition-colors">
+                                                    <div className="p-3 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 text-white shadow-lg">
                                                         <Briefcase size={24} />
                                                     </div>
                                                     <div>
@@ -336,8 +336,8 @@ const About = () => {
                                                 </div>
 
                                                 {/* Projects Stat */}
-                                                <div className="bg-[#3E2723]/50 rounded-3xl p-6 flex flex-col items-start gap-4 border border-white/5 hover:bg-[#3E2723] transition-colors">
-                                                    <div className="p-3 rounded-xl bg-gradient-to-br from-orange-500 to-amber-700 text-white shadow-lg">
+                                                <div className="bg-[#1E293B]/50 rounded-3xl p-6 flex flex-col items-start gap-4 border border-white/5 hover:bg-[#1E293B] transition-colors">
+                                                    <div className="p-3 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 text-white shadow-lg">
                                                         <Award size={24} />
                                                     </div>
                                                     <div>
@@ -349,12 +349,12 @@ const About = () => {
 
                                             {/* Expertise */}
                                             <div className="mb-10">
-                                                <h4 className="text-xs font-bold text-[#D7CCC8] uppercase tracking-[0.2em] mb-4">Expertise</h4>
+                                                <h4 className="text-xs font-bold text-[#CBD5E1] uppercase tracking-[0.2em] mb-4">Expertise</h4>
                                                 <div className="flex flex-wrap gap-3">
                                                     {partner.skills.map((skill, idx) => (
                                                         <span
                                                             key={idx}
-                                                            className="px-5 py-2.5 rounded-full bg-[#3E2723] text-[#E8DCC4] text-sm font-medium border border-[#5D4037] hover:border-vedic-saffron transition-colors cursor-default"
+                                                            className="px-5 py-2.5 rounded-full bg-[#1E293B] text-[#E2E8F0] text-sm font-medium border border-[#334155] hover:border-vedic-saffron transition-colors cursor-default"
                                                         >
                                                             {skill}
                                                         </span>
@@ -367,7 +367,7 @@ const About = () => {
 
                                             {/* Social Connect */}
                                             <div className="flex items-center justify-between">
-                                                <span className="text-xs font-bold text-[#D7CCC8] uppercase tracking-[0.2em]">Connect:</span>
+                                                <span className="text-xs font-bold text-[#CBD5E1] uppercase tracking-[0.2em]">Connect:</span>
                                                 <div className="flex gap-4">
                                                     {[
                                                         { icon: Linkedin, href: partner.social.linkedin },
@@ -378,7 +378,7 @@ const About = () => {
                                                         <a
                                                             key={idx}
                                                             href={social.href}
-                                                            className="w-10 h-10 rounded-full border border-[#8D6E63] flex items-center justify-center text-[#E8DCC4] hover:bg-vedic-saffron hover:border-vedic-saffron hover:text-white transition-all duration-300"
+                                                            className="w-10 h-10 rounded-full border border-[#475569] flex items-center justify-center text-[#E2E8F0] hover:bg-vedic-saffron hover:border-vedic-saffron hover:text-white transition-all duration-300"
                                                         >
                                                             <social.icon size={18} />
                                                         </a>
@@ -395,7 +395,7 @@ const About = () => {
                 </section>
 
                 {/* Values & Vision Section - Brown Background */}
-                <section className="py-32 px-4 bg-[#6A3914]">
+                <section className="py-32 px-4 bg-[#0F172A]">
                     <div className="max-w-7xl mx-auto">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
@@ -414,7 +414,7 @@ const About = () => {
                         </motion.div>
 
                         <div className="relative">
-                            {/* Floating Stats Bar - The "Green" pill from reference, now Brown */}
+                            {/* Floating Stats Bar - Slate/Blue */}
                             <motion.div
                                 initial={{ y: 50, opacity: 0 }}
                                 whileInView={{ y: 0, opacity: 1 }}
@@ -422,7 +422,7 @@ const About = () => {
                                 transition={{ delay: 0.2 }}
                                 className="relative z-20 max-w-4xl mx-auto -mb-16"
                             >
-                                <div className="bg-gradient-to-r from-[#6A3914] to-[#3E2723] rounded-[3rem] p-8 md:p-12 shadow-2xl border border-white/10 flex flex-wrap justify-between items-center gap-8 md:gap-4 text-center">
+                                <div className="bg-gradient-to-r from-[#0F172A] to-[#1E293B] rounded-[3rem] p-8 md:p-12 shadow-2xl border border-white/10 flex flex-wrap justify-between items-center gap-8 md:gap-4 text-center">
                                     {values.map((value, idx) => (
                                         <div key={idx} className="flex flex-col items-center gap-3 min-w-[120px] flex-1">
                                             <div className="p-3 bg-white/10 rounded-full text-vedic-saffron">
@@ -435,7 +435,7 @@ const About = () => {
                             </motion.div>
 
                             {/* White/Cream Content Card */}
-                            <div className="bg-[#FFF9F3] rounded-[3rem] pt-32 pb-20 px-8 md:px-20 relative z-10 text-vedic-black">
+                            <div className="bg-[#F8FAFC] rounded-[3rem] pt-32 pb-20 px-8 md:px-20 relative z-10 text-vedic-black">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-32 relative">
                                     {/* Vertical Divider */}
                                     <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-vedic-brown/10 -translate-x-1/2"></div>
@@ -452,7 +452,7 @@ const About = () => {
                                             <div className="w-12 h-12 rounded-full bg-vedic-saffron/10 flex items-center justify-center text-vedic-saffron">
                                                 <Target size={24} />
                                             </div>
-                                            <h3 className="text-3xl font-serif font-bold text-[#6A3914]">Our Vision</h3>
+                                            <h3 className="text-3xl font-serif font-bold text-[#0F172A]">Our Vision</h3>
                                         </div>
                                         <p className="text-vedic-black/70 text-lg leading-relaxed">
                                             To lead the way in digital transformation by delivering innovative, sustainable, and scalable solutions that bridge the gap between ancient wisdom and modern technology.
@@ -471,7 +471,7 @@ const About = () => {
                                             <div className="w-12 h-12 rounded-full bg-vedic-saffron/10 flex items-center justify-center text-vedic-saffron">
                                                 <Rocket size={24} />
                                             </div>
-                                            <h3 className="text-3xl font-serif font-bold text-[#6A3914]">Our Mission</h3>
+                                            <h3 className="text-3xl font-serif font-bold text-[#0F172A]">Our Mission</h3>
                                         </div>
                                         <p className="text-vedic-black/70 text-lg leading-relaxed">
                                             To leverage our expertise, resources, and passion to manufacture digital products that exceed industry standards and empower businesses to reach their full potential.
@@ -481,7 +481,7 @@ const About = () => {
 
                                 {/* Bottom Button */}
                                 <div className="text-center mt-20">
-                                    <button className="bg-[#0F5A48] hover:bg-[#0A4033] text-white px-8 py-4 rounded-lg font-medium transition-colors shadow-lg">
+                                    <button className="bg-[#3B82F6] hover:bg-[#2563EB] text-white px-8 py-4 rounded-lg font-medium transition-colors shadow-lg">
                                         Know More About Us
                                     </button>
                                 </div>
@@ -491,7 +491,7 @@ const About = () => {
                 </section>
 
                 {/* Journey Section - Winding Road Redesign - Cream Background */}
-                <section className="py-32 px-4 overflow-hidden text-center bg-[#FFF9F3]">
+                <section className="py-32 px-4 overflow-hidden text-center bg-[#F8FAFC]">
                     <div className="max-w-7xl mx-auto">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
@@ -514,9 +514,9 @@ const About = () => {
                             <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1100 600" preserveAspectRatio="none">
                                 <defs>
                                     <linearGradient id="roadGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" stopColor="#4E2C11" />
-                                        <stop offset="50%" stopColor="#6A3914" />
-                                        <stop offset="100%" stopColor="#4E2C11" />
+                                        <stop offset="0%" stopColor="#0F172A" />
+                                        <stop offset="50%" stopColor="#334155" />
+                                        <stop offset="100%" stopColor="#0F172A" />
                                     </linearGradient>
                                     <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
                                         <feDropShadow dx="0" dy="10" stdDeviation="15" floodColor="black" floodOpacity="0.2" />
@@ -527,7 +527,7 @@ const About = () => {
                                 <path
                                     d="M -50 550 C 300 550, 400 300, 600 350 S 900 450, 1150 100"
                                     fill="none"
-                                    stroke="#E8DCC4"
+                                    stroke="#CBD5E1"
                                     strokeWidth="140"
                                     opacity="0.5"
                                     filter="url(#shadow)"
@@ -564,13 +564,13 @@ const About = () => {
                                 transition={{ delay: 0.2 }}
                                 className="absolute left-[5%] bottom-[15%] w-72 text-left"
                             >
-                                <div className="absolute left-1/2 bottom-[-40px] h-[100px] w-1 bg-[#6A3914]/20">
+                                <div className="absolute left-1/2 bottom-[-40px] h-[100px] w-1 bg-[#0F172A]/20">
                                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-vedic-saffron"></div>
                                 </div>
-                                <div className="bg-[#FFF9F3]/80 backdrop-blur-md p-6 rounded-2xl border border-[#6A3914]/10 hover:border-vedic-saffron transition-colors cursor-pointer group shadow-lg">
+                                <div className="bg-[#F8FAFC]/80 backdrop-blur-md p-6 rounded-2xl border border-[#1E293B]/10 hover:border-vedic-saffron transition-colors cursor-pointer group shadow-lg">
                                     <h3 className="text-4xl font-bold text-vedic-saffron mb-2">2015</h3>
-                                    <h4 className="text-lg font-semibold text-[#6A3914] mb-2">{timeline[0].title}</h4>
-                                    <p className="text-sm text-[#6A3914]/70">{timeline[0].description}</p>
+                                    <h4 className="text-lg font-semibold text-[#0F172A] mb-2">{timeline[0].title}</h4>
+                                    <p className="text-sm text-[#0F172A]/70">{timeline[0].description}</p>
                                 </div>
                             </motion.div>
 
@@ -582,13 +582,13 @@ const About = () => {
                                 transition={{ delay: 0.4 }}
                                 className="absolute left-[35%] top-[55%] w-72 text-left"
                             >
-                                <div className="absolute left-1/2 top-full h-[60px] w-1 bg-[#6A3914]/20">
+                                <div className="absolute left-1/2 top-full h-[60px] w-1 bg-[#0F172A]/20">
                                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-vedic-saffron"></div>
                                 </div>
-                                <div className="bg-[#FFF9F3]/80 backdrop-blur-md p-6 rounded-2xl border border-[#6A3914]/10 hover:border-vedic-saffron transition-colors cursor-pointer group shadow-lg">
+                                <div className="bg-[#F8FAFC]/80 backdrop-blur-md p-6 rounded-2xl border border-[#1E293B]/10 hover:border-vedic-saffron transition-colors cursor-pointer group shadow-lg">
                                     <h3 className="text-4xl font-bold text-vedic-saffron mb-2">2018</h3>
-                                    <h4 className="text-lg font-semibold text-[#6A3914] mb-2">{timeline[1].title}</h4>
-                                    <p className="text-sm text-[#6A3914]/70">{timeline[1].description}</p>
+                                    <h4 className="text-lg font-semibold text-[#0F172A] mb-2">{timeline[1].title}</h4>
+                                    <p className="text-sm text-[#0F172A]/70">{timeline[1].description}</p>
                                 </div>
                             </motion.div>
 
@@ -600,13 +600,13 @@ const About = () => {
                                 transition={{ delay: 0.6 }}
                                 className="absolute left-[60%] top-[25%] w-72 text-left"
                             >
-                                <div className="absolute left-1/2 top-full h-[100px] w-1 bg-[#6A3914]/20">
+                                <div className="absolute left-1/2 top-full h-[100px] w-1 bg-[#0F172A]/20">
                                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-vedic-saffron"></div>
                                 </div>
-                                <div className="bg-[#FFF9F3]/80 backdrop-blur-md p-6 rounded-2xl border border-[#6A3914]/10 hover:border-vedic-saffron transition-colors cursor-pointer group shadow-lg">
+                                <div className="bg-[#F8FAFC]/80 backdrop-blur-md p-6 rounded-2xl border border-[#1E293B]/10 hover:border-vedic-saffron transition-colors cursor-pointer group shadow-lg">
                                     <h3 className="text-4xl font-bold text-vedic-saffron mb-2">2020</h3>
-                                    <h4 className="text-lg font-semibold text-[#6A3914] mb-2">{timeline[2].title}</h4>
-                                    <p className="text-sm text-[#6A3914]/70">{timeline[2].description}</p>
+                                    <h4 className="text-lg font-semibold text-[#0F172A] mb-2">{timeline[2].title}</h4>
+                                    <p className="text-sm text-[#0F172A]/70">{timeline[2].description}</p>
                                 </div>
                             </motion.div>
 
@@ -618,13 +618,13 @@ const About = () => {
                                 transition={{ delay: 0.8 }}
                                 className="absolute right-[5%] top-[5%] w-72 text-left"
                             >
-                                <div className="absolute left-1/2 top-full h-[80px] w-1 bg-[#6A3914]/20">
+                                <div className="absolute left-1/2 top-full h-[80px] w-1 bg-[#0F172A]/20">
                                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-vedic-saffron"></div>
                                 </div>
-                                <div className="bg-[#FFF9F3]/80 backdrop-blur-md p-6 rounded-2xl border border-[#6A3914]/10 hover:border-vedic-saffron transition-colors cursor-pointer group shadow-lg">
+                                <div className="bg-[#F8FAFC]/80 backdrop-blur-md p-6 rounded-2xl border border-[#1E293B]/10 hover:border-vedic-saffron transition-colors cursor-pointer group shadow-lg">
                                     <h3 className="text-4xl font-bold text-vedic-saffron mb-2">2024</h3>
-                                    <h4 className="text-lg font-semibold text-[#6A3914] mb-2">{timeline[3].title}</h4>
-                                    <p className="text-sm text-[#6A3914]/70">{timeline[3].description}</p>
+                                    <h4 className="text-lg font-semibold text-[#0F172A] mb-2">{timeline[3].title}</h4>
+                                    <p className="text-sm text-[#0F172A]/70">{timeline[3].description}</p>
                                 </div>
                             </motion.div>
                         </div>
@@ -634,7 +634,7 @@ const About = () => {
                             {timeline.map((item, index) => (
                                 <div key={item.year} className="relative pl-12 text-left">
                                     <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-vedic-saffron"></div>
-                                    <div className="bg-[#6A3914] backdrop-blur-md p-6 rounded-2xl border border-vedic-black/5 shadow-xl">
+                                    <div className="bg-[#0F172A] backdrop-blur-md p-6 rounded-2xl border border-vedic-black/5 shadow-xl">
                                         <span className="text-3xl font-bold text-vedic-saffron block mb-2">{item.year}</span>
                                         <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
                                         <p className="text-white/80">{item.description}</p>
@@ -646,7 +646,7 @@ const About = () => {
                 </section>
 
                 {/* Company Story - Redesigned Stacked Cards - Brown Background */}
-                <section className="py-32 px-4 relative bg-[#6A3914]">
+                <section className="py-32 px-4 relative bg-[#0F172A]">
                     <div className="max-w-4xl mx-auto">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
@@ -675,7 +675,7 @@ const About = () => {
                                 viewport={{ once: true }}
                                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                 style={{ zIndex: hoveredCard === 'vision' ? 50 : 10 }}
-                                className="relative bg-[#3E2723] rounded-[2.5rem] p-10 md:p-14 border border-white/5 shadow-2xl transform origin-bottom-left transition-all"
+                                className="relative bg-[#1E293B] rounded-[2.5rem] p-10 md:p-14 border border-white/5 shadow-2xl transform origin-bottom-left transition-all"
                             >
                                 <div className="absolute -right-4 -top-4 w-24 h-24 bg-vedic-saffron rounded-full opacity-20 blur-2xl"></div>
                                 <div className="flex flex-col md:flex-row gap-8 items-start">
@@ -684,7 +684,7 @@ const About = () => {
                                     </div>
                                     <div>
                                         <h3 className="text-3xl font-serif font-bold text-white mb-4">The Vision</h3>
-                                        <p className="text-lg text-[#E8DCC4] leading-relaxed">
+                                        <p className="text-lg text-[#E2E8F0] leading-relaxed">
                                             Tech Vriksha was born from a vision to combine the depth of Vedic wisdom with the power of modern technology.
                                             Founded by Apeksha and Pranav, we set out to create digital solutions that not only solve problems but
                                             also inspire and elevate.
@@ -709,7 +709,7 @@ const About = () => {
                                 viewport={{ once: true }}
                                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                 style={{ zIndex: hoveredCard === 'meaning' ? 50 : 20 }}
-                                className="relative bg-[#FD7503] rounded-[2.5rem] p-10 md:p-14 shadow-2xl transform origin-bottom-right transition-all"
+                                className="relative bg-[#3B82F6] rounded-[2.5rem] p-10 md:p-14 shadow-2xl transform origin-bottom-right transition-all"
                             >
                                 <div className="absolute -left-4 -top-4 w-24 h-24 bg-white rounded-full opacity-20 blur-2xl"></div>
                                 <div className="flex flex-col md:flex-row gap-8 items-start">
@@ -743,23 +743,23 @@ const About = () => {
                                 viewport={{ once: true }}
                                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                 style={{ zIndex: hoveredCard === 'impact' ? 50 : 30 }}
-                                className="relative bg-[#FFF9F3] rounded-[2.5rem] p-10 md:p-14 shadow-2xl transform origin-center transition-all"
+                                className="relative bg-[#F8FAFC] rounded-[2.5rem] p-10 md:p-14 shadow-2xl transform origin-center transition-all"
                             >
                                 <div className="absolute right-10 bottom-10 w-32 h-32 bg-vedic-saffron rounded-full opacity-10 blur-3xl"></div>
                                 <div className="flex flex-col md:flex-row gap-8 items-start">
-                                    <div className="bg-[#6A3914]/10 p-4 rounded-2xl text-[#6A3914]">
+                                    <div className="bg-[#0F172A]/10 p-4 rounded-2xl text-[#0F172A]">
                                         <Target size={32} />
                                     </div>
                                     <div>
-                                        <h3 className="text-3xl font-serif font-bold text-[#6A3914] mb-4">The Impact</h3>
-                                        <p className="text-lg text-[#3E2723]/80 leading-relaxed">
+                                        <h3 className="text-3xl font-serif font-bold text-[#0F172A] mb-4">The Impact</h3>
+                                        <p className="text-lg text-[#0F172A]/80 leading-relaxed">
                                             Today, we're proud to have worked with clients across the globe, from innovative startups to established
                                             enterprises. Our commitment to excellence continues to set us apart in the digital landscape.
                                         </p>
                                         <div className="mt-8">
                                             <Link
                                                 to="/contact"
-                                                className="inline-flex items-center gap-2 text-[#FD7503] font-bold hover:gap-4 transition-all uppercase tracking-wider text-sm"
+                                                className="inline-flex items-center gap-2 text-[#3B82F6] font-bold hover:gap-4 transition-all uppercase tracking-wider text-sm"
                                             >
                                                 <span>Join Our Journey</span>
                                                 <ArrowRight size={18} />

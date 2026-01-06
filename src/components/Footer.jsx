@@ -10,18 +10,18 @@ const Footer = () => {
 
     // Theme Colors
     const theme = {
-        bg: isAboutPage ? 'bg-[#FFF9F3]' : 'bg-[#6A3914]',
-        text: isAboutPage ? 'text-[#6A3914]' : 'text-[#FFF9F3]',
-        textMuted: isAboutPage ? 'text-[#6A3914]/80' : 'text-[#FFF9F3]/80',
-        textFaint: isAboutPage ? 'text-[#6A3914]/40' : 'text-[#FFF9F3]/40',
-        border: isAboutPage ? 'border-[#6A3914]/10' : 'border-[#FFF9F3]/10',
-        inputBorder: isAboutPage ? 'border-[#6A3914]/30' : 'border-[#FFF9F3]/30',
-        placeholder: isAboutPage ? 'placeholder-[#6A3914]/50' : 'placeholder-[#FFF9F3]/50',
+        bg: isAboutPage ? 'bg-[#F8FAFC]' : 'bg-[#0F172A]',
+        text: isAboutPage ? 'text-[#0F172A]' : 'text-[#F8FAFC]',
+        textMuted: isAboutPage ? 'text-[#0F172A]/80' : 'text-[#F8FAFC]/80',
+        textFaint: isAboutPage ? 'text-[#0F172A]/40' : 'text-[#F8FAFC]/40',
+        border: isAboutPage ? 'border-[#0F172A]/10' : 'border-[#F8FAFC]/10',
+        inputBorder: isAboutPage ? 'border-[#0F172A]/30' : 'border-[#F8FAFC]/30',
+        placeholder: isAboutPage ? 'placeholder-[#0F172A]/50' : 'placeholder-[#F8FAFC]/50',
         logoFilter: isAboutPage ? '' : 'brightness-0 invert',
         button: isAboutPage
-            ? 'bg-[#6A3914] text-[#FFF9F3] hover:bg-[#FD7503] hover:text-white'
-            : 'bg-[#FFF9F3] text-[#6A3914] hover:bg-[#FD7503] hover:text-white',
-        socialBorder: isAboutPage ? 'border-[#6A3914]/30 hover:bg-[#6A3914] hover:text-[#FFF9F3]' : 'border-[#FFF9F3]/30 hover:bg-[#FFF9F3] hover:text-[#6A3914]'
+            ? 'bg-[#0F172A] text-[#F8FAFC] hover:bg-[#3B82F6] hover:text-white'
+            : 'bg-[#F8FAFC] text-[#0F172A] hover:bg-[#3B82F6] hover:text-white',
+        socialBorder: isAboutPage ? 'border-[#0F172A]/30 hover:bg-[#0F172A] hover:text-[#F8FAFC]' : 'border-[#F8FAFC]/30 hover:bg-[#F8FAFC] hover:text-[#0F172A]'
     };
 
     return (
@@ -35,10 +35,10 @@ const Footer = () => {
                 <svg className="relative block w-full h-[50px] md:h-[100px]" viewBox="0 0 1200 100" preserveAspectRatio="none">
                     {/* The path draws the 'sky' that covers the top of the brown box? 
                         Actually, it's easier to draw the 'Trees' pointing UP from the footer color. 
-                        So fill should be #6A3914. */}
+                        So fill should be #0F172A. */}
                     <path
                         d="M0,100 L0,40 Q10,50 20,40 T40,40 T60,50 T80,30 T100,50 T120,40 T140,50 T160,20 T180,50 T200,40 T220,60 T240,30 T260,50 T280,40 T300,50 T320,20 T340,50 T360,40 T380,60 T400,30 T420,50 T440,40 T460,50 T480,20 T500,50 T520,40 T540,60 T560,30 T580,50 T600,40 T620,50 T640,20 T660,50 T680,40 T700,60 T720,30 T740,50 T760,40 T780,50 T800,20 T820,50 T840,40 T860,60 T880,30 T900,50 T920,40 T940,50 T960,20 T980,50 T1000,40 T1020,60 T1040,30 T1060,50 T1080,40 T1100,50 T1120,20 T1140,50 T1160,40 T1180,60 L1200,40 L1200,100 Z"
-                        fill="#6A3914"
+                        fill="#0F172A"
                         transform="scale(1, 1.5)"
                         transform-origin="bottom"
                     />
@@ -59,7 +59,7 @@ const Footer = () => {
                         C1000,30 1050,50 1100,30
                         C1150,60 1180,40 1200,50
                         L1200,100 Z"
-                        fill="#6A3914"
+                        fill="#0F172A"
                     />
                 </svg>
             </div>
@@ -85,7 +85,7 @@ const Footer = () => {
                                     <li key={item}>
                                         <NavLink
                                             to="#"
-                                            className="hover:text-[#FD7503] transition-colors inline-block"
+                                            className="hover:text-[#3B82F6] transition-colors inline-block"
                                         >
                                             {item}
                                         </NavLink>
@@ -115,13 +115,13 @@ const Footer = () => {
                                 <input
                                     type="email"
                                     placeholder="*Email"
-                                    className={`w-full bg-transparent border ${theme.inputBorder} px-4 py-3 text-sm focus:outline-none focus:border-[#FD7503] transition-colors ${theme.placeholder}`}
+                                    className={`w-full bg-transparent border ${theme.inputBorder} px-4 py-3 text-sm focus:outline-none focus:border-[#3B82F6] transition-colors ${theme.placeholder}`}
                                 />
                                 <div className="flex gap-4">
                                     <input
                                         type="text"
                                         placeholder="*First Name"
-                                        className={`w-full bg-transparent border ${theme.inputBorder} px-4 py-3 text-sm focus:outline-none focus:border-[#FD7503] transition-colors ${theme.placeholder}`}
+                                        className={`w-full bg-transparent border ${theme.inputBorder} px-4 py-3 text-sm focus:outline-none focus:border-[#3B82F6] transition-colors ${theme.placeholder}`}
                                     />
                                     <button
                                         className={`${theme.button} px-6 py-3 text-xs font-bold tracking-wider transition-colors uppercase whitespace-nowrap`}
@@ -135,7 +135,7 @@ const Footer = () => {
                         {/* Col 3: Contact (Right) - Span 3 */}
                         <div className="md:col-span-3 text-center md:text-right space-y-8">
                             <div>
-                                <a href="#" className="inline-flex items-center gap-2 hover:text-[#FD7503] transition-colors group font-medium mb-4">
+                                <a href="#" className="inline-flex items-center gap-2 hover:text-[#3B82F6] transition-colors group font-medium mb-4">
                                     Send Us A Message
                                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                                 </a>
@@ -155,8 +155,8 @@ const Footer = () => {
                     <div className={`flex flex-col md:flex-row justify-between items-center text-xs ${theme.textFaint} gap-4`}>
                         <p>© {new Date().getFullYear()} Tech Vriksha. All Right Reserved</p>
                         <div className="flex gap-6">
-                            <a href="#" className="hover:text-[#FD7503] transition-colors">Privacy Policy</a>
-                            <a href="#" className="hover:text-[#FD7503] transition-colors">Terms of Service</a>
+                            <a href="#" className="hover:text-[#3B82F6] transition-colors">Privacy Policy</a>
+                            <a href="#" className="hover:text-[#3B82F6] transition-colors">Terms of Service</a>
                         </div>
                     </div>
                 </div>

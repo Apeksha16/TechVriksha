@@ -38,7 +38,7 @@ const Specializations = () => {
             className={`
                 relative p-8 lg:p-10 rounded-[2.5rem] flex flex-col h-full transition-all duration-300 group
                 ${spec.isDark
-                    ? 'bg-[#3E2723] text-white shadow-2xl shadow-[#3E2723]/30 scale-105 z-10'
+                    ? 'bg-[#1E293B] text-white shadow-2xl shadow-[#1E293B]/30 scale-105 z-10'
                     : 'bg-white text-vedic-black shadow-xl hover:shadow-2xl border border-gray-100'
                 }
             `}
@@ -88,7 +88,7 @@ const Specializations = () => {
     );
 
     return (
-        <section className="relative py-32 bg-[#6A3914] overflow-hidden">
+        <section className="relative py-32 bg-[#0F172A] overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 {/* Header */}
                 <motion.div
@@ -98,10 +98,10 @@ const Specializations = () => {
                     className="text-center mb-20"
                 >
                     <div className="w-3 h-3 bg-vedic-saffron rounded-full mx-auto mb-6" />
-                    <h2 className="text-5xl md:text-7xl font-serif font-bold text-[#FFF9F3] mb-6">
+                    <h2 className="text-5xl md:text-7xl font-serif font-bold text-[#F8FAFC] mb-6">
                         What We Specialize In
                     </h2>
-                    <p className="text-lg text-[#FFF9F3]/60 max-w-2xl mx-auto font-light">
+                    <p className="text-lg text-[#F8FAFC]/60 max-w-2xl mx-auto font-light">
                         Three pillars of digital excellence, each crafted with precision and care
                     </p>
                 </motion.div>

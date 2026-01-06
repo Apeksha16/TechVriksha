@@ -89,7 +89,7 @@ const ServicesSection = () => {
     };
 
     return (
-        <section className="relative py-32 bg-[#6A3914] overflow-hidden" style={{ perspective: "2000px" }}>
+        <section className="relative py-32 bg-[#0F172A] overflow-hidden" style={{ perspective: "2000px" }}>
             <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
 
                 {/* Header Pills */}
@@ -99,7 +99,7 @@ const ServicesSection = () => {
                     transition={{ duration: 0.6 }}
                     className="flex flex-wrap items-center gap-4 mb-24"
                 >
-                    <div className="px-8 py-4 rounded-full bg-[#FFF9F3] shadow-md shadow-black/5 text-[#6A3914] font-bold tracking-wide border border-white/10">
+                    <div className="px-8 py-4 rounded-full bg-[#1E293B] shadow-md shadow-black/5 text-[#F8FAFC] font-bold tracking-wide border border-white/10">
                         Services
                     </div>
                     <div className="px-8 py-4 rounded-full bg-vedic-saffron text-white font-bold shadow-xl shadow-vedic-saffron/30 tracking-wide">

@@ -57,11 +57,11 @@ const Newsletter = () => {
                 <div className="relative w-full aspect-[1.6/1] max-w-[550px]">
 
                     {/* 1. Back Body (Inside Color) */}
-                    <div className="absolute inset-x-0 bottom-0 top-[20%] bg-[#F2E6D8] rounded-b-lg shadow-inner z-0" />
+                    <div className="absolute inset-x-0 bottom-0 top-[20%] bg-[#E2E8F0] rounded-b-lg shadow-inner z-0" />
 
                     {/* 2. Top Flap (Open) - SVG */}
                     <svg className="absolute w-full h-[55%] -top-[54%] left-0 z-0 origin-bottom" viewBox="0 0 500 200" preserveAspectRatio="none">
-                        <path d="M0,200 L250,0 L500,200" fill="#F2E6D8" stroke="#E6DCCF" strokeWidth="1" />
+                        <path d="M0,200 L250,0 L500,200" fill="#E2E8F0" stroke="#CBD5E1" strokeWidth="1" />
                     </svg>
 
                     {/* 3. The Interactive Card (Form) */}
@@ -103,10 +103,10 @@ const Newsletter = () => {
                     {/* 4. Front Pocket (Overlay) - SVG */}
                     <svg className="absolute inset-0 w-full h-full z-20 pointer-events-none drop-shadow-2xl" viewBox="0 0 500 312" preserveAspectRatio="none">
                         {/* Main Pocket Shape - Cream Color */}
-                        <path d="M0,0 L250,170 L500,0 L500,312 L0,312 Z" fill="#FFF9F3" stroke="#F2E6D8" strokeWidth="1" />
+                        <path d="M0,0 L250,170 L500,0 L500,312 L0,312 Z" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1" />
                         {/* Side Shading for 3D effect */}
-                        <path d="M0,0 L250,170 L0,312" fill="#6A3914" fillOpacity="0.05" />
-                        <path d="M500,0 L250,170 L500,312" fill="#6A3914" fillOpacity="0.08" />
+                        <path d="M0,0 L250,170 L0,312" fill="#0F172A" fillOpacity="0.05" />
+                        <path d="M500,0 L250,170 L500,312" fill="#0F172A" fillOpacity="0.08" />
                     </svg>
 
                 </div>

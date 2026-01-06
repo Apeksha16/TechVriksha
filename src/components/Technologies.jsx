@@ -41,13 +41,13 @@ const Technologies = () => {
             className={`
                 relative flex flex-col items-center justify-center p-6 rounded-2xl transition-all duration-300 cursor-pointer group
                 ${isDark
-                    ? 'bg-[#6A3914] border border-white/10 hover:border-vedic-saffron/30 hover:bg-[#8D5830] shadow-xl'
-                    : 'bg-white shadow-xl hover:shadow-2xl hover:shadow-vedic-saffron/10 border border-[#6A3914]/10'
+                    ? 'bg-[#0F172A] border border-white/10 hover:border-vedic-saffron/30 hover:bg-[#1E293B] shadow-xl'
+                    : 'bg-white shadow-xl hover:shadow-2xl hover:shadow-vedic-saffron/10 border border-[#0F172A]/10'
                 }
             `}
         >
             {/* Icon Container */}
-            <div className={`
+            < div className={`
                 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 transition-all duration-300
                 ${isDark
                     ? 'bg-gradient-to-br from-vedic-saffron/20 to-vedic-saffron/5 group-hover:from-vedic-saffron/30 group-hover:to-vedic-saffron/10'
@@ -69,15 +69,15 @@ const Technologies = () => {
             <span className={`text-[10px] mt-1 font-medium uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity ${isDark ? 'text-white/40' : 'text-vedic-black/40'}`}>
                 {item.category}
             </span>
-        </motion.div>
+        </motion.div >
     );
 
     return (
-        <section className="relative overflow-hidden w-full bg-[#FFF9F3]">
+        <section className="relative overflow-hidden w-full bg-[#F8FAFC]">
             <div className="flex flex-col lg:flex-row w-full">
 
                 {/* Left Side - Light (50% Width) */}
-                <div className="w-full lg:w-1/2 bg-[#FFF9F3] p-12 lg:p-24 flex flex-col justify-center">
+                <div className="w-full lg:w-1/2 bg-[#F8FAFC] p-12 lg:p-24 flex flex-col justify-center">
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -98,7 +98,7 @@ const Technologies = () => {
                 </div>
 
                 {/* Right Side - Dark (50% Width) */}
-                <div className="w-full lg:w-1/2 bg-[#FFF9F3] p-12 lg:p-24 flex flex-col justify-center relative">
+                <div className="w-full lg:w-1/2 bg-[#F8FAFC] p-12 lg:p-24 flex flex-col justify-center relative">
                     <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
                         {techObjects.slice(9).map((item, idx) => (
                             <TechnologyCard key={idx} item={item} isDark={true} idx={idx} />
@@ -112,7 +112,7 @@ const Technologies = () => {
                         transition={{ delay: 0.5 }}
                         className="absolute bottom-10 right-10"
                     >
-                        <a href="/services" className="text-[#6A3914]/60 hover:text-vedic-saffron text-sm font-medium flex items-center gap-2 group transition-colors">
+                        <a href="/services" className="text-[#0F172A]/60 hover:text-vedic-saffron text-sm font-medium flex items-center gap-2 group transition-colors">
                             Explore All Technologies
                             <span className="group-hover:translate-x-1 transition-transform">→</span>
                         </a>
