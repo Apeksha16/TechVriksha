@@ -6,7 +6,7 @@ import logo from '../assets/Logo.png';
 
 const Footer = () => {
     const location = useLocation();
-    const isAboutPage = location.pathname === '/about';
+    const isAboutPage = false; // Force Dark Footer on About page (User Request)
 
     // Theme Colors
     const theme = {
